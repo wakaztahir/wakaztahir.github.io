@@ -1,0 +1,50 @@
+import React from "react"
+
+import "./sidebar.scss"
+
+export default function Sidebar() {
+  return (
+    <aside>
+      <div id="me">Waqas Tahir</div>
+      <hr style={{ width: "14rem", marginTop: "3rem", marginBottom: "1rem" }} />
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
+      <section className="aside-social">
+        <a
+          href="https://facebook.com/wakaztahir"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fa fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://twitter.com/wakaztahir"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fa fa-twitter"></i>
+        </a>
+        <a
+          href="https://stackoverflow.com/users/3343503/waqas"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <i className="fa fa-stack-overflow"></i>
+        </a>
+        <a
+          href="https://github.com/wakaztahir"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fa fa-github"></i>
+        </a>
+      </section>
+      <section className="aside-footer">
+        <span>&copy; 2020 | Built with love</span>
+      </section>
+    </aside>
+  )
+}

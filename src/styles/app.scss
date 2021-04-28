@@ -1,0 +1,47 @@
+html,
+body {
+  font-family: $headFont;
+  margin: 0;
+  color: $textColor;
+}
+p,
+a,
+h4,
+h5,
+h6,
+button,
+input[type="button"],
+.g-text {
+  font-family: $textFont;
+}
+.h-text {
+  font-family: $headFont;
+  font-weight: 300;
+  font-size: 2.6rem;
+  margin: 0;
+}
+button,
+input[type="button"] {
+  padding: 0.4em 1.3em;
+  background: $fgColor;
+  color: $secondaryColor;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 1.4em;
+  box-sizing: border-box;
+  transition: color 0.3s ease-out, background 0.3s ease-out;
+
+  &:hover {
+    background: $bgColor;
+    color: $fgColor;
+  }
+}
+a {
+  color: $secondaryColor;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+a:hover {
+  text-decoration: underline;
+}

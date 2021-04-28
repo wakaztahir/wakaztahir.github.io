@@ -1,0 +1,54 @@
+.project {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  margin-top: 1rem;
+  transition: width 0.4s ease-out, height 0.4s ease-out;
+  box-sizing: border-box;
+
+  @include small-medium {
+    width: 16rem;
+    margin: 1rem;
+  }
+}
+
+.card {
+  background: rgba(darken($bgColor, 10%), 0.7);
+  color: $fgColor;
+  padding: 1rem;
+  padding-bottom: 5rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+
+  .right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+  }
+
+  .tags {
+    span {
+      font-size: 0.9rem;
+      background: rgba(darken($secondaryColor, 20%), 0.9);
+      color: darken($fgColor, 10%);
+      padding: 3px 6px;
+      cursor: default;
+      border-radius: 2px;
+      margin: 0px 2px;
+    }
+  }
+
+  .links {
+    a {
+      color: rgba(darken($fgColor, 10%), 0.8);
+      font-size: 1.3rem;
+      text-decoration: none;
+      &:hover {
+        color: lighten($fgColor, 20%);
+      }
+    }
+  }
+}

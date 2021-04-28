@@ -1,0 +1,70 @@
+aside {
+  display: none;
+  min-height: 100vh;
+  flex-basis: 400px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  float: left;
+  background-color: $bgColor;
+  background-size: 64px 128px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  nav {
+    margin-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: $fgColor;
+      display: block;
+      padding: 0.2em 1em;
+      border-radius: 2em;
+      margin: 0.2em 0em;
+      transition: color 0.3s ease-out, background 0.3s ease-out;
+      &:hover,
+      &:active {
+        background: $fgColor;
+        color: $secondaryColor;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #me {
+    width: 10rem;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  @include medium {
+    display: flex;
+  }
+
+  .aside-social {
+    margin-top: 1em;
+
+    a {
+      margin: 0px 10px;
+      i {
+        font-size: 1.5rem;
+        color: $fgColor;
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+  .aside-footer {
+    margin-top: 1.5em;
+    font-weight: 400;
+    margin-bottom: 1em;
+    color: $fgColor;
+  }
+}

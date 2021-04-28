@@ -1,0 +1,14 @@
+.social {
+  display: block;
+  margin-top: 2em;
+  a {
+    margin: 0 1em;
+    i {
+      font-size: 1.3rem;
+      color: white;
+    }
+  }
+  @include medium {
+    display: none;
+  }
+}

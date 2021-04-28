@@ -1,0 +1,28 @@
+main {
+  display: flex;
+  flex-direction: column;
+  @include medium {
+    flex-direction: row;
+  }
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .inner-text {
+    width: 70%;
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  @include small-medium {
+    flex-direction: row;
+  }
+}
