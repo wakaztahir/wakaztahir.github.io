@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import About from "../components/dialogs/About"
 import Header from "../components/header/header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
@@ -8,15 +9,29 @@ import Sidebar from "../components/sidebar/sidebar"
 import "../styles/main-page.scss"
 
 export default function Home() {
+  const [aboutDialogOpen, setAboutDialog] = useState(false)
   return (
     <main>
       <title>Waqas Tahir | Trying My Best</title>
       <Header />
       <Sidebar />
+      <About
+        open={aboutDialogOpen}
+        onClose={() => {
+          setAboutDialog(false)
+        }}
+      />
       <Parallax>
         <section id="home" className="page centered">
           <h1 className="h-text">Hi , I am Waqas.</h1>
-          <p>developer & artist</p>
+          <p>software developer</p>
+          <button
+            onClick={() => {
+              setAboutDialog(true)
+            }}
+          >
+            About Me
+          </button>
         </section>
         <section id="projects" v="page">
           <div className="projects">
@@ -46,28 +61,6 @@ export default function Home() {
               />
             </ProjectCard>
           </div>
-        </section>
-        <section id="about" className="page centered">
-          <h1 className="h-text">About me</h1>
-          <p className="inner-text">
-            I am a developer.I study Computer Science. I make websites and
-            apps.I'm also an artist , I make 3d art , music and other stuff.I
-            love computers , sci-fi films & tech gadgets. <br />
-            <br />
-          </p>
-          <p className="inner-text" style={{ marginTop: "-10px" }}>
-            I am a full stack web developer , I use react as a front-end JS
-            framework mostly , NodeJS & MongoDB as backend.I have also developed
-            in PHP & SQL.I have experience in developing wordpress plugins and
-            themes though I'm not good at it
-            <br />
-            <br />
-          </p>
-          <p className="inner-text" style={{ marginTop: "-10px" }}>
-            I love programming & making new things is my passion.
-            <br />
-            <br />
-          </p>
         </section>
       </Parallax>
     </main>

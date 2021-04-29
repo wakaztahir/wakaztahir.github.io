@@ -23,9 +23,6 @@ export default function Header() {
           <a href="#projects" className="menu-item">
             Projects
           </a>
-          <a href="#about" className="menu-item">
-            About
-          </a>
         </div>
         <div
           className={"mobile-menu " + (menuOpen ? "open" : "")}
@@ -36,9 +33,6 @@ export default function Header() {
           </a>
           <a href="#projects" className="menu-item">
             Projects
-          </a>
-          <a href="#about" className="menu-item">
-            About
           </a>
         </div>
       </nav>

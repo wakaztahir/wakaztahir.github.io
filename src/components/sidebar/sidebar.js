@@ -10,7 +10,6 @@ export default function Sidebar() {
       <nav>
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
       </nav>
       <section className="aside-social">
         <a
