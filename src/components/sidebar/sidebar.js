@@ -9,6 +9,7 @@ export default function Sidebar() {
       <hr style={{ width: "14rem", marginTop: "3rem", marginBottom: "1rem" }} />
       <nav>
         <a href="#home">Home</a>
+        <a href="/blog">Blog</a>
         <a href="#projects">Projects</a>
       </nav>
       <section className="aside-social">
@@ -17,28 +18,28 @@ export default function Sidebar() {
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-facebook-f"></i>
+          <i className="fa fa-facebook-f" />
         </a>
         <a
           href="https://twitter.com/wakaztahir"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-twitter"></i>
+          <i className="fa fa-twitter" />
         </a>
         <a
           href="https://stackoverflow.com/users/3343503/waqas"
           rel="noreferrer"
           target="_blank"
         >
-          <i className="fa fa-stack-overflow"></i>
+          <i className="fa fa-stack-overflow" />
         </a>
         <a
           href="https://github.com/wakaztahir"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-github"></i>
+          <i className="fa fa-github" />
         </a>
       </section>
       <section className="aside-footer">

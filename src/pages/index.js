@@ -3,17 +3,17 @@ import About from "../components/dialogs/About"
 import Header from "../components/header/header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
-  ProjectCardButton,
+  ProjectCardButton
 } from "../components/project-card/project-card"
 import Sidebar from "../components/sidebar/sidebar"
-import "../styles/main-page.scss"
+import * as css from "../styles/main-page.module.scss"
 
 export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
   return (
-    <main>
+    <main className={css.container}>
       <title>Waqas Tahir | Trying My Best</title>
-      <Header />
+      <Header mobileOnly={true} />
       <Sidebar />
       <About
         open={aboutDialogOpen}
@@ -22,7 +22,7 @@ export default function Home() {
         }}
       />
       <Parallax>
-        <section id="home" className="page centered">
+        <section id="home" className={css.centered + " " + css.contentSection+" "+css.home}>
           <h1 className="h-text">Hi , I am Waqas.</h1>
           <p>software developer</p>
           <button
@@ -33,8 +33,8 @@ export default function Home() {
             About Me
           </button>
         </section>
-        <section id="projects" v="page">
-          <div className="projects">
+        <section id="projects" className={css.contentSection+" "+css.projects}>
+          <div className={css.projects}>
             <ProjectCard tags={["March 2021"]}>
               <h1>Timeline</h1>
               <p>

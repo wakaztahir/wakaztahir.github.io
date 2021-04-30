@@ -1,10 +1,10 @@
 import React from "react"
 
-import "../styles/404.scss"
+import * as css from "../styles/404.module.scss"
 
 export default function Notfound() {
   return (
-    <main style={{ margin: "16px" }}>
+    <main style={{ margin: "16px" }} className={css.h1thing}>
       <div>
         <h1>404 Not found</h1>
         <p>

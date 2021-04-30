@@ -12,17 +12,17 @@ module.exports = {
       options: {
         additionalData: `@import "base";`,
         sassOptions: {
-          includePaths: [`${__dirname}/src/styles`],
-        },
-      },
+          includePaths: [`${__dirname}/src/styles`]
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
-      },
+        path: `${__dirname}/src/markdown-pages`
+      }
     },
-    `gatsby-transformer-remark`,
-  ],
+    `gatsby-transformer-remark`
+  ]
 }

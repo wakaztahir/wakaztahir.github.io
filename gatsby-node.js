@@ -33,6 +33,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         // additional data can be passed via context
         slug: node.frontmatter.slug,
+        excerpt:node.frontmatter.excerpt,
+        image:node.frontmatter.image,
+        author:node.frontmatter.author
       },
     })
   })

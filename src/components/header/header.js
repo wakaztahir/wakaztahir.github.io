@@ -2,11 +2,11 @@ import React, { useState } from "react"
 
 import "./header.scss"
 
-export default function Header() {
+export default function Header(props) {
   let [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header>
+    <header className={(menuOpen ? "header-open " : "") + (props.mobileOnly ? "mobile-only-header " : "")}>
       <span className="wakaz">Waqas Tahir</span>
       <nav className="primary">
         <span
@@ -14,13 +14,16 @@ export default function Header() {
           id="mobile-menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <i className="fa fa-bars" aria-hidden="true"></i>
+          <i className="fa fa-bars" aria-hidden="true" />
         </span>
         <div className="menu">
-          <a href="#home" className="menu-item">
+          <a href="/#home" className="menu-item">
             Home
           </a>
-          <a href="#projects" className="menu-item">
+          <a href="/blog" className="">
+            Blog
+          </a>
+          <a href="/#projects" className="menu-item">
             Projects
           </a>
         </div>
@@ -28,10 +31,13 @@ export default function Header() {
           className={"mobile-menu " + (menuOpen ? "open" : "")}
           id="mobile-menu"
         >
-          <a href="#home" className="menu-item">
+          <a href="/#home" className="menu-item">
             Home
           </a>
-          <a href="#projects" className="menu-item">
+          <a href="/blog" className="">
+            Blog
+          </a>
+          <a href="/#projects" className="menu-item">
             Projects
           </a>
         </div>
