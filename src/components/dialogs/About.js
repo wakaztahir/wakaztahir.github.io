@@ -34,9 +34,7 @@ export default function About(props) {
           working at currently
         </DialogContentText>
         <DialogContentText>
-          You can <a href="#">download my CV</a> which will go in depth about my
-          experience in programming and my skills if you are a recruitor. My
-          blog posts can be found on this site which is a collection of my
+          My blog posts can be found on this site which is a collection of my
           thoughts and experiences about the programming world
         </DialogContentText>
       </DialogContent>
