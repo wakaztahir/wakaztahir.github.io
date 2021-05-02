@@ -1,15 +1,15 @@
 import React from "react"
 
-import "./project-card.scss"
+import * as css from "./project-card.module.scss"
 
 export default function ProjectCard(props) {
   return (
-    <div className="project card">
+    <div className={`${css.project} ${css.card}`}>
       {props.children}
 
-      <div className="right-bottom">
-        <div className="links"></div>
-        <div className="tags">
+      <div className={`${css.rightBottom}`}>
+        <div className={`${css.links}`}></div>
+        <div className={`${css.tags}`}>
           {props.tags.forEach(tagName => (
             <span>{tagName}</span>
           ))}
@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
 export function ProjectCardButton(props) {
   return (
     <a href={props.href} target="_blank" rel="noreferrer">
-      <button className="button">{props.name}</button>
+      <button>{props.name}</button>
     </a>
   )
 }

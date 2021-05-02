@@ -1,29 +1,29 @@
 import React from "react"
 
-import "./social.scss"
+import * as css from "./social.module.scss"
 
 export default function Social() {
   return (
-    <section class="social">
+    <section className={`${css.social}`}>
       <a
         href="https://facebook.com/wakaztahir"
         target="_blank"
         rel="noreferrer"
       >
-        <i class="fa fa-facebook-f"></i>
+        <i className="fa fa-facebook-f"/>
       </a>
       <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
-        <i class="fa fa-twitter"></i>
+        <i className="fa fa-twitter"/>
       </a>
       <a
         href="https://stackoverflow.com/users/3343503/waqas"
         target="_blank"
         rel="noreferrer"
       >
-        <i class="fa fa-stack-overflow"></i>
+        <i className="fa fa-stack-overflow"/>
       </a>
       <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
-        <i class="fa fa-github"></i>
+        <i className="fa fa-github"/>
       </a>
     </section>
   )

@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "./post-excerpt.scss"
+import * as css from "./post-excerpt.module.scss"
+
 import {
   Button,
   Card, CardActionArea,

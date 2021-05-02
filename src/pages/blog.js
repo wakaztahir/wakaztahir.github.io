@@ -14,7 +14,7 @@ const Blog = ({ data: { allMarkdownRemark: { edges } } }) => {
     <main>
       <title>Waqas Tahir - Blog</title>
       <Header />
-      <div className="header-margin" />
+      <div className={`${css.headerMargin}`} />
       <div className="posts-container">
         {Posts}
       </div>

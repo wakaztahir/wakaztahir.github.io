@@ -1,11 +1,11 @@
 import React from "react"
 
-import "./parallax.scss"
+import * as css from "./parallax.module.scss"
 
 export default function Parallax(props) {
   return (
-    <div className="content parallax">
-      <div className="wrap gradient-layer">{props.children}</div>
+    <div className={`${css.content} ${css.parallax}`}>
+      <div className={`${css.wrap} ${css.gradientLayer}`}>{props.children}</div>
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.header-margin {
+  width: 100vw;
+  height: 4rem;
+  display: block;
+
+  &.mobile {
+    @include medium {
+      display: none;
+    }
+  }
+}

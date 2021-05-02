@@ -1,4 +1,4 @@
-aside {
+.aside-sidebar {
   display: none;
   min-height: 100vh;
   flex-basis: 400px;
@@ -35,7 +35,7 @@ aside {
     }
   }
 
-  #me {
+  .aside-title {
     width: 10rem;
     color: white;
     font-size: 2.5em;

@@ -1,18 +1,18 @@
 import React from "react"
 
-import "./sidebar.scss"
+import * as css from "./sidebar.module.scss"
 
 export default function Sidebar() {
   return (
-    <aside>
-      <div id="me">Waqas Tahir</div>
+    <aside className={`${css.asideSidebar}`}>
+      <div className={`${css.asideTitle}`}>Waqas Tahir</div>
       <hr style={{ width: "14rem", marginTop: "3rem", marginBottom: "1rem" }} />
       <nav>
-        <a href="#home">Home</a>
+        <a href="/#home">Home</a>
         <a href="/blog">Blog</a>
-        <a href="#projects">Projects</a>
+        <a href="/#projects">Projects</a>
       </nav>
-      <section className="aside-social">
+      <section className={`${css.asideSocial}`}>
         <a
           href="https://facebook.com/wakaztahir"
           target="_blank"
@@ -42,7 +42,7 @@ export default function Sidebar() {
           <i className="fa fa-github" />
         </a>
       </section>
-      <section className="aside-footer">
+      <section className={`${css.asideFooter}`}>
         <span>&copy; 2020 | Built with love</span>
       </section>
     </aside>

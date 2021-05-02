@@ -1,25 +1,28 @@
 .parallax {
+  background: url("/images/me-cover-small.jpg");
   background-size: cover;
-  background: url("/images/me-cover-small.jpg") fixed;
+  background-attachment: fixed;
 
   @include medium {
     background: url("/images/me-cover-medium.jpg");
   }
   @include large {
+    background: url("/images/me-cover-large.jpg");
     background-size: 100% 150%;
-    background: url("/images/me-cover-large.jpg") 8% 8%;
+    background-position: 8% 8%;
   }
+
   .gradient-layer {
     box-sizing: border-box;
     color: $fgColor;
     text-align: center;
     background: linear-gradient(
-      rgba($secondaryColor, 0.8),
-      rgba(16, 105, 98, 0.8),
-      rgba(16, 105, 98, 0.8),
-      rgba(40, 59, 110, 0.8),
-      rgba(40, 59, 110, 0.8),
-      rgba(24, 24, 26, 0.8)
+                    rgba($secondaryColor, 0.8),
+                    rgba(16, 105, 98, 0.8),
+                    rgba(16, 105, 98, 0.8),
+                    rgba(40, 59, 110, 0.8),
+                    rgba(40, 59, 110, 0.8),
+                    rgba(24, 24, 26, 0.8)
     );
   }
 }
