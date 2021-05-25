@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import { useState } from "react"
+import * as React from "react"
 import About from "../components/dialogs/About"
 import Header from "../components/header/header"
 import Parallax from "../components/parallax/parallax"

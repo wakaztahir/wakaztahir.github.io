@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core"
-import React from "react"
+import * as React from "react"
 
 export default function About(props) {
   const theme = useTheme()

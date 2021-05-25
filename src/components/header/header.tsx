@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import * as React from "react"
 
 import * as css from "./header.module.scss"
+import { useState } from "react"
 
 export default function Header(props) {
   let [menuOpen, setMenuOpen] = useState(false)

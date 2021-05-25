@@ -1,10 +1,9 @@
-import React from "react"
-
-import * as css from "../styles/404.module.scss"
-
-export default function Notfound() {
-  return (
-    <main style={{ margin: "16px" }} className={css.h1thing}>
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = require("react");
+var css = require("../styles/404.module.scss");
+function Notfound() {
+    return (<main style={{ margin: "16px" }} className={css.h1thing}>
       <div>
         <h1>404 Not found</h1>
         <p>
@@ -18,6 +17,6 @@ export default function Notfound() {
           <button>Posts</button>
         </a>
       </div>
-    </main>
-  )
+    </main>);
 }
+exports.default = Notfound;

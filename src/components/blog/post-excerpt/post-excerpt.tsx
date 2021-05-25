@@ -1,7 +1,7 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 
-import * as css from "./post-excerpt.module.scss"
+import "./"
 
 import {
   Button,

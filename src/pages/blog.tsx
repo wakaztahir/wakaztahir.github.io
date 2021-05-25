@@ -1,10 +1,10 @@
-import React from "react"
+import * as React from "react"
 import { graphql } from "gatsby"
 import PostExcerpt from "../components/blog/post-excerpt/post-excerpt"
 import Header from "../components/header/header"
 import * as css from "../styles/blog.module.scss"
 
-const Blog = ({ data: { allMarkdownRemark: { edges } } }) => {
+const Blog = ({ data: { allMdx: { edges } } }) => {
   //Posts Component
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
@@ -26,7 +26,7 @@ export default Blog
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           id
