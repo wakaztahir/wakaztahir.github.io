@@ -2,6 +2,8 @@ import * as React from "react"
 
 import * as css from "./header.module.scss"
 import { useState } from "react"
+import { Menu } from "@material-ui/icons"
+import { IconButton } from "@material-ui/core"
 
 export default function Header(props) {
   let [menuOpen, setMenuOpen] = useState(false)
@@ -11,13 +13,11 @@ export default function Header(props) {
       className={`${css.siteHeader} ${(menuOpen ? css.headerOpen : "")} ${(props.mobileOnly ? css.mobileOnlyHeader : "")}`}>
       <span className={css.wakaz}>Waqas Tahir</span>
       <nav className={css.navPrimary}>
-        <span
+        <IconButton
           className={css.mobileMenuToggle}
-          id="mobile-menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <i className="fa fa-bars" aria-hidden="true" />
-        </span>
+          onClick={() => setMenuOpen(!menuOpen)}>
+          <Menu />
+        </IconButton>
         <div className={css.menu}>
           <a href="/#home">
             Home

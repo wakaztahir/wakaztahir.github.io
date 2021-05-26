@@ -42,7 +42,8 @@
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
-    top: 0.4em;
+    top: 50%;
+    transform: translateY(-50%);
     right: 1em;
 
     @include small-medium {

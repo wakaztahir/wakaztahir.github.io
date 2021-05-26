@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var gatsby_1 = require("gatsby");
+require("./post-excerpt.module.scss");
 var core_1 = require("@material-ui/core");
 var useStyles = core_1.makeStyles({
     root: {

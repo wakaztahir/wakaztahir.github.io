@@ -1,6 +1,10 @@
 import * as React from "react"
-
+import FacebookIcon from "../../../public/icons/FacebookIcon"
+import TwitterIcon from "../../../public/icons/TwitterIcon"
+import StackoverflowIcon from "../../../public/icons/StackoverflowIcon"
+import GithubIcon from "../../../public/icons/GithubIcon"
 import * as css from "./sidebar.module.scss"
+import { Icon, IconButton } from "@material-ui/core"
 
 export default function Sidebar() {
   return (
@@ -18,28 +22,32 @@ export default function Sidebar() {
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-facebook-f" />
+          <IconButton><FacebookIcon /></IconButton>
         </a>
         <a
           href="https://twitter.com/wakaztahir"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-twitter" />
+          <IconButton>
+            <TwitterIcon /></IconButton>
         </a>
         <a
           href="https://stackoverflow.com/users/3343503/waqas"
           rel="noreferrer"
           target="_blank"
         >
-          <i className="fa fa-stack-overflow" />
+          <IconButton>
+            <StackoverflowIcon /></IconButton>
         </a>
         <a
           href="https://github.com/wakaztahir"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fa fa-github" />
+          <IconButton>
+            <GithubIcon />
+          </IconButton>
         </a>
       </section>
       <section className={`${css.asideFooter}`}>
