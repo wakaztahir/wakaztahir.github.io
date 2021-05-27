@@ -1,12 +1,12 @@
 import * as React from "react"
-import FacebookIcon from "../../../public/icons/FacebookIcon"
-import TwitterIcon from "../../../public/icons/TwitterIcon"
-import StackoverflowIcon from "../../../public/icons/StackoverflowIcon"
-import GithubIcon from "../../../public/icons/GithubIcon"
 import { IconButton, Typography } from "@material-ui/core"
 import BaseSidebar from "./base-sidebar"
 import styled from "styled-components"
 import { SiteMenu } from "../header/main-header"
+import FacebookIcon from "../icons/FacebookIcon"
+import TwitterIcon from "../icons/TwitterIcon"
+import StackoverflowIcon from "../icons/StackoverflowIcon"
+import GithubIcon from "../icons/GithubIcon"
 
 const SideNav = styled.nav`
   display: flex;

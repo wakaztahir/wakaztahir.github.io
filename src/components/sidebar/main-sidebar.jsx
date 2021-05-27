@@ -5,14 +5,14 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var FacebookIcon_1 = require("../../../public/icons/FacebookIcon");
-var TwitterIcon_1 = require("../../../public/icons/TwitterIcon");
-var StackoverflowIcon_1 = require("../../../public/icons/StackoverflowIcon");
-var GithubIcon_1 = require("../../../public/icons/GithubIcon");
 var core_1 = require("@material-ui/core");
 var base_sidebar_1 = require("./base-sidebar");
 var styled_components_1 = require("styled-components");
 var main_header_1 = require("../header/main-header");
+var FacebookIcon_1 = require("../icons/FacebookIcon");
+var TwitterIcon_1 = require("../icons/TwitterIcon");
+var StackoverflowIcon_1 = require("../icons/StackoverflowIcon");
+var GithubIcon_1 = require("../icons/GithubIcon");
 var SideNav = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n\n"])));
 var SideSeparator = styled_components_1.default.hr(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 80%;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n"], ["\n  width: 80%;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n"])));
 var SideSocial = styled_components_1.default.section(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  margin-top: 2em;\n"], ["\n  margin-top: 2em;\n"])));

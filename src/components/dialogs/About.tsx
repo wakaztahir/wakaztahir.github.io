@@ -3,7 +3,7 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
+  DialogTitle, Typography,
   useMediaQuery,
   useTheme
 } from "@material-ui/core"
@@ -20,7 +20,7 @@ export default function About(props) {
       onClose={props.onClose}
       aria-labelledby="responsive-dialog-title"
     >
-      <DialogTitle id="responsive-dialog-title">{"About Me"}</DialogTitle>
+      <DialogTitle id="responsive-dialog-title"><Typography variant={"h4"}>About Me</Typography></DialogTitle>
       <DialogContent>
         <DialogContentText>
           I am a software developer , I have experience in different programming

@@ -7,7 +7,7 @@ function About(props) {
     var theme = core_1.useTheme();
     var fullScreen = core_1.useMediaQuery(theme.breakpoints.down("sm"));
     return (<core_1.Dialog fullScreen={fullScreen} open={props.open} onClose={props.onClose} aria-labelledby="responsive-dialog-title">
-      <core_1.DialogTitle id="responsive-dialog-title">{"About Me"}</core_1.DialogTitle>
+      <core_1.DialogTitle id="responsive-dialog-title"><core_1.Typography variant={"h4"}>About Me</core_1.Typography></core_1.DialogTitle>
       <core_1.DialogContent>
         <core_1.DialogContentText>
           I am a software developer , I have experience in different programming
