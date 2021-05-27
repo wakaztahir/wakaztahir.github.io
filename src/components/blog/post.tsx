@@ -2,12 +2,11 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import SEO from "../commons/SEO"
 
 const PostTemplate = ({ data }) => {
   const { title, date, author, image } = data.mdx.frontmatter
   const { body } = data.mdx
-  const img = getImage(image.childImageSharp.gatsbyImageData)
+  const img = getImage(image)
 
   return (
     <React.Fragment>

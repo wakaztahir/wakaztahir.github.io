@@ -13,7 +13,7 @@ var PostTemplate = function (_a) {
     var data = _a.data;
     var _b = data.mdx.frontmatter, title = _b.title, date = _b.date, author = _b.author, image = _b.image;
     var body = data.mdx.body;
-    var img = gatsby_plugin_image_1.getImage(image.childImageSharp.gatsbyImageData);
+    var img = gatsby_plugin_image_1.getImage(image);
     return (<React.Fragment>
       <section>
         <gatsby_1.Link className="btn" to="/">
