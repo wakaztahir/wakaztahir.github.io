@@ -8,3 +8,4 @@ var BlogSidebar = function (props) {
       {/*  todo blog side bar archive  */}
     </base_sidebar_1.default>);
 };
+exports.default = BlogSidebar;

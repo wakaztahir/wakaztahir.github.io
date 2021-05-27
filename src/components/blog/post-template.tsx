@@ -35,13 +35,13 @@ const PostTemplate = ({ data }) => {
 export const query = graphql`
   query getPost($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        slug
-        date(formatString: "MMMM Do, YYYY")
-        author
-        image
-      }
+        frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            image
+            author
+        }
       body
     }
   }

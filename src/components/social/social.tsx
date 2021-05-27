@@ -1,10 +1,9 @@
 import * as React from "react"
-
-import FacebookIcon from "../../../public/icons/FacebookIcon"
-import StackoverflowIcon from "../../../public/icons/StackoverflowIcon"
-import GithubIcon from "../../../public/icons/GithubIcon"
-import TwitterIcon from "../../../public/icons/TwitterIcon"
 import { createStyles, IconButton, makeStyles, Theme } from "@material-ui/core"
+import FacebookIcon from "../icons/FacebookIcon"
+import TwitterIcon from "../icons/TwitterIcon"
+import StackoverflowIcon from "../icons/StackoverflowIcon"
+import GithubIcon from "../icons/GithubIcon"
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {

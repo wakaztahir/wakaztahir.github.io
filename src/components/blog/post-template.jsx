@@ -35,6 +35,6 @@ var PostTemplate = function (_a) {
       </section>
     </React.Fragment>);
 };
-exports.query = gatsby_1.graphql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query getPost($slug: String!) {\n    mdx(frontmatter: { slug: { eq: $slug } }) {\n      frontmatter {\n        title\n        slug\n        date(formatString: \"MMMM Do, YYYY\")\n        author\n        image\n      }\n      body\n    }\n  }\n"], ["\n  query getPost($slug: String!) {\n    mdx(frontmatter: { slug: { eq: $slug } }) {\n      frontmatter {\n        title\n        slug\n        date(formatString: \"MMMM Do, YYYY\")\n        author\n        image\n      }\n      body\n    }\n  }\n"])));
+exports.query = gatsby_1.graphql(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  query getPost($slug: String!) {\n    mdx(frontmatter: { slug: { eq: $slug } }) {\n        frontmatter {\n            date(formatString: \"MMMM DD, YYYY\")\n            slug\n            title\n            image\n            author\n        }\n      body\n    }\n  }\n"], ["\n  query getPost($slug: String!) {\n    mdx(frontmatter: { slug: { eq: $slug } }) {\n        frontmatter {\n            date(formatString: \"MMMM DD, YYYY\")\n            slug\n            title\n            image\n            author\n        }\n      body\n    }\n  }\n"])));
 exports.default = PostTemplate;
 var templateObject_1;

@@ -15,3 +15,5 @@ const BlogSidebar: FunctionComponent<BlogSidebarProps> = (props) => {
 interface BlogSidebarProps {
 
 }
+
+export default BlogSidebar

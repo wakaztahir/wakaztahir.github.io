@@ -1,9 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import PostCard from "../components/blog/post-card"
 import MyApp from "../components/commons/MyApp"
-import BaseSidebar from "../components/sidebar/base-sidebar"
 import styled from "styled-components"
+import PostsList from "../components/blog/posts-list"
+import BlogSidebar from "../components/sidebar/blog-sidebar"
 
 const BoxRow = styled.div`
   display: flex;
@@ -11,20 +11,25 @@ const BoxRow = styled.div`
   flex-wrap: nowrap;
 `
 
+const PostsContainer = styled.div`
+  background: ${props => props.theme.palette.background.paper}
+`
+
 const Blog = ({ data: { allMdx: { edges } } }) => {
   //Posts Component
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <PostCard key={edge.node.id} post={edge.node} />)
+    .map(edge => edge.node)
 
   return (
     <MyApp>
       <main>
         <BoxRow>
-          <BaseSidebar />
-          <div className="posts-container">
-            {Posts}
-          </div>
+          <BlogSidebar />
+          <PostsContainer>
+            <PostsList
+              posts={Posts}
+            />
+          </PostsContainer>
         </BoxRow>
       </main>
     </MyApp>
@@ -33,12 +38,25 @@ const Blog = ({ data: { allMdx: { edges } } }) => {
 
 export default Blog
 
+export interface Post {
+  id: number,
+  excerpt: string,
+  frontmatter: {
+    date: string,
+    slug: string,
+    title: string,
+    image: string,
+    author: string,
+  }
+}
+
 export const pageQuery = graphql`
   query {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMdx {
       edges {
         node {
           id
+          excerpt(pruneLength: 300)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug
