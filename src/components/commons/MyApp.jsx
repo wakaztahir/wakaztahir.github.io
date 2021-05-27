@@ -11,7 +11,7 @@ var Themes_1 = require("../themes/Themes");
 var core_1 = require("@material-ui/core");
 var styled_components_1 = require("styled-components");
 function MyApp(props) {
-    var _a = react_1.useState(Themes_1.ThemeTypes.DarkBlue), themeType = _a[0], setThemeType = _a[1];
+    var _a = react_1.useState(Themes_1.ThemeTypes.Light), themeType = _a[0], setThemeType = _a[1];
     var appState = {
         themeType: themeType,
         setThemeType: setThemeType

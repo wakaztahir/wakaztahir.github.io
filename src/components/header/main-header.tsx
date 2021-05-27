@@ -67,7 +67,7 @@ const DesktopMenu = styled.div`
   }
 `
 
-const MobileMenu = styled.div`
+const MobileMenu = styled.div<{ isOpen: boolean }>`
   width: 100vw;
   max-height: ${props => props.isOpen ? `400px` : `0px`};
   position: absolute;

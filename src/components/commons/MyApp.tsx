@@ -7,7 +7,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components"
 
 export default function MyApp(props: { children: any }) {
 
-  const [themeType, setThemeType] = useState(ThemeTypes.DarkBlue)
+  const [themeType, setThemeType] = useState(ThemeTypes.Light)
 
   let appState = {
     themeType,

@@ -38,27 +38,27 @@ function Home() {
           <section id="projects" className={css.contentSection + " " + css.projects}>
             <div className={css.projects}>
               <project_card_1.default tags={["March 2021"]}>
-                <h1>Timeline</h1>
-                <p>
-                  A Web App to make notes and organize your information , Data is
-                  stored locally and in cloud so you never lose it , secured with
-                  strong encryption
-                </p>
-                <a href="https://timeline-notes.github.io/web" target={"_blank"}>
-                  <MyButton_1.default>Live Demo</MyButton_1.default>
-                </a>
+                <project_card_1.ProjectCardTitle>Timeline</project_card_1.ProjectCardTitle>
+                <project_card_1.ProjectCardDescription>
+                  A Material Design Web App inspired by Google Keep to make notes and organize
+                  your information , Data
+                  is synced to google drive.
+                </project_card_1.ProjectCardDescription>
+                <project_card_1.ProjectCardLink href="https://timeline-notes.github.io/web">
+                  Live Demo
+                </project_card_1.ProjectCardLink>
               </project_card_1.default>
               <project_card_1.default tags={["August 2020"]}>
-                <h1>Acadtable</h1>
-                <p>
+                <project_card_1.ProjectCardTitle>Acadtable</project_card_1.ProjectCardTitle>
+                <project_card_1.ProjectCardDescription>
                   Online <strong>react</strong> application that allows the users
                   to make academic time tables.
                   <br />
                   This is a block based table generator application.
-                </p>
-                <a href="https://wakaztahir.github.io/acadtable/" target={"_blank"}>
-                  <MyButton_1.default>Live Demo</MyButton_1.default>
-                </a>
+                </project_card_1.ProjectCardDescription>
+                <project_card_1.ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
+                  Live Demo
+                </project_card_1.ProjectCardLink>
               </project_card_1.default>
             </div>
           </section>

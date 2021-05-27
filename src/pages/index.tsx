@@ -4,13 +4,14 @@ import About from "../components/dialogs/About"
 import MainHeader from "../components/header/main-header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
-  ProjectCardButton
+  ProjectCardDescription, ProjectCardLink, ProjectCardTitle
 } from "../components/project-card/project-card"
 import MainSidebar from "../components/sidebar/main-sidebar"
 import * as css from "../styles/main-page.module.scss"
 import MyApp from "../components/commons/MyApp"
-import { Hidden } from "@material-ui/core"
+import { Hidden, Typography } from "@material-ui/core"
 import MyButton from "../components/commons/MyButton"
+import styled from "styled-components"
 
 export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
@@ -45,27 +46,27 @@ export default function Home() {
           <section id="projects" className={css.contentSection + " " + css.projects}>
             <div className={css.projects}>
               <ProjectCard tags={["March 2021"]}>
-                <h1>Timeline</h1>
-                <p>
-                  A Web App to make notes and organize your information , Data is
-                  stored locally and in cloud so you never lose it , secured with
-                  strong encryption
-                </p>
-                <a href="https://timeline-notes.github.io/web" target={"_blank"}>
-                  <MyButton>Live Demo</MyButton>
-                </a>
+                <ProjectCardTitle>Timeline</ProjectCardTitle>
+                <ProjectCardDescription>
+                  A Material Design Web App inspired by Google Keep to make notes and organize
+                  your information , Data
+                  is synced to google drive.
+                </ProjectCardDescription>
+                <ProjectCardLink href="https://timeline-notes.github.io/web">
+                  Live Demo
+                </ProjectCardLink>
               </ProjectCard>
               <ProjectCard tags={["August 2020"]}>
-                <h1>Acadtable</h1>
-                <p>
+                <ProjectCardTitle>Acadtable</ProjectCardTitle>
+                <ProjectCardDescription>
                   Online <strong>react</strong> application that allows the users
                   to make academic time tables.
                   <br />
                   This is a block based table generator application.
-                </p>
-                <a href="https://wakaztahir.github.io/acadtable/" target={"_blank"}>
-                  <MyButton>Live Demo</MyButton>
-                </a>
+                </ProjectCardDescription>
+                <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
+                  Live Demo
+                </ProjectCardLink>
               </ProjectCard>
             </div>
           </section>

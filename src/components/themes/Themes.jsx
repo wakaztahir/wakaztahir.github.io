@@ -32,7 +32,7 @@ var commonTheme = {
             fontFamily: Raleway
         },
         h4: {
-            fontFamily: Hind
+            fontFamily: Raleway
         },
         h5: {
             fontFamily: Hind

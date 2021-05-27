@@ -1,6 +1,9 @@
 import * as React from "react"
 
 import styled from "styled-components"
+import { FunctionComponent } from "react"
+import { Typography } from "@material-ui/core"
+import MyButton from "../commons/MyButton"
 
 const CardContainer = styled.div`
   width: calc(100% - 2rem);
@@ -9,8 +12,8 @@ const CardContainer = styled.div`
   box-sizing: border-box;
 
 
-  background: rgba(0, 0, 0, .6);
-  padding: 1rem 1rem 5rem;
+  background: ${props => props.theme.palette.type === "dark" ? `rgba(0, 0, 0, .6)` : `rgba(255, 255, 255, .6)`};
+  padding: 1rem 1rem 1rem;
   border-radius: 5px;
   position: relative;
 
@@ -23,31 +26,52 @@ const CardContainer = styled.div`
 const CardFooter = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-right: 1em;
-  margin-bottom: 1em;
+  align-items: flex-start;
+  margin-top: 1em;
 `
 
-export default function ProjectCard(props) {
+export const ProjectCardTitle = styled((props) => (<Typography variant={"h4"} color={"textPrimary"} {...props} />))`
+  margin-top: 0.5em;
+`
+export const ProjectCardDescription = styled((props) => (
+  <Typography variant={"body1"} color={"textPrimary"} {...props} />))`
+  margin-top: 1em;
+`
+
+const PLink = styled.a`
+  display: block;
+  margin-top: 1em;
+`
+
+export const ProjectCardLink = styled((props: { href: string, children: any }) => (
+  <PLink href={props.href} target={"_blank"}><MyButton>{props.children}</MyButton></PLink>))`
+`
+
+const TagsContainer = styled.div`
+
+`
+
+const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
   return (
     <CardContainer>
       {props.children}
-
       <CardFooter>
-        <div>
-          {props.tags.forEach(tagName => (
-            <span>{tagName}</span>
+        <TagsContainer>
+          {props.tags.map(tagName => (
+            <Typography key={tagName} variant={"caption"} color={"textSecondary"}>{tagName}</Typography>
           ))}
-        </div>
+        </TagsContainer>
       </CardFooter>
     </CardContainer>
   )
 }
 
-export function ProjectCardButton(props) {
-  return (
-    <a href={props.href} target="_blank" rel="noreferrer">
-      <button>{props.name}</button>
-    </a>
-  )
+interface ProjectCardProps {
+  tags: string[]
 }
+
+ProjectCard.defaultProps = {
+  tags: []
+}
+
+export default ProjectCard

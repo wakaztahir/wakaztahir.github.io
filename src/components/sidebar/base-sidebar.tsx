@@ -1,7 +1,6 @@
 import * as React from "react"
 import { FunctionComponent } from "react"
 import styled from "styled-components"
-import { Hidden } from "@material-ui/core"
 
 const Aside = styled.aside`
   width: 22rem;
@@ -12,6 +11,7 @@ const Aside = styled.aside`
   justify-content: center;
   align-items: center;
   float: left;
+  overflow-y:hidden;
 `
 
 const BaseSidebar: FunctionComponent<BaseSidebarProps> = (props) => {
