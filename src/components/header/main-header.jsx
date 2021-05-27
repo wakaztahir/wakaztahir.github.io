@@ -39,7 +39,6 @@ function SiteMenu(props) {
     var Wrapper = function (wProps) { return props.useButtons != null && props.useButtons === true ? (<MyButton_1.default {...wProps}/>) : (<core_1.Typography {...wProps} color={"textPrimary"}/>); };
     return (<React.Fragment>
       <a href="/#home"><Wrapper>Home</Wrapper></a>
-      <a href="/blog"><Wrapper>Blog</Wrapper></a>
       <a href="/#projects"><Wrapper>Projects</Wrapper></a>
     </React.Fragment>);
 }

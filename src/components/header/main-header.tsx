@@ -130,7 +130,6 @@ export function SiteMenu(props: { useButtons?: boolean }) {
   return (
     <React.Fragment>
       <a href="/#home"><Wrapper>Home</Wrapper></a>
-      <a href="/blog"><Wrapper>Blog</Wrapper></a>
       <a href="/#projects"><Wrapper>Projects</Wrapper></a>
     </React.Fragment>
   )
