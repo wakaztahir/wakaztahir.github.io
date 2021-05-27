@@ -26,7 +26,7 @@ var MainButton = styled_components_1.default(MyButton_1.default)(templateObject_
 function Home() {
     var _a = react_1.useState(false), aboutDialogOpen = _a[0], setAboutDialog = _a[1];
     return (<MyApp_1.default>
-      <SEO_1.default title={"Waqas Tahir"} description={"Trying My Best"}/>
+      <SEO_1.default title={"Trying My Best"}/>
       <Container>
         <core_1.Hidden mdUp={true}>
           <main_header_1.default />

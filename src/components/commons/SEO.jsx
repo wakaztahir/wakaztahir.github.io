@@ -14,7 +14,7 @@ var SEO = function (_a) {
         image: "" + href + image,
         siteUrl: "" + href
     };
-    return (<react_helmet_1.Helmet htmlAttributes={{ lang: "en" }} title={seo.title + " | " + seo.description}>
+    return (<react_helmet_1.Helmet htmlAttributes={{ lang: "en" }} title={"Waqas Tahir | " + seo.title}>
       <meta name="description" content={seo.description}/>
       <meta name="image" content={seo.image}/>
       {seo.siteUrl && <meta property="og:url" content={seo.siteUrl}/>}

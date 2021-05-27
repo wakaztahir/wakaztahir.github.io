@@ -18,7 +18,7 @@ const SEO = ({ title, description, article, image }: SEOProps) => {
   return (
     <Helmet
       htmlAttributes={{ lang: "en" }}
-      title={`${seo.title} | ${seo.description}`}
+      title={`Waqas Tahir | ${seo.title}`}
     >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

@@ -66,8 +66,7 @@ export default function Home() {
   return (
     <MyApp>
       <SEO
-        title={"Waqas Tahir"}
-        description={"Trying My Best"}
+        title={"Trying My Best"}
       />
       <Container>
         <Hidden mdUp={true}>

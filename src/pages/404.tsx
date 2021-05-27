@@ -1,10 +1,15 @@
 import * as React from "react"
 
 import MyApp from "../components/commons/MyApp"
+import SEO from "../components/commons/SEO"
 
 export default function Notfound() {
   return (
     <MyApp>
+      <SEO
+        title={"Not Found"}
+        description={"Couldn't not find the page you were looking for"}
+      />
       <main style={{ margin: "16px" }}>
         <div>
           <h1>404 Not found</h1>
