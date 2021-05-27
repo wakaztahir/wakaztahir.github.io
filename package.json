@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy-github": "node github-deploy.js",
-    "deploy": "npm run deploy-github",
+    "deploy": "npm run build && npm run deploy-github",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
