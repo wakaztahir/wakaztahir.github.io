@@ -8,15 +8,20 @@ var React = require("react");
 var styled_components_1 = require("styled-components");
 var core_1 = require("@material-ui/core");
 var PostContainer = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 2em;\n  margin: 2em;\n  border-radius: 4px;\n  background: ", ";\n"], ["\n  padding: 2em;\n  margin: 2em;\n  border-radius: 4px;\n  background: ", ";\n"])), function (props) { return props.theme.palette.type === "dark" ? "rgba(255, 255, 255, .2)" : "rgba(0, 0, 0, .2)"; });
-var PostTitle = styled_components_1.default(function (props) { return <core_1.Typography variant={"h3"} {...props}/>; })(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: block;\n"], ["\n  display: block;\n"])));
-var PostExcerpt = styled_components_1.default(function (props) { return <core_1.Typography variant={"body1"} {...props}/>; })(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: block;\n"], ["\n  display: block;\n"])));
-var PostDate = styled_components_1.default(core_1.Typography)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  display: block;\n"], ["\n  display: block;\n"])));
+var PostTitle = styled_components_1.default(function (props) { return <core_1.Typography variant={"h3"} {...props}/>; })(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n\n"], ["\n\n"])));
+var PostExcerpt = styled_components_1.default(function (props) { return <core_1.Typography variant={"body1"} {...props}/>; })(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n\n"], ["\n\n"])));
+var PostFooter = styled_components_1.default.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n"], ["\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n"])));
+var PostCaption = styled_components_1.default(function (props) { return <core_1.Typography variant={"subtitle1"} {...props}/>; })(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n\n"], ["\n\n"])));
 var PostItem = function (_a) {
     var post = _a.post;
     return (<PostContainer>
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <PostExcerpt>{post.excerpt}</PostExcerpt>
+      <PostFooter>
+        <PostCaption>{post.frontmatter.date}</PostCaption>
+        <PostCaption>{post.frontmatter.author}</PostCaption>
+      </PostFooter>
     </PostContainer>);
 };
 exports.default = PostItem;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5;

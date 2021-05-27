@@ -4,6 +4,7 @@ import MyApp from "../components/commons/MyApp"
 import styled from "styled-components"
 import PostsList from "../components/blog/posts-list"
 import BlogSidebar from "../components/sidebar/blog-sidebar"
+import { Hidden } from "@material-ui/core"
 
 const BoxRow = styled.div`
   display: flex;
@@ -24,7 +25,9 @@ const Blog = ({ data: { allMdx: { edges } } }) => {
     <MyApp>
       <main>
         <BoxRow>
-          <BlogSidebar />
+          <Hidden smDown={true}>
+            <BlogSidebar />
+          </Hidden>
           <PostsContainer>
             <PostsList
               posts={Posts}

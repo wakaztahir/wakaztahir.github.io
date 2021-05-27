@@ -1,9 +1,8 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { FunctionComponent } from "react"
 import styled from "styled-components"
 import { Typography } from "@material-ui/core"
 import { Post } from "../../pages/blog"
-import { FunctionComponent } from "react"
 
 const PostContainer = styled.div`
   padding: 2em;
@@ -13,15 +12,22 @@ const PostContainer = styled.div`
 `
 
 const PostTitle = styled((props) => <Typography variant={"h3"} {...props} />)`
-  display: block;
+
 `
 
 const PostExcerpt = styled((props) => <Typography variant={"body1"} {...props} />)`
-  display: block;
+
 `
 
-const PostDate = styled(Typography)`
-  display: block;
+const PostFooter = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const PostCaption = styled((props) => <Typography variant={"subtitle1"} {...props} />)`
+
 `
 
 const PostItem: FunctionComponent<PostItemProps> = ({ post }) => {
@@ -30,6 +36,10 @@ const PostItem: FunctionComponent<PostItemProps> = ({ post }) => {
     <PostContainer>
       <PostTitle>{post.frontmatter.title}</PostTitle>
       <PostExcerpt>{post.excerpt}</PostExcerpt>
+      <PostFooter>
+        <PostCaption>{post.frontmatter.date}</PostCaption>
+        <PostCaption>{post.frontmatter.author}</PostCaption>
+      </PostFooter>
     </PostContainer>
   )
 }

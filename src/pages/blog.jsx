@@ -11,6 +11,7 @@ var MyApp_1 = require("../components/commons/MyApp");
 var styled_components_1 = require("styled-components");
 var posts_list_1 = require("../components/blog/posts-list");
 var blog_sidebar_1 = require("../components/sidebar/blog-sidebar");
+var core_1 = require("@material-ui/core");
 var BoxRow = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n"], ["\n  display: flex;\n  flex-direction: row;\n  flex-wrap: nowrap;\n"])));
 var PostsContainer = styled_components_1.default.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  background: ", "\n"], ["\n  background: ", "\n"])), function (props) { return props.theme.palette.background.paper; });
 var Blog = function (_a) {
@@ -21,7 +22,9 @@ var Blog = function (_a) {
     return (<MyApp_1.default>
       <main>
         <BoxRow>
-          <blog_sidebar_1.default />
+          <core_1.Hidden smDown={true}>
+            <blog_sidebar_1.default />
+          </core_1.Hidden>
           <PostsContainer>
             <posts_list_1.default posts={Posts}/>
           </PostsContainer>
