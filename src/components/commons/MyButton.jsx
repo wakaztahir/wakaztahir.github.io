@@ -8,13 +8,9 @@ var React = require("react");
 var styled_components_1 = require("styled-components");
 var Button = styled_components_1.default.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 0.4em 1.3em;\n  background: ", ";\n  color: ", ";\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  border-radius: 1.4em;\n  box-sizing: border-box;\n  transition: color 0.3s ease-out, background 0.3s ease-out;\n\n  &:hover {\n    color: ", ";\n    background: ", ";\n  }\n"], ["\n  padding: 0.4em 1.3em;\n  background: ", ";\n  color: ", ";\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  border-radius: 1.4em;\n  box-sizing: border-box;\n  transition: color 0.3s ease-out, background 0.3s ease-out;\n\n  &:hover {\n    color: ", ";\n    background: ", ";\n  }\n"])), function (props) { return props.theme.palette.background.default; }, function (props) { return props.theme.palette.text.primary; }, function (props) { return props.theme.palette.background.default; }, function (props) { return props.theme.palette.text.primary; });
 var MyButton = function (props) {
-    return (<Button onClick={props.onClick}>
+    return (<Button {...props}>
       {props.children}
     </Button>);
-};
-MyButton.defaultProps = {
-    onClick: function () {
-    }
 };
 exports.default = MyButton;
 var templateObject_1;

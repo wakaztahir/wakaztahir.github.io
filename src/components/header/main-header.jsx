@@ -4,33 +4,44 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SiteMenu = void 0;
 var React = require("react");
-var css = require("./header.module.scss");
-var react_1 = require("react");
-var icons_1 = require("@material-ui/icons");
-var core_1 = require("@material-ui/core");
 var styled_components_1 = require("styled-components");
-var Header = styled_components_1.default.header(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  \n"], ["\n  \n"])));
+var core_1 = require("@material-ui/core");
+var icons_1 = require("@material-ui/icons");
+var react_1 = require("react");
+var MyButton_1 = require("../commons/MyButton");
+var Header = styled_components_1.default.header(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  width: 100vw;\n  height: 4rem;\n  background: ", ";\n  position: fixed;\n  top: 0;\n  z-index: 9;\n  align-items: center;\n  transition: background .5s ease-in-out;\n"], ["\n  display: flex;\n  width: 100vw;\n  height: 4rem;\n  background: ", ";\n  position: fixed;\n  top: 0;\n  z-index: 9;\n  align-items: center;\n  transition: background .5s ease-in-out;\n"])), function (props) { return props.theme.palette.type === "light" ? "rgba(255, 255, 255, .4)" : "rgba(0, 0, 0, .4)"; });
+var HeaderTitle = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%);\n  font-size: 1.5rem;\n\n  ", " {\n    position: static;\n    left: 0;\n    transform: translate(0%);\n    font-size: 1.2rem;\n    margin-left: 1em;\n  }\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%);\n  font-size: 1.5rem;\n\n  ", " {\n    position: static;\n    left: 0;\n    transform: translate(0%);\n    font-size: 1.2rem;\n    margin-left: 1em;\n  }\n"])), function (props) { return props.theme.breakpoints.up("sm"); });
+var HeaderNav = styled_components_1.default.nav(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n\n"], ["\n\n"])));
+var MobileMenuToggle = styled_components_1.default(function (props) {
+    return <core_1.IconButton {...props}><icons_1.Menu /></core_1.IconButton>;
+})(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  font-size: 2rem;\n  cursor: pointer;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 1em;\n\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 2rem;\n  cursor: pointer;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 1em;\n\n  ", " {\n    display: none;\n  }\n"])), function (props) { return props.theme.breakpoints.up("sm"); });
+var DesktopMenu = styled_components_1.default.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: none;\n  position: absolute;\n  top: 2rem;\n  right: 1em;\n  transform: translateY(-50%);\n\n  & > * {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n  }\n\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  position: absolute;\n  top: 2rem;\n  right: 1em;\n  transform: translateY(-50%);\n\n  & > * {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n  }\n\n  ", " {\n    display: block;\n  }\n"])), function (props) { return props.theme.breakpoints.up("sm"); });
+var MobileMenu = styled_components_1.default.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 100vw;\n  max-height: ", ";\n  position: absolute;\n  top: 4rem;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n\n  & > * {\n    width: 100%;\n    padding-top: 0.75em;\n    padding-bottom: 0.75em;\n    text-align: center;\n    background: ", ";\n    transition: background 0.3s ease-out;\n  }\n\n  & > *:hover {\n    background: ", ";\n  }\n\n  & a {\n    text-decoration: none;\n  }\n\n  ", " {\n    max-height: 0;\n  }\n"], ["\n  width: 100vw;\n  max-height: ", ";\n  position: absolute;\n  top: 4rem;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  transition: max-height 0.3s ease-out;\n  overflow: hidden;\n\n  & > * {\n    width: 100%;\n    padding-top: 0.75em;\n    padding-bottom: 0.75em;\n    text-align: center;\n    background: ", ";\n    transition: background 0.3s ease-out;\n  }\n\n  & > *:hover {\n    background: ", ";\n  }\n\n  & a {\n    text-decoration: none;\n  }\n\n  ", " {\n    max-height: 0;\n  }\n"])), function (props) { return props.isOpen ? "400px" : "0px"; }, function (props) { return props.theme.palette.type === "dark" ? "rgba(0, 0, 0, .4)" : "rgba(255, 255, 255, .4)"; }, function (props) { return props.theme.palette.type === "dark" ? "rgba(0, 0, 0, .5)" : "rgba(255, 255, 255, .5)"; }, function (props) { return props.theme.breakpoints.up("sm"); });
 function MainHeader(props) {
     var _a = react_1.useState(false), menuOpen = _a[0], setMenuOpen = _a[1];
-    return (<header className={css.siteHeader + " " + (menuOpen ? css.headerOpen : "") + " " + (props.mobileOnly ? css.mobileOnlyHeader : "")}>
-      <span className={css.wakaz}>Waqas Tahir</span>
-      <nav className={css.navPrimary}>
-        <core_1.IconButton className={css.mobileMenuToggle} onClick={function () { return setMenuOpen(!menuOpen); }}>
-          <icons_1.Menu />
-        </core_1.IconButton>
-        <div className={css.menu}>
-          <a href="/#home">Home</a>
-          <a href="/blog">Blog</a>
-          <a href="/#projects">Projects</a>
-        </div>
-        <div className={css.mobileMenu + " " + (menuOpen ? css.open : "")} id="mobile-menu">
-          <a href="/#home">Home</a>
-          <a href="/blog">Blog</a>
-          <a href="/#projects">Projects</a>
-        </div>
-      </nav>
-    </header>);
+    return (<Header>
+      <HeaderTitle><core_1.Typography color={"textPrimary"}>Waqas Tahir</core_1.Typography></HeaderTitle>
+      <HeaderNav>
+        <MobileMenuToggle onClick={function () { return setMenuOpen(!menuOpen); }}/>
+        <DesktopMenu>
+          <SiteMenu useButtons={true}/>
+        </DesktopMenu>
+        <MobileMenu isOpen={menuOpen}>
+          <SiteMenu />
+        </MobileMenu>
+      </HeaderNav>
+    </Header>);
 }
 exports.default = MainHeader;
-var templateObject_1;
+function SiteMenu(props) {
+    var Wrapper = function (wProps) { return props.useButtons != null && props.useButtons === true ? (<MyButton_1.default {...wProps}/>) : (<core_1.Typography {...wProps} color={"textPrimary"}/>); };
+    return (<React.Fragment>
+      <a href="/#home"><Wrapper>Home</Wrapper></a>
+      <a href="/blog"><Wrapper>Blog</Wrapper></a>
+      <a href="/#projects"><Wrapper>Projects</Wrapper></a>
+    </React.Fragment>);
+}
+exports.SiteMenu = SiteMenu;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;

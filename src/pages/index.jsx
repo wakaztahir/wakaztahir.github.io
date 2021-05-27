@@ -16,7 +16,7 @@ function Home() {
     return (<MyApp_1.default>
       <main className={css.container}>
         <title>Waqas Tahir | Trying My Best</title>
-        <core_1.Hidden smUp={true}>
+        <core_1.Hidden mdUp={true}>
           <main_header_1.default />
         </core_1.Hidden>
         <core_1.Hidden smDown={true}>
@@ -44,7 +44,9 @@ function Home() {
                   stored locally and in cloud so you never lose it , secured with
                   strong encryption
                 </p>
-                <project_card_1.ProjectCardButton href="https://timeline.fly.dev" name="Live Demo"/>
+                <a href="https://timeline-notes.github.io/web" target={"_blank"}>
+                  <MyButton_1.default>Live Demo</MyButton_1.default>
+                </a>
               </project_card_1.default>
               <project_card_1.default tags={["August 2020"]}>
                 <h1>Acadtable</h1>
@@ -54,7 +56,9 @@ function Home() {
                   <br />
                   This is a block based table generator application.
                 </p>
-                <project_card_1.ProjectCardButton href="https://wakaztahir.github.io/acadtable/" name="Live Demo"/>
+                <a href="https://wakaztahir.github.io/acadtable/" target={"_blank"}>
+                  <MyButton_1.default>Live Demo</MyButton_1.default>
+                </a>
               </project_card_1.default>
             </div>
           </section>

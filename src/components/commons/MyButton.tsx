@@ -2,11 +2,6 @@ import * as React from "react"
 import { FunctionComponent } from "react"
 import styled from "styled-components"
 
-interface MyButtonProps {
-  children: any,
-  onClick?: (e) => void
-}
-
 const Button = styled.button`
   padding: 0.4em 1.3em;
   background: ${props => props.theme.palette.background.default};
@@ -24,17 +19,12 @@ const Button = styled.button`
   }
 `
 
-const MyButton: FunctionComponent<MyButtonProps> = (props) => {
+const MyButton = (props) => {
   return (
-    <Button onClick={props.onClick}>
+    <Button {...props}>
       {props.children}
     </Button>
   )
-}
-
-MyButton.defaultProps = {
-  onClick: () => {
-  }
 }
 
 export default MyButton

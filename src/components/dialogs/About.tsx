@@ -5,9 +5,10 @@ import {
   DialogContentText,
   DialogTitle,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from "@material-ui/core"
 import * as React from "react"
+import MyButton from "../commons/MyButton"
 
 export default function About(props) {
   const theme = useTheme()
@@ -24,8 +25,7 @@ export default function About(props) {
         <DialogContentText>
           I am a software developer , I have experience in different programming
           languages like Javascript,Java,Kotlin & Python.I have made Android
-          Apps , Made Softwares using PyQt and websites using frameworks like
-          React,NodeJs & even just plain old PHP and SQL.
+          Apps , Web Apps , Websites & Software.
         </DialogContentText>
         <DialogContentText>
           I keep tying to learn more and make myself better and improve my
@@ -34,14 +34,14 @@ export default function About(props) {
           working at currently
         </DialogContentText>
         <DialogContentText>
-          My blog posts can be found on this site which is a collection of my
-          thoughts and experiences about the programming world
+          This site is basically my portfolio , You can send me an email by clicking <a
+          href={"mailto:wakazdev@gmail.com"}>here</a> if you would like to contact me
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <button autoFocus onClick={props.onClose} color="primary">
+        <MyButton autoFocus onClick={props.onClose} color="primary">
           Close
-        </button>
+        </MyButton>
       </DialogActions>
     </Dialog>
   )

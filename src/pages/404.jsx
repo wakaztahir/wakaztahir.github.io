@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var css = require("../styles/404.module.scss");
 var MyApp_1 = require("../components/commons/MyApp");
 function Notfound() {
     return (<MyApp_1.default>
-      <main style={{ margin: "16px" }} className={css.h1thing}>
+      <main style={{ margin: "16px" }}>
         <div>
           <h1>404 Not found</h1>
           <p>

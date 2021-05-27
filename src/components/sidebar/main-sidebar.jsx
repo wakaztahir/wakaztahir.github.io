@@ -11,9 +11,9 @@ var StackoverflowIcon_1 = require("../../../public/icons/StackoverflowIcon");
 var GithubIcon_1 = require("../../../public/icons/GithubIcon");
 var core_1 = require("@material-ui/core");
 var base_sidebar_1 = require("./base-sidebar");
-var MyButton_1 = require("../commons/MyButton");
 var styled_components_1 = require("styled-components");
-var SideNav = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n  \n"], ["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n  \n"])));
+var main_header_1 = require("../header/main-header");
+var SideNav = styled_components_1.default.nav(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n\n"], ["\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n  align-items: center;\n\n  & > * {\n    margin-top: 0.5em;\n  }\n\n"])));
 var SideSeparator = styled_components_1.default.hr(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 80%;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n"], ["\n  width: 80%;\n  margin-top: 2rem;\n  margin-bottom: 2rem;\n"])));
 var SideSocial = styled_components_1.default.section(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  margin-top: 2em;\n"], ["\n  margin-top: 2em;\n"])));
 var SideFooter = styled_components_1.default.section(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin-top: 1em;\n"], ["\n  margin-top: 1em;\n"])));
@@ -22,15 +22,7 @@ function MainSidebar() {
       <core_1.Typography variant={"h2"} align={"center"} color={"textPrimary"}>Waqas Tahir</core_1.Typography>
       <SideSeparator />
       <SideNav>
-        <a href="/#home">
-          <MyButton_1.default>Home</MyButton_1.default>
-        </a>
-        <a href="/blog">
-          <MyButton_1.default>Blog</MyButton_1.default>
-        </a>
-        <a href="/#projects">
-          <MyButton_1.default>Projects</MyButton_1.default>
-        </a>
+        <main_header_1.SiteMenu useButtons={true}/>
       </SideNav>
       <SideSocial>
         <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">

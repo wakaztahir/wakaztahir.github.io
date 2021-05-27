@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import PostExcerpt from "../components/blog/post-excerpt/post-excerpt"
+import PostCard from "../components/blog/post-card"
 import MainHeader from "../components/header/main-header"
 import MyApp from "../components/commons/MyApp"
 import BaseSidebar from "../components/sidebar/base-sidebar"
@@ -16,7 +16,7 @@ const Blog = ({ data: { allMdx: { edges } } }) => {
   //Posts Component
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <PostExcerpt key={edge.node.id} post={edge.node} />)
+    .map(edge => <PostCard key={edge.node.id} post={edge.node} />)
 
   return (
     <MyApp>

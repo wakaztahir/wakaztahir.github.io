@@ -7,6 +7,7 @@ import { Hidden, Icon, IconButton, Typography } from "@material-ui/core"
 import BaseSidebar from "./base-sidebar"
 import MyButton from "../commons/MyButton"
 import styled from "styled-components"
+import { SiteMenu } from "../header/main-header"
 
 const SideNav = styled.nav`
   display: flex;
@@ -17,7 +18,7 @@ const SideNav = styled.nav`
   & > * {
     margin-top: 0.5em;
   }
-  
+
 `
 
 const SideSeparator = styled.hr`
@@ -40,15 +41,9 @@ export default function MainSidebar() {
       <Typography variant={"h2"} align={"center"} color={"textPrimary"}>Waqas Tahir</Typography>
       <SideSeparator />
       <SideNav>
-        <a href="/#home">
-          <MyButton>Home</MyButton>
-        </a>
-        <a href="/blog">
-          <MyButton>Blog</MyButton>
-        </a>
-        <a href="/#projects">
-          <MyButton>Projects</MyButton>
-        </a>
+        <SiteMenu
+          useButtons={true}
+        />
       </SideNav>
       <SideSocial>
         <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">

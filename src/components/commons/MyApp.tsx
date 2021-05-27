@@ -3,7 +3,7 @@ import AppStateProvider from "../store/AppStateProvider"
 import { useState } from "react"
 import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
 import { createMuiTheme, MuiThemeProvider, StylesProvider } from "@material-ui/core"
-import { ThemeProvider } from "styled-components"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 
 export default function MyApp(props: { children: any }) {
 
@@ -20,10 +20,17 @@ export default function MyApp(props: { children: any }) {
     theme = createMuiTheme(lightTheme)
   }
 
+  const DarkCss = createGlobalStyle`
+    :root {
+      color-scheme: dark;
+    }
+  `
+
   return (
     <AppStateProvider value={appState}>
       <MuiThemeProvider theme={theme}>
         <ThemeProvider theme={theme}>
+          {theme.palette.type === "dark" ? <DarkCss /> : null}
           <StylesProvider injectFirst>
             {props.children}
           </StylesProvider>

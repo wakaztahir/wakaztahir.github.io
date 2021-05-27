@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.pageQuery = void 0;
 var React = require("react");
 var gatsby_1 = require("gatsby");
-var post_excerpt_1 = require("../components/blog/post-excerpt/post-excerpt");
+var post_card_1 = require("../components/blog/post-card");
 var MyApp_1 = require("../components/commons/MyApp");
 var base_sidebar_1 = require("../components/sidebar/base-sidebar");
 var styled_components_1 = require("styled-components");
@@ -17,7 +17,7 @@ var Blog = function (_a) {
     //Posts Component
     var Posts = edges
         .filter(function (edge) { return !!edge.node.frontmatter.date; })
-        .map(function (edge) { return <post_excerpt_1.default key={edge.node.id} post={edge.node}/>; });
+        .map(function (edge) { return <post_card_1.default key={edge.node.id} post={edge.node}/>; });
     return (<MyApp_1.default>
       <main>
         <BoxRow>

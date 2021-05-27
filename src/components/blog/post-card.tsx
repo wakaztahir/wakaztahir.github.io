@@ -1,8 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import "./post-excerpt.module.scss"
-
 import {
   Button,
   Card, CardActionArea,
@@ -26,7 +24,7 @@ const useStyles = makeStyles({
 })
 
 
-function PostExcerpt({ post }) {
+function PostCard({ post }) {
   const classes = useStyles()
   return (
     <Card className={classes.root}>
@@ -62,4 +60,4 @@ function PostExcerpt({ post }) {
   )
 }
 
-export default PostExcerpt
+export default PostCard

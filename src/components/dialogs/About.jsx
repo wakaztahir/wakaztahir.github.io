@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@material-ui/core");
 var React = require("react");
+var MyButton_1 = require("../commons/MyButton");
 function About(props) {
     var theme = core_1.useTheme();
     var fullScreen = core_1.useMediaQuery(theme.breakpoints.down("sm"));
@@ -11,8 +12,7 @@ function About(props) {
         <core_1.DialogContentText>
           I am a software developer , I have experience in different programming
           languages like Javascript,Java,Kotlin & Python.I have made Android
-          Apps , Made Softwares using PyQt and websites using frameworks like
-          React,NodeJs & even just plain old PHP and SQL.
+          Apps , Web Apps , Websites & Software.
         </core_1.DialogContentText>
         <core_1.DialogContentText>
           I keep tying to learn more and make myself better and improve my
@@ -21,14 +21,13 @@ function About(props) {
           working at currently
         </core_1.DialogContentText>
         <core_1.DialogContentText>
-          My blog posts can be found on this site which is a collection of my
-          thoughts and experiences about the programming world
+          This site is basically my portfolio , You can send me an email by clicking <a href={"mailto:wakazdev@gmail.com"}>here</a> if you would like to contact me
         </core_1.DialogContentText>
       </core_1.DialogContent>
       <core_1.DialogActions>
-        <button autoFocus onClick={props.onClose} color="primary">
+        <MyButton_1.default autoFocus onClick={props.onClose} color="primary">
           Close
-        </button>
+        </MyButton_1.default>
       </core_1.DialogActions>
     </core_1.Dialog>);
 }
