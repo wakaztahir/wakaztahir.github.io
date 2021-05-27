@@ -1,14 +1,16 @@
 import { useState } from "react"
 import * as React from "react"
 import About from "../components/dialogs/About"
-import Header from "../components/header/header"
+import MainHeader from "../components/header/main-header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
   ProjectCardButton
 } from "../components/project-card/project-card"
-import Sidebar from "../components/sidebar/sidebar"
+import MainSidebar from "../components/sidebar/main-sidebar"
 import * as css from "../styles/main-page.module.scss"
 import MyApp from "../components/commons/MyApp"
+import { Hidden } from "@material-ui/core"
+import MyButton from "../components/commons/MyButton"
 
 export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
@@ -16,8 +18,12 @@ export default function Home() {
     <MyApp>
       <main className={css.container}>
         <title>Waqas Tahir | Trying My Best</title>
-        <Header mobileOnly={true} />
-        <Sidebar />
+        <Hidden smUp={true}>
+          <MainHeader/>
+        </Hidden>
+        <Hidden smDown={true}>
+          <MainSidebar />
+        </Hidden>
         <About
           open={aboutDialogOpen}
           onClose={() => {
@@ -28,13 +34,13 @@ export default function Home() {
           <section id="home" className={css.centered + " " + css.contentSection + " " + css.home}>
             <h1 className="h-text">Hi , I am Waqas.</h1>
             <p>software developer</p>
-            <button
+            <MyButton
               onClick={() => {
                 setAboutDialog(true)
               }}
             >
               About Me
-            </button>
+            </MyButton>
           </section>
           <section id="projects" className={css.contentSection + " " + css.projects}>
             <div className={css.projects}>

@@ -4,8 +4,14 @@ import * as css from "./header.module.scss"
 import { useState } from "react"
 import { Menu } from "@material-ui/icons"
 import { IconButton } from "@material-ui/core"
+import styled from "styled-components"
 
-export default function Header(props) {
+const Header = styled.header`
+  
+`
+
+export default function MainHeader(props) {
+
   let [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -19,29 +25,17 @@ export default function Header(props) {
           <Menu />
         </IconButton>
         <div className={css.menu}>
-          <a href="/#home">
-            Home
-          </a>
-          <a href="/blog">
-            Blog
-          </a>
-          <a href="/#projects">
-            Projects
-          </a>
+          <a href="/#home">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/#projects">Projects</a>
         </div>
         <div
           className={`${css.mobileMenu} ${(menuOpen ? css.open : "")}`}
           id="mobile-menu"
         >
-          <a href="/#home">
-            Home
-          </a>
-          <a href="/blog">
-            Blog
-          </a>
-          <a href="/#projects">
-            Projects
-          </a>
+          <a href="/#home">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/#projects">Projects</a>
         </div>
       </nav>
     </header>

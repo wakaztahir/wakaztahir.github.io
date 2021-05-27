@@ -1,29 +1,57 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import SEO from "../commons/SEO"
 
-export default function Template({ data }) {
-  const { frontmatter, body } = data.mdx
+const PostTemplate = ({ data }) => {
+  const { title, date, author, image } = data.mdx.frontmatter
+  const { body } = data.mdx
+  const img = getImage(image.childImageSharp.gatsbyImageData)
+
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <MDXRenderer>{body}</MDXRenderer>
-      </div>
-    </div>
+    <React.Fragment>
+      <SEO
+        title={title}
+        article={true}
+        image={image}
+
+      />
+      <section>
+        <Link className="btn" to="/">
+          Back to all posts
+        </Link>
+        <div>
+          <h1>{title}</h1>
+          <h4>
+            <span>Written by {author}</span> & Posted on <span>{date}</span>
+          </h4>
+        </div>
+        <GatsbyImage image={img} alt="Blog Post" />
+        <div>
+          <MDXRenderer>{body}</MDXRenderer>
+        </div>
+        <h4>
+          <span>Written by {author}</span> & Posted on <span>{date}</span>
+        </h4>
+      </section>
+    </React.Fragment>
   )
 }
-export const pageQuery = graphql`
-  query($slug: String!) {
+
+export const query = graphql`
+  query getPost($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
-      body
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
         title
-        excerpt
+        slug
+        date(formatString: "MMMM Do, YYYY")
+        author
+        image
       }
+      body
     }
   }
 `
+
+export default PostTemplate

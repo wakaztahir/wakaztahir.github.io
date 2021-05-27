@@ -28,12 +28,6 @@
       margin-left: 1em;
     }
   }
-
-  &.mobile-only-header {
-    @include medium {
-      display: none;
-    }
-  }
 }
 
 .nav-primary {

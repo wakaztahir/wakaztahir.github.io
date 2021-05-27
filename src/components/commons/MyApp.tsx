@@ -2,7 +2,8 @@ import * as React from "react"
 import AppStateProvider from "../store/AppStateProvider"
 import { useState } from "react"
 import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core"
+import { createMuiTheme, MuiThemeProvider, StylesProvider } from "@material-ui/core"
+import { ThemeProvider } from "styled-components"
 
 export default function MyApp(props: { children: any }) {
 
@@ -22,7 +23,11 @@ export default function MyApp(props: { children: any }) {
   return (
     <AppStateProvider value={appState}>
       <MuiThemeProvider theme={theme}>
-        {props.children}
+        <ThemeProvider theme={theme}>
+          <StylesProvider injectFirst>
+            {props.children}
+          </StylesProvider>
+        </ThemeProvider>
       </MuiThemeProvider>
     </AppStateProvider>
   )

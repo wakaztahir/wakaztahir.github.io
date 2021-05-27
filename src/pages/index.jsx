@@ -3,19 +3,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var React = require("react");
 var About_1 = require("../components/dialogs/About");
-var header_1 = require("../components/header/header");
+var main_header_1 = require("../components/header/main-header");
 var parallax_1 = require("../components/parallax/parallax");
 var project_card_1 = require("../components/project-card/project-card");
-var sidebar_1 = require("../components/sidebar/sidebar");
+var main_sidebar_1 = require("../components/sidebar/main-sidebar");
 var css = require("../styles/main-page.module.scss");
 var MyApp_1 = require("../components/commons/MyApp");
+var core_1 = require("@material-ui/core");
+var MyButton_1 = require("../components/commons/MyButton");
 function Home() {
     var _a = react_1.useState(false), aboutDialogOpen = _a[0], setAboutDialog = _a[1];
     return (<MyApp_1.default>
       <main className={css.container}>
         <title>Waqas Tahir | Trying My Best</title>
-        <header_1.default mobileOnly={true}/>
-        <sidebar_1.default />
+        <core_1.Hidden smUp={true}>
+          <main_header_1.default />
+        </core_1.Hidden>
+        <core_1.Hidden smDown={true}>
+          <main_sidebar_1.default />
+        </core_1.Hidden>
         <About_1.default open={aboutDialogOpen} onClose={function () {
             setAboutDialog(false);
         }}/>
@@ -23,11 +29,11 @@ function Home() {
           <section id="home" className={css.centered + " " + css.contentSection + " " + css.home}>
             <h1 className="h-text">Hi , I am Waqas.</h1>
             <p>software developer</p>
-            <button onClick={function () {
+            <MyButton_1.default onClick={function () {
             setAboutDialog(true);
         }}>
               About Me
-            </button>
+            </MyButton_1.default>
           </section>
           <section id="projects" className={css.contentSection + " " + css.projects}>
             <div className={css.projects}>

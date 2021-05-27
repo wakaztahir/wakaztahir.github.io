@@ -1,9 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import PostExcerpt from "../components/blog/post-excerpt/post-excerpt"
-import Header from "../components/header/header"
-import * as css from "../styles/blog.module.scss"
+import MainHeader from "../components/header/main-header"
 import MyApp from "../components/commons/MyApp"
+import BaseSidebar from "../components/sidebar/base-sidebar"
+import styled from "styled-components"
+
+const BoxRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+`
 
 const Blog = ({ data: { allMdx: { edges } } }) => {
   //Posts Component
@@ -14,12 +21,12 @@ const Blog = ({ data: { allMdx: { edges } } }) => {
   return (
     <MyApp>
       <main>
-        <title>Waqas Tahir - Blog</title>
-        <Header />
-        <div className={`${css.headerMargin}`} />
-        <div className="posts-container">
-          {Posts}
-        </div>
+        <BoxRow>
+          <BaseSidebar />
+          <div className="posts-container">
+            {Posts}
+          </div>
+        </BoxRow>
       </main>
     </MyApp>
   )
@@ -38,7 +45,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             slug
             title
-            excerpt
             image
             author
           }

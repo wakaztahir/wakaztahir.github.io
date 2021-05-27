@@ -5,8 +5,20 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Koop Blog`,
+    titleTemplate: `%s | A simple MDX blog`,
+    description: `Built using GatsbyJS and serving content using markdown`,
+    siteUrl: `https://koop-blog.netlify.app`, // Cannot include a trailing slash
+    image: `/images/macbook.jpg`,
+    twitterUsername: `@twitter`
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -27,7 +39,15 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.md`, `.mdx`],
-      },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`
     }
   ]
 }
