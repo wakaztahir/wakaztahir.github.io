@@ -54,7 +54,7 @@ const DesktopMenu = styled.div`
   display: none;
   position: absolute;
   top: 2rem;
-  right: 1em;
+  right: 2em;
   transform: translateY(-50%);
 
   & > * {

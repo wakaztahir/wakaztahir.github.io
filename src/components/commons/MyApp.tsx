@@ -5,6 +5,12 @@ import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
 import { createMuiTheme, MuiThemeProvider, StylesProvider } from "@material-ui/core"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 
+const DarkCss = createGlobalStyle`
+  :root {
+    color-scheme: dark;
+  }
+`
+
 export default function MyApp(props: { children: any }) {
 
   const [themeType, setThemeType] = useState(ThemeTypes.Light)
@@ -19,12 +25,6 @@ export default function MyApp(props: { children: any }) {
   if (themeType === ThemeTypes.Light) {
     theme = createMuiTheme(lightTheme)
   }
-
-  const DarkCss = createGlobalStyle`
-    :root {
-      color-scheme: dark;
-    }
-  `
 
   return (
     <AppStateProvider value={appState}>
