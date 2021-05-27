@@ -3,15 +3,15 @@ import { FunctionComponent } from "react"
 import BaseSidebar from "./base-sidebar"
 
 
-const BlogSidebar:FunctionComponent<BlogSidebarProps> = (props) => {
+const BlogSidebar: FunctionComponent<BlogSidebarProps> = (props) => {
   return (
     <BaseSidebar>
 
-    {/*  todo blog side bar archive  */}
+      {/*  todo blog side bar archive  */}
     </BaseSidebar>
   )
 }
 
-interface BlogSidebarProps{
+interface BlogSidebarProps {
 
 }

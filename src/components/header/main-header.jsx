@@ -6,10 +6,10 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SiteMenu = void 0;
 var React = require("react");
+var react_1 = require("react");
 var styled_components_1 = require("styled-components");
 var core_1 = require("@material-ui/core");
 var icons_1 = require("@material-ui/icons");
-var react_1 = require("react");
 var MyButton_1 = require("../commons/MyButton");
 var Header = styled_components_1.default.header(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  width: 100vw;\n  height: 4rem;\n  background: ", ";\n  position: fixed;\n  top: 0;\n  z-index: 9;\n  align-items: center;\n  transition: background .5s ease-in-out;\n"], ["\n  display: flex;\n  width: 100vw;\n  height: 4rem;\n  background: ", ";\n  position: fixed;\n  top: 0;\n  z-index: 9;\n  align-items: center;\n  transition: background .5s ease-in-out;\n"])), function (props) { return props.theme.palette.type === "light" ? "rgba(255, 255, 255, .4)" : "rgba(0, 0, 0, .4)"; });
 var HeaderTitle = styled_components_1.default.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%);\n  font-size: 1.5rem;\n\n  ", " {\n    position: static;\n    left: 0;\n    transform: translate(0%);\n    font-size: 1.2rem;\n    margin-left: 1em;\n  }\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%);\n  font-size: 1.5rem;\n\n  ", " {\n    position: static;\n    left: 0;\n    transform: translate(0%);\n    font-size: 1.2rem;\n    margin-left: 1em;\n  }\n"])), function (props) { return props.theme.breakpoints.up("sm"); });

@@ -4,8 +4,8 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
 var React = require("react");
+var react_1 = require("react");
 var About_1 = require("../components/dialogs/About");
 var main_header_1 = require("../components/header/main-header");
 var parallax_1 = require("../components/parallax/parallax");
@@ -19,6 +19,9 @@ var Container = styled_components_1.default.main(templateObject_1 || (templateOb
 var ContentSection = styled_components_1.default.section(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 100%;\n  padding: 5rem 0;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"], ["\n  width: 100%;\n  padding: 5rem 0;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"])));
 var HomeSection = styled_components_1.default(ContentSection)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  min-height: 100vh;\n  padding: 0;\n"], ["\n  min-height: 100vh;\n  padding: 0;\n"])));
 var ProjectsSection = styled_components_1.default(ContentSection)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  min-height: 60vh;\n  padding-top: 0;\n\n  ", " {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n"], ["\n  min-height: 60vh;\n  padding-top: 0;\n\n  ", " {\n    flex-direction: row;\n    flex-wrap: wrap;\n  }\n"])), function (props) { return props.theme.breakpoints.up("md"); });
+var MainTitle = styled_components_1.default(core_1.Typography)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  color: white;\n"], ["\n  color: white;\n"])));
+var MainDescription = styled_components_1.default(core_1.Typography)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  color: white;\n  margin-top: 0.5em;\n"], ["\n  color: white;\n  margin-top: 0.5em;\n"])));
+var MainButton = styled_components_1.default(MyButton_1.default)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  margin-top: 1em;\n"], ["\n  margin-top: 1em;\n"])));
 function Home() {
     var _a = react_1.useState(false), aboutDialogOpen = _a[0], setAboutDialog = _a[1];
     return (<MyApp_1.default>
@@ -35,13 +38,13 @@ function Home() {
         }}/>
         <parallax_1.default>
           <HomeSection id="home">
-            <h1 className="h-text">Hi , I am Waqas.</h1>
-            <p>software developer</p>
-            <MyButton_1.default onClick={function () {
+            <MainTitle variant={"h3"}>Hi , I am Waqas.</MainTitle>
+            <MainDescription>a lazy software developer</MainDescription>
+            <MainButton onClick={function () {
             setAboutDialog(true);
         }}>
               About Me
-            </MyButton_1.default>
+            </MainButton>
           </HomeSection>
           <ProjectsSection id="projects">
             <project_card_1.default tags={["March 2021"]}>
@@ -73,4 +76,4 @@ function Home() {
     </MyApp_1.default>);
 }
 exports.default = Home;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;

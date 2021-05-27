@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import PostCard from "../components/blog/post-card"
-import MainHeader from "../components/header/main-header"
 import MyApp from "../components/commons/MyApp"
 import BaseSidebar from "../components/sidebar/base-sidebar"
 import styled from "styled-components"

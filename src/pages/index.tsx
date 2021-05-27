@@ -1,10 +1,12 @@
-import { useState } from "react"
 import * as React from "react"
+import { useState } from "react"
 import About from "../components/dialogs/About"
 import MainHeader from "../components/header/main-header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
-  ProjectCardDescription, ProjectCardLink, ProjectCardTitle
+  ProjectCardDescription,
+  ProjectCardLink,
+  ProjectCardTitle
 } from "../components/project-card/project-card"
 import MainSidebar from "../components/sidebar/main-sidebar"
 import MyApp from "../components/commons/MyApp"
@@ -46,6 +48,18 @@ const ProjectsSection = styled(ContentSection)`
   }
 `
 
+const MainTitle = styled(Typography)`
+  color: white;
+`
+const MainDescription = styled(Typography)`
+  color: white;
+  margin-top: 0.5em;
+`
+
+const MainButton = styled(MyButton)`
+  margin-top: 1em;
+`
+
 export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
   return (
@@ -66,15 +80,15 @@ export default function Home() {
         />
         <Parallax>
           <HomeSection id="home">
-            <h1 className="h-text">Hi , I am Waqas.</h1>
-            <p>software developer</p>
-            <MyButton
+            <MainTitle variant={"h3"}>Hi , I am Waqas.</MainTitle>
+            <MainDescription>a lazy software developer</MainDescription>
+            <MainButton
               onClick={() => {
                 setAboutDialog(true)
               }}
             >
               About Me
-            </MyButton>
+            </MainButton>
           </HomeSection>
           <ProjectsSection id="projects">
             <ProjectCard tags={["March 2021"]}>

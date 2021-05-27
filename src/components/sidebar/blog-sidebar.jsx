@@ -5,6 +5,6 @@ var base_sidebar_1 = require("./base-sidebar");
 var BlogSidebar = function (props) {
     return (<base_sidebar_1.default>
 
-    {/*  todo blog side bar archive  */}
+      {/*  todo blog side bar archive  */}
     </base_sidebar_1.default>);
 };

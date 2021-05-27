@@ -1,7 +1,7 @@
 import * as React from "react"
+import { FunctionComponent } from "react"
 
 import styled from "styled-components"
-import { FunctionComponent } from "react"
 import { Typography } from "@material-ui/core"
 import MyButton from "../commons/MyButton"
 

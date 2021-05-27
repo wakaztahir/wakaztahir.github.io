@@ -5,8 +5,8 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var AppStateProvider_1 = require("../store/AppStateProvider");
 var react_1 = require("react");
+var AppStateProvider_1 = require("../store/AppStateProvider");
 var Themes_1 = require("../themes/Themes");
 var core_1 = require("@material-ui/core");
 var styled_components_1 = require("styled-components");

@@ -1,6 +1,6 @@
 import * as React from "react"
-import AppStateProvider from "../store/AppStateProvider"
 import { useState } from "react"
+import AppStateProvider from "../store/AppStateProvider"
 import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
 import { createMuiTheme, MuiThemeProvider, StylesProvider } from "@material-ui/core"
 import { createGlobalStyle, ThemeProvider } from "styled-components"

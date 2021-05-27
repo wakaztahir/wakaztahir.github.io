@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 
 import {
   Button,
-  Card, CardActionArea,
+  Card,
+  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,

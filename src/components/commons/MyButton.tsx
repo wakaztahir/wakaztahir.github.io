@@ -1,9 +1,8 @@
 import * as React from "react"
-import { FunctionComponent } from "react"
 import styled from "styled-components"
 
 const Button = styled.button`
-  padding: 0.4em 1.3em;
+  padding: 0.6em 1.2em;
   background: ${props => props.theme.palette.background.default};
   color: ${props => props.theme.palette.text.primary};
   border: 0;
