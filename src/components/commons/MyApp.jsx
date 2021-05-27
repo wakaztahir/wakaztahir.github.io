@@ -17,7 +17,7 @@ var AppCss = styled_components_1.createGlobalStyle(templateObject_1 || (template
 });
 var DarkCss = styled_components_1.createGlobalStyle(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  :root {\n    color-scheme: dark;\n  }\n"], ["\n  :root {\n    color-scheme: dark;\n  }\n"])));
 function MyApp(props) {
-    var _a = react_1.useState(Themes_1.ThemeTypes.DarkBlue), themeType = _a[0], setThemeType = _a[1];
+    var _a = react_1.useState(Themes_1.ThemeTypes.Light), themeType = _a[0], setThemeType = _a[1];
     var appState = {
         themeType: themeType,
         setThemeType: setThemeType

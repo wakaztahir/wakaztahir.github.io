@@ -1,36 +1,24 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
-import { graphql, useStaticQuery } from "gatsby"
 
-const SEO = ({ title, description, lang, image, article }: SEOProps) => {
-  const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+const SEO = ({ title, description, article, image }: SEOProps) => {
+  const { href } = useLocation()
 
-  // Deconstruct data
-  const {
-    defaultTitle,
-    titleTemplate,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername
-  } = site.siteMetadata
 
   // Check if data supplied
   // If not, use defaults
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    siteUrl: `${siteUrl}${pathname}`
+    title: title,
+    description: description,
+    image: `${href}${image}`,
+    siteUrl: `${href}`
   }
 
   return (
     <Helmet
-      htmlAttributes={{ lang }}
-      title={seo.title}
-      titleTemplate={titleTemplate}
+      htmlAttributes={{ lang: "en" }}
+      title={`${seo.title} | ${seo.description}`}
     >
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -42,9 +30,7 @@ const SEO = ({ title, description, lang, image, article }: SEOProps) => {
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
-      {twitterUsername && (
-        <meta name="twitter:creator" content={twitterUsername} />
-      )}
+      <meta name="twitter:creator" content={"@wakaztahir"} />
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
@@ -55,34 +41,17 @@ const SEO = ({ title, description, lang, image, article }: SEOProps) => {
 }
 
 interface SEOProps {
-  title: string,
-  description: string,
-  image: string,
-  lang?: string,
+  title?: string,
+  description?: string,
+  image?: string,
   article: boolean
 }
 
 SEO.defaultProps = {
-  title: null,
-  description: null,
+  title: "Waqas Tahir",
+  description: "Waqas Tahir's Blog",
   image: null,
-  lang: `en`,
   article: false
 }
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: siteUrl
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`
 
 export default SEO

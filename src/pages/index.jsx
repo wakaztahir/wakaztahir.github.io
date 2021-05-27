@@ -15,6 +15,7 @@ var MyApp_1 = require("../components/commons/MyApp");
 var core_1 = require("@material-ui/core");
 var MyButton_1 = require("../components/commons/MyButton");
 var styled_components_1 = require("styled-components");
+var SEO_1 = require("../components/commons/SEO");
 var Container = styled_components_1.default.main(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n\n  ", " {\n    flex-direction: row;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n\n  ", " {\n    flex-direction: row;\n  }\n"])), function (props) { return props.theme.breakpoints.up("md"); });
 var ContentSection = styled_components_1.default.section(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  width: 100%;\n  padding: 5rem 0;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"], ["\n  width: 100%;\n  padding: 5rem 0;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n"])));
 var HomeSection = styled_components_1.default(ContentSection)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  min-height: 100vh;\n  padding: 0;\n"], ["\n  min-height: 100vh;\n  padding: 0;\n"])));
@@ -25,8 +26,8 @@ var MainButton = styled_components_1.default(MyButton_1.default)(templateObject_
 function Home() {
     var _a = react_1.useState(false), aboutDialogOpen = _a[0], setAboutDialog = _a[1];
     return (<MyApp_1.default>
+      <SEO_1.default title={"Waqas Tahir"} description={"Trying My Best"}/>
       <Container>
-        <title>Waqas Tahir | Trying My Best</title>
         <core_1.Hidden mdUp={true}>
           <main_header_1.default />
         </core_1.Hidden>

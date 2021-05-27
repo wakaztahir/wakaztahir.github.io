@@ -5,14 +5,6 @@
  */
 
 module.exports = {
-  siteMetadata: {
-    title: `Waqas Tahir`,
-    titleTemplate: `%s | trying my best`,
-    description: `A passionate web & android developer`,
-    siteUrl: `https://wakaztahir.github.io`, // Cannot include a trailing slash
-    image: `/images/ms-cover-small.jpg`,
-    twitterUsername: `@wakaztahir`
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,

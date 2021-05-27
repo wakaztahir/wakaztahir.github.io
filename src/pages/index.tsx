@@ -13,6 +13,7 @@ import MyApp from "../components/commons/MyApp"
 import { Hidden, Typography } from "@material-ui/core"
 import MyButton from "../components/commons/MyButton"
 import styled from "styled-components"
+import SEO from "../components/commons/SEO"
 
 const Container = styled.main`
   display: flex;
@@ -64,8 +65,11 @@ export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
   return (
     <MyApp>
+      <SEO
+        title={"Waqas Tahir"}
+        description={"Trying My Best"}
+      />
       <Container>
-        <title>Waqas Tahir | Trying My Best</title>
         <Hidden mdUp={true}>
           <MainHeader />
         </Hidden>

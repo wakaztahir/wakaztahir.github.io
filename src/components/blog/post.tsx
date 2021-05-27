@@ -11,12 +11,6 @@ const PostTemplate = ({ data }) => {
 
   return (
     <React.Fragment>
-      <SEO
-        title={title}
-        article={true}
-        image={image}
-
-      />
       <section>
         <Link className="btn" to="/">
           Back to all posts
