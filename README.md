@@ -2,6 +2,8 @@
 
 This is a multi page custom designed portfolio website I built using Gatsby,React,Typescript & Sass...
 
+[Live Demo](https://wakaztahir.github.io)
+
 ### Usage
 
 * Clone the repository
