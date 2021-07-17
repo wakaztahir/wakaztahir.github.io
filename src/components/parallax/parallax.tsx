@@ -1,8 +1,10 @@
 import * as React from "react"
 
 import styled from "styled-components"
+import { ThemeToggle } from "./ThemeToggle"
 
 const ParallaxContainer = styled.div`
+  position: relative;
   flex-basis: 100%;
   flex-shrink: 2.5;
   height: 100vh;
@@ -37,9 +39,18 @@ const ParrallaxGradient = styled.div`
   rgba(24, 24, 26, 0.8));
 `
 
+const ToggleContainer = styled.div`
+  position: fixed;
+  bottom :1em;
+  right: 2em;
+`
+
 export default function Parallax(props) {
   return (
     <ParallaxContainer>
+      <ToggleContainer>
+        <ThemeToggle />
+      </ToggleContainer>
       <ParrallaxGradient>{props.children}</ParrallaxGradient>
     </ParallaxContainer>
   )
