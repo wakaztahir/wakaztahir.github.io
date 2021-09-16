@@ -6,14 +6,16 @@ import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
   ProjectCardDescription,
   ProjectCardLink,
-  ProjectCardTitle
+  ProjectCardTitle,
+  ProjectIcons
 } from "../components/project-card/project-card"
 import MainSidebar from "../components/sidebar/main-sidebar"
 import MyApp from "../components/commons/MyApp"
-import { Hidden, Typography } from "@material-ui/core"
+import { Hidden, Typography, useTheme } from "@material-ui/core"
 import MyButton from "../components/commons/MyButton"
 import styled from "styled-components"
 import SEO from "../components/commons/SEO"
+import { Android, Language } from "@material-ui/icons"
 
 const Container = styled.main`
   display: flex;
@@ -63,6 +65,9 @@ const MainButton = styled(MyButton)`
 
 export default function Home() {
   const [aboutDialogOpen, setAboutDialog] = useState(false)
+
+  const theme = useTheme()
+
   return (
     <MyApp>
       <SEO
@@ -94,63 +99,139 @@ export default function Home() {
             </MainButton>
           </HomeSection>
           <ProjectsSection id="projects">
-            <ProjectCard tags={["August 2021"]}>
-              <ProjectCardTitle>Compose Draggable List</ProjectCardTitle>
-              <ProjectCardDescription>
-                Its Jetpack Compose library that creates a draggable list on android
-              </ProjectCardDescription>
-              <ProjectCardLink href="https://github.com/timeline-notes/compose-draggable-list">
-                Github
-              </ProjectCardLink>
-            </ProjectCard>
-            <ProjectCard tags={["June 2021"]}>
-              <ProjectCardTitle>React Staggered Grid</ProjectCardTitle>
-              <ProjectCardDescription>
-                This is a npm package that creates a staggered grid in React
-              </ProjectCardDescription>
-              <ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
-                Github
-              </ProjectCardLink>
-            </ProjectCard>
-            <ProjectCard tags={["March 2021"]}>
-              <ProjectCardTitle>Timeline Web App</ProjectCardTitle>
-              <ProjectCardDescription>
-                A Material Design Web App inspired by Google Keep to make notes and organize
-                your information , Data
-                is synced to google drive.
-              </ProjectCardDescription>
-              <ProjectCardLink href="https://timeline-notes.github.io/web">
-                Live Demo
-              </ProjectCardLink>
-            </ProjectCard>
-            <ProjectCard tags={["August 2020"]}>
-              <ProjectCardTitle>Acadtable</ProjectCardTitle>
-              <ProjectCardDescription>
-                Online <strong>react</strong> application that allows the users
-                to make academic time tables.
-                <br />
-                This is a block based table generator application.
-              </ProjectCardDescription>
-              <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
-                Live Demo
-              </ProjectCardLink>
-              <ProjectCardLink href="https://github.com/wakaztahir/acadtable">
-                Github
-              </ProjectCardLink>
-            </ProjectCard>
-            <ProjectCard tags={["August 2019"]}>
-              <ProjectCardTitle>Music Landing Page</ProjectCardTitle>
-              <ProjectCardDescription>
-                A Wordpress Plugin I built in PHP that helps creates a landing page
-                for songs linking to different stores its available in
-              </ProjectCardDescription>
-              <ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
-                Github
-              </ProjectCardLink>
-            </ProjectCard>
+            <ComposeDraggableListCard />
+            <ReactStaggeredGridCard />
+            <TimelineWebAppCard />
+            <AcadtableCard />
+            <MusicLandingPageCard />
           </ProjectsSection>
         </Parallax>
       </Container>
     </MyApp>
+  )
+}
+
+function ComposeDraggableListCard(){
+
+  const theme = useTheme()
+
+  return (
+    <ProjectCard tags={["August 2021"]}>
+      <ProjectCardTitle>Compose Draggable List</ProjectCardTitle>
+      <ProjectCardDescription>
+        Its Jetpack Compose library that creates a draggable list on android
+      </ProjectCardDescription>
+      <ProjectCardLink href="https://github.com/timeline-notes/compose-draggable-list">
+        Github
+      </ProjectCardLink>
+      <ProjectIcons>
+        <Android style={{ color: theme.palette.type === "dark" ? "#6ad43d" : "#3e8e2e" }} />
+      </ProjectIcons>
+    </ProjectCard>
+  )
+}
+
+function ReactStaggeredGridCard(){
+
+  const theme = useTheme()
+
+  return (
+    <ProjectCard tags={["June 2021"]}>
+      <ProjectCardTitle>React Staggered Grid</ProjectCardTitle>
+      <ProjectCardDescription>
+        This is a npm package that creates a staggered grid in React
+      </ProjectCardDescription>
+      <ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
+        Github
+      </ProjectCardLink>
+      <ProjectIcons>
+        <Language
+          style={{
+            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+          }}
+        />
+      </ProjectIcons>
+    </ProjectCard>
+  )
+}
+
+function TimelineWebAppCard(){
+
+  const theme = useTheme()
+
+  return (
+    <ProjectCard tags={["March 2021"]}>
+      <ProjectCardTitle>Timeline Web App</ProjectCardTitle>
+      <ProjectCardDescription>
+        A Material Design Web App inspired by Google Keep to make notes and organize
+        your information , Data
+        is synced to google drive.
+      </ProjectCardDescription>
+      <ProjectCardLink href="https://timeline-notes.github.io/web">
+        Live Demo
+      </ProjectCardLink>
+      <ProjectIcons>
+        <Language
+          style={{
+            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+          }}
+        />
+      </ProjectIcons>
+    </ProjectCard>
+  )
+}
+
+function AcadtableCard(){
+
+  const theme = useTheme()
+
+  return (
+    <ProjectCard tags={["August 2020"]}>
+      <ProjectCardTitle>Acadtable</ProjectCardTitle>
+      <ProjectCardDescription>
+        Online <strong>react</strong> application that allows the users
+        to make academic time tables.
+        <br />
+        This is a block based table generator application.
+      </ProjectCardDescription>
+      <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
+        Live Demo
+      </ProjectCardLink>
+      <ProjectCardLink href="https://github.com/wakaztahir/acadtable">
+        Github
+      </ProjectCardLink>
+      <ProjectIcons>
+        <Language
+          style={{
+            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+          }}
+        />
+      </ProjectIcons>
+    </ProjectCard>
+  )
+}
+
+function MusicLandingPageCard() {
+
+  const theme = useTheme()
+
+  return (
+    <ProjectCard tags={["August 2019"]}>
+      <ProjectCardTitle>Music Landing Page</ProjectCardTitle>
+      <ProjectCardDescription>
+        A Wordpress Plugin I built in PHP that helps creates a landing page
+        for songs linking to different stores its available in
+      </ProjectCardDescription>
+      <ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
+        Github
+      </ProjectCardLink>
+      <ProjectIcons>
+        <Language
+          style={{
+            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+          }}
+        />
+      </ProjectIcons>
+    </ProjectCard>
   )
 }

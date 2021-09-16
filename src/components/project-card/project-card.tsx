@@ -47,6 +47,13 @@ export const ProjectCardLink = styled((props: { href: string, children: any }) =
   <PLink href={props.href} target={"_blank"}><MyButton>{props.children}</MyButton></PLink>))`
 `
 
+export const ProjectIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1em;
+`
+
 const TagsContainer = styled.div`
 
 `
