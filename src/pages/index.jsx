@@ -48,8 +48,26 @@ function Home() {
             </MainButton>
           </HomeSection>
           <ProjectsSection id="projects">
+            <project_card_1.default tags={["August 2021"]}>
+              <project_card_1.ProjectCardTitle>Compose Draggable List</project_card_1.ProjectCardTitle>
+              <project_card_1.ProjectCardDescription>
+                Its Jetpack Compose library that creates a draggable list on android
+              </project_card_1.ProjectCardDescription>
+              <project_card_1.ProjectCardLink href="https://github.com/timeline-notes/compose-draggable-list">
+                Github
+              </project_card_1.ProjectCardLink>
+            </project_card_1.default>
+            <project_card_1.default tags={["June 2021"]}>
+              <project_card_1.ProjectCardTitle>React Staggered Grid</project_card_1.ProjectCardTitle>
+              <project_card_1.ProjectCardDescription>
+                This is a npm package that creates a staggered grid in React
+              </project_card_1.ProjectCardDescription>
+              <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
+                Github
+              </project_card_1.ProjectCardLink>
+            </project_card_1.default>
             <project_card_1.default tags={["March 2021"]}>
-              <project_card_1.ProjectCardTitle>Timeline</project_card_1.ProjectCardTitle>
+              <project_card_1.ProjectCardTitle>Timeline Web App</project_card_1.ProjectCardTitle>
               <project_card_1.ProjectCardDescription>
                 A Material Design Web App inspired by Google Keep to make notes and organize
                 your information , Data
@@ -69,6 +87,19 @@ function Home() {
               </project_card_1.ProjectCardDescription>
               <project_card_1.ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
                 Live Demo
+              </project_card_1.ProjectCardLink>
+              <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/acadtable">
+                Github
+              </project_card_1.ProjectCardLink>
+            </project_card_1.default>
+            <project_card_1.default tags={["August 2019"]}>
+              <project_card_1.ProjectCardTitle>Music Landing Page</project_card_1.ProjectCardTitle>
+              <project_card_1.ProjectCardDescription>
+                A Wordpress Plugin I built in PHP that helps creates a landing page
+                for songs linking to different stores its available in
+              </project_card_1.ProjectCardDescription>
+              <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
+                Github
               </project_card_1.ProjectCardLink>
             </project_card_1.default>
           </ProjectsSection>

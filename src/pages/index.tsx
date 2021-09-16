@@ -94,8 +94,26 @@ export default function Home() {
             </MainButton>
           </HomeSection>
           <ProjectsSection id="projects">
+            <ProjectCard tags={["August 2021"]}>
+              <ProjectCardTitle>Compose Draggable List</ProjectCardTitle>
+              <ProjectCardDescription>
+                Its Jetpack Compose library that creates a draggable list on android
+              </ProjectCardDescription>
+              <ProjectCardLink href="https://github.com/timeline-notes/compose-draggable-list">
+                Github
+              </ProjectCardLink>
+            </ProjectCard>
+            <ProjectCard tags={["June 2021"]}>
+              <ProjectCardTitle>React Staggered Grid</ProjectCardTitle>
+              <ProjectCardDescription>
+                This is a npm package that creates a staggered grid in React
+              </ProjectCardDescription>
+              <ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
+                Github
+              </ProjectCardLink>
+            </ProjectCard>
             <ProjectCard tags={["March 2021"]}>
-              <ProjectCardTitle>Timeline</ProjectCardTitle>
+              <ProjectCardTitle>Timeline Web App</ProjectCardTitle>
               <ProjectCardDescription>
                 A Material Design Web App inspired by Google Keep to make notes and organize
                 your information , Data
@@ -115,6 +133,19 @@ export default function Home() {
               </ProjectCardDescription>
               <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
                 Live Demo
+              </ProjectCardLink>
+              <ProjectCardLink href="https://github.com/wakaztahir/acadtable">
+                Github
+              </ProjectCardLink>
+            </ProjectCard>
+            <ProjectCard tags={["August 2019"]}>
+              <ProjectCardTitle>Music Landing Page</ProjectCardTitle>
+              <ProjectCardDescription>
+                A Wordpress Plugin I built in PHP that helps creates a landing page
+                for songs linking to different stores its available in
+              </ProjectCardDescription>
+              <ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
+                Github
               </ProjectCardLink>
             </ProjectCard>
           </ProjectsSection>
