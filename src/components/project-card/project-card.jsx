@@ -15,7 +15,7 @@ exports.ProjectCardTitle = styled_components_1.default(function (props) { return
 exports.ProjectCardDescription = styled_components_1.default(function (props) { return (<core_1.Typography variant={"body1"} color={"textPrimary"} {...props}/>); })(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin-top: 1em;\n"], ["\n  margin-top: 1em;\n"])));
 var PLink = styled_components_1.default.a(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: block;\n  margin-top: 1em;\n"], ["\n  display: block;\n  margin-top: 1em;\n"])));
 exports.ProjectCardLink = styled_components_1.default(function (props) { return (<PLink href={props.href} target={"_blank"}><MyButton_1.default>{props.children}</MyButton_1.default></PLink>); })(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n"], ["\n"])));
-exports.ProjectIcons = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  margin-top: 1em;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n  margin-top: 1em;\n"])));
+exports.ProjectIcons = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"], ["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"])));
 var TagsContainer = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n\n"], ["\n\n"])));
 var ProjectCard = function (props) {
     return (<CardContainer>

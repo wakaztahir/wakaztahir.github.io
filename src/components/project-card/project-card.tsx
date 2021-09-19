@@ -49,7 +49,7 @@ export const ProjectCardLink = styled((props: { href: string, children: any }) =
 
 export const ProjectIcons = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   margin-top: 1em;
 `

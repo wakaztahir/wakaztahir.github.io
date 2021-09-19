@@ -101,7 +101,7 @@ export default function Home() {
           <ProjectsSection id="projects">
             <ComposeDraggableListCard />
             <ReactStaggeredGridCard />
-            <TimelineWebAppCard />
+            <TimelineCard />
             <AcadtableCard />
             <MusicLandingPageCard />
           </ProjectsSection>
@@ -155,20 +155,20 @@ function ReactStaggeredGridCard(){
   )
 }
 
-function TimelineWebAppCard(){
+function TimelineCard(){
 
   const theme = useTheme()
 
   return (
     <ProjectCard tags={["March 2021"]}>
-      <ProjectCardTitle>Timeline Web App</ProjectCardTitle>
+      <ProjectCardTitle>Timeline</ProjectCardTitle>
       <ProjectCardDescription>
-        A Material Design Web App inspired by Google Keep to make notes and organize
+        A Material Designed Web & Android App inspired by Google Keep to make notes and organize
         your information , Data
         is synced to google drive.
       </ProjectCardDescription>
-      <ProjectCardLink href="https://timeline-notes.github.io/web">
-        Live Demo
+      <ProjectCardLink href="https://timeline-notes.github.io/">
+        Website
       </ProjectCardLink>
       <ProjectIcons>
         <Language
@@ -176,6 +176,7 @@ function TimelineWebAppCard(){
             color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
           }}
         />
+        <Android style={{ color: theme.palette.type === "dark" ? "#6ad43d" : "#3e8e2e" }} />
       </ProjectIcons>
     </ProjectCard>
   )
