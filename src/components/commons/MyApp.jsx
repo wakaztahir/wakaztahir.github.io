@@ -10,22 +10,21 @@ var AppStateProvider_1 = require("../store/AppStateProvider");
 var Themes_1 = require("../themes/Themes");
 var core_1 = require("@material-ui/core");
 var styled_components_1 = require("styled-components");
-var AppCss = styled_components_1.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ", "\n"], ["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ",
-    "\n"])), function (props) {
+var AppCss = (0, styled_components_1.createGlobalStyle)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ", "\n"], ["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ", "\n"])), function (props) {
     //@ts-ignore}
     return props.theme.palette.secondary.main;
 });
-var DarkCss = styled_components_1.createGlobalStyle(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  :root {\n    color-scheme: dark;\n  }\n"], ["\n  :root {\n    color-scheme: dark;\n  }\n"])));
+var DarkCss = (0, styled_components_1.createGlobalStyle)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  :root {\n    color-scheme: dark;\n  }\n"], ["\n  :root {\n    color-scheme: dark;\n  }\n"])));
 function MyApp(props) {
-    var _a = react_1.useState(Themes_1.ThemeTypes.Light), themeType = _a[0], setThemeType = _a[1];
+    var _a = (0, react_1.useState)(Themes_1.ThemeTypes.Light), themeType = _a[0], setThemeType = _a[1];
     var appState = {
         themeType: themeType,
         setThemeType: setThemeType
     };
     //todo load saved state
-    var theme = core_1.createMuiTheme(Themes_1.darkBlue);
+    var theme = (0, core_1.createMuiTheme)(Themes_1.darkBlue);
     if (themeType === Themes_1.ThemeTypes.Light) {
-        theme = core_1.createMuiTheme(Themes_1.lightTheme);
+        theme = (0, core_1.createMuiTheme)(Themes_1.lightTheme);
     }
     return (<AppStateProvider_1.default value={appState}>
       <core_1.MuiThemeProvider theme={theme}>

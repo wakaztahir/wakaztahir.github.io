@@ -5,7 +5,7 @@ var react_helmet_1 = require("react-helmet");
 var router_1 = require("@reach/router");
 var SEO = function (_a) {
     var title = _a.title, description = _a.description, article = _a.article, image = _a.image;
-    var href = router_1.useLocation().href;
+    var href = (0, router_1.useLocation)().href;
     // Check if data supplied
     // If not, use defaults
     var seo = {

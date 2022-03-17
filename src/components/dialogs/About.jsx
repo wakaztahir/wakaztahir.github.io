@@ -4,8 +4,8 @@ var core_1 = require("@material-ui/core");
 var React = require("react");
 var MyButton_1 = require("../commons/MyButton");
 function About(props) {
-    var theme = core_1.useTheme();
-    var fullScreen = core_1.useMediaQuery(theme.breakpoints.down("sm"));
+    var theme = (0, core_1.useTheme)();
+    var fullScreen = (0, core_1.useMediaQuery)(theme.breakpoints.down("sm"));
     return (<core_1.Dialog fullScreen={fullScreen} open={props.open} onClose={props.onClose} aria-labelledby="responsive-dialog-title">
       <core_1.DialogTitle id="responsive-dialog-title"><core_1.Typography variant={"h4"}>About Me</core_1.Typography></core_1.DialogTitle>
       <core_1.DialogContent>

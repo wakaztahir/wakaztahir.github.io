@@ -167,7 +167,7 @@ function TimelineCard(){
         your information , Data
         is synced to google drive.
       </ProjectCardDescription>
-      <ProjectCardLink href="https://timeline-notes.github.io/">
+      <ProjectCardLink href="https://codeckle.github.io/timeline">
         Website
       </ProjectCardLink>
       <ProjectIcons>
