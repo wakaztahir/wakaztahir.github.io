@@ -54,11 +54,11 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   }
 }))
 
-const DialogTitleStyled = styled(Typography)(({ theme })=>({
-  "&":{
-    marginLeft : theme.spacing(2),
-    marginTop : "8px"
-  },
+const DialogTitleStyled = styled(Typography)(({ theme }) => ({
+  "&": {
+    marginLeft: theme.spacing(2),
+    marginTop: "8px"
+  }
 }))
 
 export default function CustomizedDialogs(props) {
@@ -94,19 +94,24 @@ export default function CustomizedDialogs(props) {
       </DialogTitle>
       <DialogContent dividers>
         <Typography gutterBottom>
-          I am a software developer , I have experience in different programming
-          languages like Javascript,Java,Kotlin & Python.I have made Android
-          Apps , Web Apps , Websites & Software.
+          I am a software developer , I am mainly an Android Developer but I have
+          experience in other programming languages as well.
+          I use these languages a lot Kotlin,Typescript,Golang,C++ and Java.
+          I am familiar with these Technologies : Android, Kotlin, MVVM, Kotlin Flow, Room DB, SQLDelight, Sqlite, Kotlin
+          Serialization, Ktor, Jetpack Compose, Web Development with React | Gatsby, JS, HTML & CSS | Sass.
+        </Typography>
+        <Typography gutterBottom>
+          I have built Android Apps,websites,Single Page Applications & PWAs. Backend APIs in Golang , Desktop Applications (JVM) , Kotlin Multiplatform Applications for Android & Desktop.
+          Also author of multiple Web & Android Libraries.
         </Typography>
         <Typography gutterBottom>
           I keep tying to learn more and make myself better and improve my
-          skills , I love learning. You can check out my
-          <a href="https://gitub.com/wakaztahir/"> Github</a> to see what am I
-          working at currently
+          skills. You can check out my <a href="https://gitub.com/wakaztahir/">Github</a> to see all of my
+          projects. Most of which are open source.
         </Typography>
         <Typography gutterBottom>
-          This site is basically my portfolio , You can send me an email by clicking <a
-          href={"mailto:wakazdev@gmail.com"}>here</a> if you would like to contact me
+          You can send me an email by clicking <a href={"mailto:wakaztahir@gmail.com"}>here</a> if you would like to
+          contact me
         </Typography>
       </DialogContent>
     </BootstrapDialog>
