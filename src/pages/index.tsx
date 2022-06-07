@@ -97,7 +97,7 @@ export default function Home() {
             >
               About Me
             </MainButton>
-            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.docx"}>
+            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}>
               <MainButton>
                 Download CV
               </MainButton>
