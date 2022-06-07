@@ -1,4 +1,4 @@
-import { ThemeOptions } from "@material-ui/core"
+import { ThemeOptions } from "@mui/material"
 
 export enum ThemeTypes {
   Light = "light",
@@ -41,7 +41,7 @@ const commonTheme: ThemeOptions = {
 export const lightTheme: ThemeOptions = {
   ...commonTheme,
   palette: {
-    type: "light",
+    mode: "light",
     background: {
       default: "#e7e4e4"
     }
@@ -51,7 +51,7 @@ export const lightTheme: ThemeOptions = {
 export const darkBlue: ThemeOptions = {
   ...commonTheme,
   palette: {
-    type: "dark",
+    mode: "dark",
     background: {
       default: "#2b3a42"
     }

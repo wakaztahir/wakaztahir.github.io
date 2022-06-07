@@ -1,5 +1,7 @@
 import * as React from "react"
-import { createStyles, IconButton, makeStyles, Theme } from "@material-ui/core"
+import { IconButton, Theme } from "@mui/material";
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import FacebookIcon from "../icons/FacebookIcon"
 import TwitterIcon from "../icons/TwitterIcon"
 import StackoverflowIcon from "../icons/StackoverflowIcon"
@@ -30,7 +32,7 @@ export default function Social() {
         rel="noreferrer"
         className={classes.socialLink}
       >
-        <IconButton>
+        <IconButton size="large">
           <FacebookIcon />
         </IconButton>
       </a>
@@ -48,5 +50,5 @@ export default function Social() {
         <GithubIcon />
       </a>
     </section>
-  )
+  );
 }

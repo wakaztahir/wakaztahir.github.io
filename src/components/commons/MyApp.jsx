@@ -8,7 +8,7 @@ var React = require("react");
 var react_1 = require("react");
 var AppStateProvider_1 = require("../store/AppStateProvider");
 var Themes_1 = require("../themes/Themes");
-var core_1 = require("@material-ui/core");
+var material_1 = require("@mui/material");
 var styled_components_1 = require("styled-components");
 var AppCss = (0, styled_components_1.createGlobalStyle)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ", "\n"], ["\n  html, body {\n    margin: 0;\n  }\n\n  a {\n    color: ", "\n"])), function (props) {
     //@ts-ignore}
@@ -22,20 +22,20 @@ function MyApp(props) {
         setThemeType: setThemeType
     };
     //todo load saved state
-    var theme = (0, core_1.createMuiTheme)(Themes_1.darkBlue);
+    var theme = (0, material_1.createTheme)(Themes_1.darkBlue);
     if (themeType === Themes_1.ThemeTypes.Light) {
-        theme = (0, core_1.createMuiTheme)(Themes_1.lightTheme);
+        theme = (0, material_1.createTheme)(Themes_1.lightTheme);
     }
     return (<AppStateProvider_1.default value={appState}>
-      <core_1.MuiThemeProvider theme={theme}>
-        <styled_components_1.ThemeProvider theme={theme}>
-          <core_1.StylesProvider injectFirst>
+      <material_1.StyledEngineProvider injectFirst>
+        <material_1.ThemeProvider theme={theme}>
+          <styled_components_1.ThemeProvider theme={theme}>
             <AppCss />
-            {theme.palette.type === "dark" ? <DarkCss /> : null}
+            {theme.palette.mode === "dark" ? <DarkCss /> : null}
             {props.children}
-          </core_1.StylesProvider>
-        </styled_components_1.ThemeProvider>
-      </core_1.MuiThemeProvider>
+          </styled_components_1.ThemeProvider>
+        </material_1.ThemeProvider>
+      </material_1.StyledEngineProvider>
     </AppStateProvider_1.default>);
 }
 exports.default = MyApp;

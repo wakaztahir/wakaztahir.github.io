@@ -1,6 +1,6 @@
 import * as React from "react"
-import { IconButton } from "@material-ui/core"
-import { Brightness4, Brightness7 } from "@material-ui/icons"
+import { IconButton } from "@mui/material"
+import { Brightness4, Brightness7 } from "@mui/icons-material"
 import { useAppState } from "../store/AppStateProvider"
 import { ThemeTypes } from "../themes/Themes"
 
@@ -16,12 +16,13 @@ export function ThemeToggle() {
         }else{
           state.setThemeType(ThemeTypes.DarkBlue)
         }
-      }}>
+      }}
+      size="large">
       {state.themeType == ThemeTypes.DarkBlue ? (
         <Brightness7 color={"primary"} />
       ) : (
         <Brightness4  color={"primary"}/>
       )}
     </IconButton>
-  )
+  );
 }

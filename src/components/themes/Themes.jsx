@@ -49,13 +49,13 @@ var commonTheme = {
     }
 };
 exports.lightTheme = __assign(__assign({}, commonTheme), { palette: {
-        type: "light",
+        mode: "light",
         background: {
             default: "#e7e4e4"
         }
     } });
 exports.darkBlue = __assign(__assign({}, commonTheme), { palette: {
-        type: "dark",
+        mode: "dark",
         background: {
             default: "#2b3a42"
         }

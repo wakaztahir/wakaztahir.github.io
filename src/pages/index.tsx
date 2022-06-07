@@ -11,11 +11,12 @@ import ProjectCard, {
 } from "../components/project-card/project-card"
 import MainSidebar from "../components/sidebar/main-sidebar"
 import MyApp from "../components/commons/MyApp"
-import { Hidden, Typography, useTheme } from "@material-ui/core"
+import { Hidden, Typography, useTheme } from "@mui/material"
 import MyButton from "../components/commons/MyButton"
 import styled from "styled-components"
 import SEO from "../components/commons/SEO"
-import { Android, Language } from "@material-ui/icons"
+import { Android, Language } from "@mui/icons-material"
+import PlayStoreIcon from "../components/icons/PlaystoreIcon"
 
 const Container = styled.main`
   display: flex;
@@ -64,9 +65,8 @@ const MainButton = styled(MyButton)`
 `
 
 export default function Home() {
-  const [aboutDialogOpen, setAboutDialog] = useState(false)
 
-  const theme = useTheme()
+  const [aboutDialogOpen, setAboutDialog] = useState(false)
 
   return (
     <MyApp>
@@ -77,7 +77,7 @@ export default function Home() {
         <Hidden mdUp={true}>
           <MainHeader />
         </Hidden>
-        <Hidden smDown={true}>
+        <Hidden mdDown={true}>
           <MainSidebar />
         </Hidden>
         <About
@@ -97,12 +97,17 @@ export default function Home() {
             >
               About Me
             </MainButton>
+            <a href={"/WaqasTahirCV.docx"} download={"waqas-tahir-cv.docx"}>
+              <MainButton>
+                Download CV
+              </MainButton>
+            </a>
           </HomeSection>
           <ProjectsSection id="projects">
-            <ComposeDraggableListCard />
-            <ReactStaggeredGridCard />
             <TimelineCard />
+            <ReactStaggeredGridCard />
             <AcadtableCard />
+            <ComposeDraggableListCard />
             <MusicLandingPageCard />
           </ProjectsSection>
         </Parallax>
@@ -111,7 +116,7 @@ export default function Home() {
   )
 }
 
-function ComposeDraggableListCard(){
+function ComposeDraggableListCard() {
 
   const theme = useTheme()
 
@@ -119,19 +124,19 @@ function ComposeDraggableListCard(){
     <ProjectCard tags={["August 2021"]}>
       <ProjectCardTitle>Compose Draggable List</ProjectCardTitle>
       <ProjectCardDescription>
-        Its Jetpack Compose library that creates a draggable list on android
+        Its a Jetpack Compose library for android that creates a draggable list
       </ProjectCardDescription>
-      <ProjectCardLink href="https://github.com/timeline-notes/compose-draggable-list">
+      <ProjectCardLink href="https://github.com/wakaztahir/compose-draggable-list">
         Github
       </ProjectCardLink>
       <ProjectIcons>
-        <Android style={{ color: theme.palette.type === "dark" ? "#6ad43d" : "#3e8e2e" }} />
+        <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />
       </ProjectIcons>
     </ProjectCard>
   )
 }
 
-function ReactStaggeredGridCard(){
+function ReactStaggeredGridCard() {
 
   const theme = useTheme()
 
@@ -141,13 +146,16 @@ function ReactStaggeredGridCard(){
       <ProjectCardDescription>
         This is a npm package that creates a staggered grid in React
       </ProjectCardDescription>
+      <ProjectCardLink href="https://wakaztahir.github.io/react-staggered-grid/">
+        Live Demo
+      </ProjectCardLink>
       <ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
         Github
       </ProjectCardLink>
       <ProjectIcons>
         <Language
           style={{
-            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
           }}
         />
       </ProjectIcons>
@@ -155,7 +163,14 @@ function ReactStaggeredGridCard(){
   )
 }
 
-function TimelineCard(){
+const CenteredRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
+
+function TimelineCard() {
 
   const theme = useTheme()
 
@@ -164,25 +179,28 @@ function TimelineCard(){
       <ProjectCardTitle>Timeline</ProjectCardTitle>
       <ProjectCardDescription>
         A Material Designed Web & Android App inspired by Google Keep to make notes and organize
-        your information , Data
-        is synced to google drive.
+        your information.
       </ProjectCardDescription>
-      <ProjectCardLink href="https://codeckle.github.io/timeline">
+      <ProjectCardLink href="https://qawaz.github.io/timeline">
         Website
+      </ProjectCardLink>
+      <ProjectCardLink href="https://play.google.com/store/apps/details?id=com.wakaztahir.timeline">
+        <CenteredRow><PlayStoreIcon />&nbsp;&nbsp;<span>PlayStore</span></CenteredRow>
       </ProjectCardLink>
       <ProjectIcons>
         <Language
           style={{
-            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
           }}
         />
-        <Android style={{ color: theme.palette.type === "dark" ? "#6ad43d" : "#3e8e2e" }} />
+        &nbsp;&nbsp;
+        <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />
       </ProjectIcons>
     </ProjectCard>
   )
 }
 
-function AcadtableCard(){
+function AcadtableCard() {
 
   const theme = useTheme()
 
@@ -193,7 +211,6 @@ function AcadtableCard(){
         Online <strong>react</strong> application that allows the users
         to make academic time tables.
         <br />
-        This is a block based table generator application.
       </ProjectCardDescription>
       <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
         Live Demo
@@ -204,7 +221,7 @@ function AcadtableCard(){
       <ProjectIcons>
         <Language
           style={{
-            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
           }}
         />
       </ProjectIcons>
@@ -229,7 +246,7 @@ function MusicLandingPageCard() {
       <ProjectIcons>
         <Language
           style={{
-            color: theme.palette.type === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
           }}
         />
       </ProjectIcons>

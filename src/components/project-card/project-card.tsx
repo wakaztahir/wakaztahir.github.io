@@ -2,7 +2,7 @@ import * as React from "react"
 import { FunctionComponent } from "react"
 
 import styled from "styled-components"
-import { Typography } from "@material-ui/core"
+import { Typography } from "@mui/material"
 import MyButton from "../commons/MyButton"
 
 const CardContainer = styled.div`
@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   box-sizing: border-box;
 
 
-  background: ${props => props.theme.palette.type === "dark" ? `rgba(0, 0, 0, .6)` : `rgba(255, 255, 255, .6)`};
+  background: ${props => props.theme.palette.mode === "dark" ? `rgba(0, 0, 0, .6)` : `rgba(255, 255, 255, .6)`};
   padding: 1rem 1rem 1rem;
   border-radius: 5px;
   position: relative;
@@ -58,7 +58,7 @@ const TagsContainer = styled.div`
 
 `
 
-const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
+function ProjectCard(props : ProjectCardProps){
   return (
     <CardContainer>
       {props.children}
@@ -74,7 +74,8 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
 }
 
 interface ProjectCardProps {
-  tags: string[]
+  tags: string[],
+  children ?: React.ReactNode
 }
 
 ProjectCard.defaultProps = {

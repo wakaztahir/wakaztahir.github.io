@@ -1,5 +1,5 @@
 import * as React from "react"
-import { IconButton, Typography } from "@material-ui/core"
+import { IconButton, Typography } from "@mui/material"
 import BaseSidebar from "./base-sidebar"
 import styled from "styled-components"
 import { SiteMenu } from "../header/main-header"
@@ -46,18 +46,18 @@ export default function MainSidebar() {
       </SideNav>
       <SideSocial>
         <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton><FacebookIcon /></IconButton>
+          <IconButton size="large"><FacebookIcon /></IconButton>
         </a>
         <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton>
+          <IconButton size="large">
             <TwitterIcon /></IconButton>
         </a>
         <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
-          <IconButton>
+          <IconButton size="large">
             <StackoverflowIcon /></IconButton>
         </a>
         <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton>
+          <IconButton size="large">
             <GithubIcon />
           </IconButton>
         </a>
@@ -66,5 +66,5 @@ export default function MainSidebar() {
         <Typography variant={"caption"} color={"textPrimary"}>&copy; 2020 | Built with love</Typography>
       </SideFooter>
     </BaseSidebar>
-  )
+  );
 }

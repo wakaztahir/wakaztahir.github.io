@@ -2,8 +2,8 @@ import * as React from "react"
 import { useState } from "react"
 import AppStateProvider from "../store/AppStateProvider"
 import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
-import { createMuiTheme, MuiThemeProvider, StylesProvider } from "@material-ui/core"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { createTheme, StyledEngineProvider, ThemeProvider } from "@mui/material"
+import { createGlobalStyle, ThemeProvider as StyledComponentsThemeProvider } from "styled-components"
 
 
 const AppCss = createGlobalStyle`
@@ -34,22 +34,22 @@ export default function MyApp(props: { children: any }) {
   }
 
   //todo load saved state
-  let theme = createMuiTheme(darkBlue)
+  let theme = createTheme(darkBlue)
   if (themeType === ThemeTypes.Light) {
-    theme = createMuiTheme(lightTheme)
+    theme = createTheme(lightTheme)
   }
 
   return (
     <AppStateProvider value={appState}>
-      <MuiThemeProvider theme={theme}>
+      <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <StylesProvider injectFirst>
+          <StyledComponentsThemeProvider theme={theme}>
             <AppCss />
-            {theme.palette.type === "dark" ? <DarkCss /> : null}
+            {theme.palette.mode === "dark" ? <DarkCss /> : null}
             {props.children}
-          </StylesProvider>
+          </StyledComponentsThemeProvider>
         </ThemeProvider>
-      </MuiThemeProvider>
+      </StyledEngineProvider>
     </AppStateProvider>
   )
 }

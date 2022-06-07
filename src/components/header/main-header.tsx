@@ -1,15 +1,15 @@
 import * as React from "react"
 import { useState } from "react"
 import styled from "styled-components"
-import { IconButton, Typography } from "@material-ui/core"
-import { Menu } from "@material-ui/icons"
+import { IconButton, Typography } from "@mui/material"
+import { Menu } from "@mui/icons-material"
 import MyButton from "../commons/MyButton"
 
 const Header = styled.header`
   display: flex;
   width: 100vw;
   height: 4rem;
-  background: ${props => props.theme.palette.type === "light" ? `rgba(255, 255, 255, .4)` : `rgba(0, 0, 0, .4)`};
+  background: ${props => props.theme.palette.mode === "light" ? `rgba(255, 255, 255, .4)` : `rgba(0, 0, 0, .4)`};
   position: fixed;
   top: 0;
   z-index: 9;
@@ -37,7 +37,7 @@ const HeaderNav = styled.nav`
 `
 
 const MobileMenuToggle = styled((props) =>
-  <IconButton {...props}><Menu /></IconButton>)`
+  <IconButton {...props} size="large"><Menu /></IconButton>)`
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
@@ -85,12 +85,12 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
     padding-top: 0.75em;
     padding-bottom: 0.75em;
     text-align: center;
-    background: ${props => props.theme.palette.type === "dark" ? `rgba(0, 0, 0, .4)` : `rgba(255, 255, 255, .4)`};
+    background: ${props => props.theme.palette.mode === "dark" ? `rgba(0, 0, 0, .4)` : `rgba(255, 255, 255, .4)`};
     transition: background 0.3s ease-out;
   }
 
   & > *:hover {
-    background: ${props => props.theme.palette.type === "dark" ? `rgba(0, 0, 0, .5)` : `rgba(255, 255, 255, .5)`};
+    background: ${props => props.theme.palette.mode === "dark" ? `rgba(0, 0, 0, .5)` : `rgba(255, 255, 255, .5)`};
   }
 
   & a {

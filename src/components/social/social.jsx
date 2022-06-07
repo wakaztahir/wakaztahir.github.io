@@ -1,14 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var core_1 = require("@material-ui/core");
+var material_1 = require("@mui/material");
+var createStyles_1 = require("@mui/styles/createStyles");
+var makeStyles_1 = require("@mui/styles/makeStyles");
 var FacebookIcon_1 = require("../icons/FacebookIcon");
 var TwitterIcon_1 = require("../icons/TwitterIcon");
 var StackoverflowIcon_1 = require("../icons/StackoverflowIcon");
 var GithubIcon_1 = require("../icons/GithubIcon");
-var useStyles = core_1.makeStyles(function (theme) {
+var useStyles = (0, makeStyles_1.default)(function (theme) {
     var _a;
-    return core_1.createStyles({
+    return (0, createStyles_1.default)({
         root: (_a = {
                 display: "block",
                 marginTop: theme.spacing(6)
@@ -26,9 +28,9 @@ function Social() {
     var classes = useStyles();
     return (<section className={"" + classes.root}>
       <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer" className={classes.socialLink}>
-        <core_1.IconButton>
+        <material_1.IconButton size="large">
           <FacebookIcon_1.default />
-        </core_1.IconButton>
+        </material_1.IconButton>
       </a>
       <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer" className={classes.socialLink}>
         <TwitterIcon_1.default />
