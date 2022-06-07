@@ -48,7 +48,7 @@ function Home() {
         }}>
               About Me
             </MainButton>
-            <a href={"/WaqasTahirCV.docx"} download={"waqas-tahir-cv.docx"}>
+            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.docx"}>
               <MainButton>
                 Download CV
               </MainButton>
