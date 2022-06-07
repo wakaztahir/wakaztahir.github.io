@@ -17,11 +17,16 @@ var AppCss = (0, styled_components_1.createGlobalStyle)(templateObject_1 || (tem
 var DarkCss = (0, styled_components_1.createGlobalStyle)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  :root {\n    color-scheme: dark;\n  }\n"], ["\n  :root {\n    color-scheme: dark;\n  }\n"])));
 function MyApp(props) {
     var systemThemeType;
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        systemThemeType = Themes_1.ThemeTypes.DarkBlue;
+    if (typeof window != "undefined") {
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            systemThemeType = Themes_1.ThemeTypes.DarkBlue;
+        }
+        else {
+            systemThemeType = Themes_1.ThemeTypes.Light;
+        }
     }
     else {
-        systemThemeType = Themes_1.ThemeTypes.Light;
+        systemThemeType = Themes_1.ThemeTypes.DarkBlue;
     }
     var _a = (0, react_1.useState)(systemThemeType), themeType = _a[0], setThemeType = _a[1];
     var appState = {

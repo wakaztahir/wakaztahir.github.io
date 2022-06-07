@@ -28,10 +28,14 @@ export default function MyApp(props: { children: any }) {
 
   let systemThemeType: ThemeTypes
 
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  if(typeof window != "undefined") {
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      systemThemeType = ThemeTypes.DarkBlue
+    } else {
+      systemThemeType = ThemeTypes.Light
+    }
+  }else {
     systemThemeType = ThemeTypes.DarkBlue
-  } else {
-    systemThemeType = ThemeTypes.Light
   }
 
   const [themeType, setThemeType] = useState(systemThemeType)
