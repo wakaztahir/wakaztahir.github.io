@@ -16,15 +16,27 @@ var AppCss = (0, styled_components_1.createGlobalStyle)(templateObject_1 || (tem
 });
 var DarkCss = (0, styled_components_1.createGlobalStyle)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  :root {\n    color-scheme: dark;\n  }\n"], ["\n  :root {\n    color-scheme: dark;\n  }\n"])));
 function MyApp(props) {
-    var _a = (0, react_1.useState)(Themes_1.ThemeTypes.Light), themeType = _a[0], setThemeType = _a[1];
+    var systemThemeType;
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        systemThemeType = Themes_1.ThemeTypes.DarkBlue;
+    }
+    else {
+        systemThemeType = Themes_1.ThemeTypes.Light;
+    }
+    var _a = (0, react_1.useState)(systemThemeType), themeType = _a[0], setThemeType = _a[1];
     var appState = {
         themeType: themeType,
         setThemeType: setThemeType
     };
-    //todo load saved state
-    var theme = (0, material_1.createTheme)(Themes_1.darkBlue);
-    if (themeType === Themes_1.ThemeTypes.Light) {
-        theme = (0, material_1.createTheme)(Themes_1.lightTheme);
+    var theme;
+    switch (themeType) {
+        case Themes_1.ThemeTypes.DarkBlue:
+        default:
+            theme = (0, material_1.createTheme)(Themes_1.darkBlue);
+            break;
+        case Themes_1.ThemeTypes.Light:
+            theme = (0, material_1.createTheme)(Themes_1.lightTheme);
+            break;
     }
     return (<AppStateProvider_1.default value={appState}>
       <material_1.StyledEngineProvider injectFirst>

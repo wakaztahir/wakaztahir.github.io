@@ -43,7 +43,7 @@ function MainSidebar() {
         </a>
       </SideSocial>
       <SideFooter>
-        <material_1.Typography variant={"caption"} color={"textPrimary"}>&copy; 2020 | Built with love</material_1.Typography>
+        <material_1.Typography variant={"caption"} color={"textPrimary"}>&copy; 2022 | Built with love</material_1.Typography>
       </SideFooter>
     </base_sidebar_1.default>);
 }

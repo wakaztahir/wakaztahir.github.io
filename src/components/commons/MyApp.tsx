@@ -2,7 +2,7 @@ import * as React from "react"
 import { useState } from "react"
 import AppStateProvider from "../store/AppStateProvider"
 import { darkBlue, lightTheme, ThemeTypes } from "../themes/Themes"
-import { createTheme, StyledEngineProvider, ThemeProvider } from "@mui/material"
+import { createTheme, StyledEngineProvider, Theme, ThemeProvider } from "@mui/material"
 import { createGlobalStyle, ThemeProvider as StyledComponentsThemeProvider } from "styled-components"
 
 
@@ -26,17 +26,30 @@ const DarkCss = createGlobalStyle`
 
 export default function MyApp(props: { children: any }) {
 
-  const [themeType, setThemeType] = useState(ThemeTypes.Light)
+  let systemThemeType: ThemeTypes
+
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    systemThemeType = ThemeTypes.DarkBlue
+  } else {
+    systemThemeType = ThemeTypes.Light
+  }
+
+  const [themeType, setThemeType] = useState(systemThemeType)
 
   let appState = {
     themeType,
     setThemeType
   }
 
-  //todo load saved state
-  let theme = createTheme(darkBlue)
-  if (themeType === ThemeTypes.Light) {
-    theme = createTheme(lightTheme)
+  let theme: Theme
+  switch (themeType) {
+    case ThemeTypes.DarkBlue:
+    default:
+      theme = createTheme(darkBlue)
+      break
+    case ThemeTypes.Light:
+      theme = createTheme(lightTheme)
+      break
   }
 
   return (

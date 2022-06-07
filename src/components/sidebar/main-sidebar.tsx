@@ -63,7 +63,7 @@ export default function MainSidebar() {
         </a>
       </SideSocial>
       <SideFooter>
-        <Typography variant={"caption"} color={"textPrimary"}>&copy; 2020 | Built with love</Typography>
+        <Typography variant={"caption"} color={"textPrimary"}>&copy; 2022 | Built with love</Typography>
       </SideFooter>
     </BaseSidebar>
   );
