@@ -6,7 +6,7 @@ ghpages.publish(
     branch: "public",
     repo: "https://github.com/wakaztahir/wakaztahir.github.io.git",
   },
-  () => {
-    console.log("Github Pages has been deployed !")
+  (e) => {
+    console.log("Github Pages has been deployed !",e)
   }
 )
