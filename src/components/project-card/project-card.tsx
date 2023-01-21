@@ -1,9 +1,10 @@
 import * as React from "react"
-import { FunctionComponent } from "react"
+import { FunctionComponent, ReactNode } from "react"
 
 import styled from "styled-components"
 import { Typography } from "@mui/material"
 import MyButton from "../commons/MyButton"
+import { Language } from "@mui/icons-material"
 
 const CardContainer = styled.div`
   width: calc(100% - 2rem);
@@ -41,11 +42,30 @@ export const ProjectCardDescription = styled((props) => (
 const PLink = styled.a`
   display: block;
   margin-top: 1em;
+  
+  &:hover > svg {
+    color : #fff !important;
+  }
 `
 
 export const ProjectCardLink = styled((props: { href: string, children: any }) => (
   <PLink href={props.href} target={"_blank"}><MyButton>{props.children}</MyButton></PLink>))`
 `
+
+const CardLinkCenteredRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ProjectCardLinkWithIcon = ({ path , icon ,text } : { path : string,icon : ReactNode,text : string }) => {
+  return (
+    <ProjectCardLink href={path}>
+      <CardLinkCenteredRow>{icon}&nbsp;&nbsp;<span>{text}</span></CardLinkCenteredRow>
+    </ProjectCardLink>
+  )
+}
 
 export const ProjectIcons = styled.div`
   display: flex;

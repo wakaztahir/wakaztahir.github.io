@@ -76,9 +76,9 @@ function ComposeDraggableListCard() {
       <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/compose-draggable-list">
         Github
       </project_card_1.ProjectCardLink>
-      <project_card_1.ProjectIcons>
-        <icons_material_1.Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }}/>
-      </project_card_1.ProjectIcons>
+      {/*<ProjectIcons>*/}
+      {/*  <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />*/}
+      {/*</ProjectIcons>*/}
     </project_card_1.default>);
 }
 function ReactStaggeredGridCard() {
@@ -94,14 +94,24 @@ function ReactStaggeredGridCard() {
       <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
         Github
       </project_card_1.ProjectCardLink>
-      <project_card_1.ProjectIcons>
-        <icons_material_1.Language style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-        }}/>
-      </project_card_1.ProjectIcons>
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </project_card_1.default>);
 }
 var CenteredRow = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n"])));
+function useIconColorProps() {
+    var theme = (0, material_1.useTheme)();
+    return {
+        style: {
+            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+        }
+    };
+}
 function TimelineCard() {
     var theme = (0, material_1.useTheme)();
     return (<project_card_1.default tags={["March 2021"]}>
@@ -110,19 +120,22 @@ function TimelineCard() {
         A Material Designed Web & Android App inspired by Google Keep to make notes and organize
         your information.
       </project_card_1.ProjectCardDescription>
-      <project_card_1.ProjectCardLink href="https://qawaz.github.io/timeline">
-        Website
-      </project_card_1.ProjectCardLink>
+      <project_card_1.ProjectCardLinkWithIcon path="https://qawaz.github.io/timeline" icon={<icons_material_1.Language {...useIconColorProps()}/>} text={"Website"}/>
+      {/*<ProjectCardLink href="https://qawaz.github.io/timeline">*/}
+      {/*  <CenteredRow><Language {...useIconColorProps()}/>&nbsp;&nbsp;<span>Website</span></CenteredRow>*/}
+      {/*</ProjectCardLink>*/}
       <project_card_1.ProjectCardLink href="https://play.google.com/store/apps/details?id=com.wakaztahir.timeline">
         <CenteredRow><PlaystoreIcon_1.default />&nbsp;&nbsp;<span>PlayStore</span></CenteredRow>
       </project_card_1.ProjectCardLink>
-      <project_card_1.ProjectIcons>
-        <icons_material_1.Language style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-        }}/>
-        &nbsp;&nbsp;
-        <icons_material_1.Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }}/>
-      </project_card_1.ProjectIcons>
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*  &nbsp;&nbsp;*/}
+      {/*  <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />*/}
+      {/*</ProjectIcons>*/}
     </project_card_1.default>);
 }
 function AcadtableCard() {
@@ -140,11 +153,13 @@ function AcadtableCard() {
       <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/acadtable">
         Github
       </project_card_1.ProjectCardLink>
-      <project_card_1.ProjectIcons>
-        <icons_material_1.Language style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-        }}/>
-      </project_card_1.ProjectIcons>
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </project_card_1.default>);
 }
 function MusicLandingPageCard() {
@@ -158,11 +173,13 @@ function MusicLandingPageCard() {
       <project_card_1.ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
         Github
       </project_card_1.ProjectCardLink>
-      <project_card_1.ProjectIcons>
-        <icons_material_1.Language style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-        }}/>
-      </project_card_1.ProjectIcons>
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </project_card_1.default>);
 }
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;

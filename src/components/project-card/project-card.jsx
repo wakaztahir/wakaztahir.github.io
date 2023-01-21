@@ -4,7 +4,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProjectIcons = exports.ProjectCardLink = exports.ProjectCardDescription = exports.ProjectCardTitle = void 0;
+exports.ProjectIcons = exports.ProjectCardLinkWithIcon = exports.ProjectCardLink = exports.ProjectCardDescription = exports.ProjectCardTitle = void 0;
 var React = require("react");
 var styled_components_1 = require("styled-components");
 var material_1 = require("@mui/material");
@@ -15,8 +15,16 @@ exports.ProjectCardTitle = (0, styled_components_1.default)(function (props) { r
 exports.ProjectCardDescription = (0, styled_components_1.default)(function (props) { return (<material_1.Typography variant={"body1"} color={"textPrimary"} {...props}/>); })(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  margin-top: 1em;\n"], ["\n  margin-top: 1em;\n"])));
 var PLink = styled_components_1.default.a(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: block;\n  margin-top: 1em;\n"], ["\n  display: block;\n  margin-top: 1em;\n"])));
 exports.ProjectCardLink = (0, styled_components_1.default)(function (props) { return (<PLink href={props.href} target={"_blank"}><MyButton_1.default>{props.children}</MyButton_1.default></PLink>); })(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n"], ["\n"])));
-exports.ProjectIcons = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"], ["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"])));
-var TagsContainer = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n\n"], ["\n\n"])));
+var CardLinkCenteredRow = styled_components_1.default.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n"], ["\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n"])));
+var ProjectCardLinkWithIcon = function (_a) {
+    var path = _a.path, icon = _a.icon, text = _a.text;
+    return (<exports.ProjectCardLink href={path}>
+      <CardLinkCenteredRow>{icon}&nbsp;&nbsp;<span>{text}</span></CardLinkCenteredRow>
+    </exports.ProjectCardLink>);
+};
+exports.ProjectCardLinkWithIcon = ProjectCardLinkWithIcon;
+exports.ProjectIcons = styled_components_1.default.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"], ["\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  margin-top: 1em;\n"])));
+var TagsContainer = styled_components_1.default.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n\n"], ["\n\n"])));
 function ProjectCard(props) {
     return (<CardContainer>
       {props.children}
@@ -31,4 +39,4 @@ ProjectCard.defaultProps = {
     tags: []
 };
 exports.default = ProjectCard;
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;

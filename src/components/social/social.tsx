@@ -1,44 +1,38 @@
 import * as React from "react"
-import { IconButton, Theme } from "@mui/material";
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { IconButton } from "@mui/material"
 import FacebookIcon from "../icons/FacebookIcon"
 import TwitterIcon from "../icons/TwitterIcon"
 import StackoverflowIcon from "../icons/StackoverflowIcon"
 import GithubIcon from "../icons/GithubIcon"
+import styled from "styled-components"
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  root: {
-    display: "block",
-    marginTop: theme.spacing(6),
-    [theme.breakpoints.up("md")]: {
-      display: "none"
-    }
-  },
-  socialLink: {
-    margin: "0 1em"
+const Section = styled.section`
+  display: block;
+  margin-top: 6rem;
+  @media screen and (min-width: 720px) {
+    display: none;
   }
-}))
+`
+
+const SocialLink = styled.a`
+  margin: 0 1em;
+`
 
 export default function Social() {
-
-  const classes = useStyles()
-
   return (
-    <section className={`${classes.root}`}>
-      <a
+    <Section>
+      <SocialLink
         href="https://facebook.com/wakaztahir"
         target="_blank"
         rel="noreferrer"
-        className={classes.socialLink}
       >
         <IconButton size="large">
           <FacebookIcon />
         </IconButton>
-      </a>
-      <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer" className={classes.socialLink}>
+      </SocialLink>
+      <SocialLink href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
         <TwitterIcon />
-      </a>
+      </SocialLink>
       <a
         href="https://stackoverflow.com/users/3343503/waqas"
         target="_blank"
@@ -46,9 +40,9 @@ export default function Social() {
       >
         <StackoverflowIcon />
       </a>
-      <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer" className={classes.socialLink}>
+      <SocialLink href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
         <GithubIcon />
-      </a>
-    </section>
-  );
+      </SocialLink>
+    </Section>
+  )
 }

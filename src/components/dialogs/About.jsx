@@ -79,7 +79,7 @@ function CustomizedDialogs(props) {
         </material_1.Typography>
         <material_1.Typography gutterBottom>
           I keep tying to learn more and make myself better and improve my
-          skills. You can check out my <a href="https://gitub.com/wakaztahir/">Github</a> to see all of my
+          skills. You can check out my <a href="https://github.com/wakaztahir/" target="_blank">Github</a> to see all of my
           projects. Most of which are open source.
         </material_1.Typography>
         <material_1.Typography gutterBottom>

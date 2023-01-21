@@ -5,7 +5,7 @@ import MainHeader from "../components/header/main-header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
   ProjectCardDescription,
-  ProjectCardLink,
+  ProjectCardLink, ProjectCardLinkWithIcon,
   ProjectCardTitle,
   ProjectIcons
 } from "../components/project-card/project-card"
@@ -17,6 +17,7 @@ import styled from "styled-components"
 import SEO from "../components/commons/SEO"
 import { Android, Language } from "@mui/icons-material"
 import PlayStoreIcon from "../components/icons/PlaystoreIcon"
+import GithubIcon from "../components/icons/GithubIcon"
 
 const Container = styled.main`
   display: flex;
@@ -126,12 +127,14 @@ function ComposeDraggableListCard() {
       <ProjectCardDescription>
         Its a Jetpack Compose library for android that creates a draggable list
       </ProjectCardDescription>
-      <ProjectCardLink href="https://github.com/wakaztahir/compose-draggable-list">
-        Github
-      </ProjectCardLink>
-      <ProjectIcons>
-        <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />
-      </ProjectIcons>
+      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/compose-draggable-list"} icon={<GithubIcon />}
+                               text={"Github"} />
+      {/*<ProjectCardLink href="https://github.com/wakaztahir/compose-draggable-list">*/}
+      {/*  Github*/}
+      {/*</ProjectCardLink>*/}
+      {/*<ProjectIcons>*/}
+      {/*  <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />*/}
+      {/*</ProjectIcons>*/}
     </ProjectCard>
   )
 }
@@ -146,33 +149,32 @@ function ReactStaggeredGridCard() {
       <ProjectCardDescription>
         This is a npm package that creates a staggered grid in React
       </ProjectCardDescription>
-      <ProjectCardLink href="https://wakaztahir.github.io/react-staggered-grid/">
-        Live Demo
-      </ProjectCardLink>
-      <ProjectCardLink href="https://github.com/wakaztahir/react-staggered-grid">
-        Github
-      </ProjectCardLink>
-      <ProjectIcons>
-        <Language
-          style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-          }}
-        />
-      </ProjectIcons>
+      <ProjectCardLinkWithIcon path="https://wakaztahir.github.io/react-staggered-grid/"
+                               icon={<Language {...useIconColorProps()} />}
+                               text={"Live Demo"} />
+      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/react-staggered-grid"} icon={<GithubIcon />}
+                               text={"Github"} />
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </ProjectCard>
   )
 }
 
-const CenteredRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`
+function useIconColorProps() {
+  const theme = useTheme()
+  return {
+    style: {
+      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
+    }
+  }
+}
 
 function TimelineCard() {
-
-  const theme = useTheme()
 
   return (
     <ProjectCard tags={["March 2021"]}>
@@ -181,28 +183,27 @@ function TimelineCard() {
         A Material Designed Web & Android App inspired by Google Keep to make notes and organize
         your information.
       </ProjectCardDescription>
-      <ProjectCardLink href="https://qawaz.github.io/timeline">
-        Website
-      </ProjectCardLink>
-      <ProjectCardLink href="https://play.google.com/store/apps/details?id=com.wakaztahir.timeline">
-        <CenteredRow><PlayStoreIcon />&nbsp;&nbsp;<span>PlayStore</span></CenteredRow>
-      </ProjectCardLink>
-      <ProjectIcons>
-        <Language
-          style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-          }}
-        />
-        &nbsp;&nbsp;
-        <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />
-      </ProjectIcons>
+      <ProjectCardLinkWithIcon path="https://qawaz.github.io/timeline" icon={<Language {...useIconColorProps()} />}
+                               text={"Website"} />
+      {/*<ProjectCardLink href="https://qawaz.github.io/timeline">*/}
+      {/*  <CenteredRow><Language {...useIconColorProps()}/>&nbsp;&nbsp;<span>Website</span></CenteredRow>*/}
+      {/*</ProjectCardLink>*/}
+      <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.timeline"}
+                               icon={<PlayStoreIcon />} text={"PlayStore"} />
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*  &nbsp;&nbsp;*/}
+      {/*  <Android style={{ color: theme.palette.mode === "dark" ? "#6ad43d" : "#3e8e2e" }} />*/}
+      {/*</ProjectIcons>*/}
     </ProjectCard>
   )
 }
 
 function AcadtableCard() {
-
-  const theme = useTheme()
 
   return (
     <ProjectCard tags={["August 2020"]}>
@@ -212,27 +213,23 @@ function AcadtableCard() {
         to make academic time tables.
         <br />
       </ProjectCardDescription>
-      <ProjectCardLink href="https://wakaztahir.github.io/acadtable/">
-        Live Demo
-      </ProjectCardLink>
-      <ProjectCardLink href="https://github.com/wakaztahir/acadtable">
-        Github
-      </ProjectCardLink>
-      <ProjectIcons>
-        <Language
-          style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-          }}
-        />
-      </ProjectIcons>
+      <ProjectCardLinkWithIcon path="https://wakaztahir.github.io/acadtable/"
+                               icon={<Language {...useIconColorProps()} />}
+                               text={"Live Demo"} />
+      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/acadtable"} icon={<GithubIcon />}
+                               text={"Github"} />
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </ProjectCard>
   )
 }
 
 function MusicLandingPageCard() {
-
-  const theme = useTheme()
-
   return (
     <ProjectCard tags={["August 2019"]}>
       <ProjectCardTitle>Music Landing Page</ProjectCardTitle>
@@ -240,16 +237,15 @@ function MusicLandingPageCard() {
         A Wordpress Plugin I built in PHP that helps creates a landing page
         for songs linking to different stores its available in
       </ProjectCardDescription>
-      <ProjectCardLink href="https://github.com/wakaztahir/musiclandingpage">
-        Github
-      </ProjectCardLink>
-      <ProjectIcons>
-        <Language
-          style={{
-            color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"
-          }}
-        />
-      </ProjectIcons>
+      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/musiclandingpage"} icon={<GithubIcon />}
+                               text={"Github"} />
+      {/*<ProjectIcons>*/}
+      {/*  <Language*/}
+      {/*    style={{*/}
+      {/*      color: theme.palette.mode === "dark" ? "rgba(255,255,255,.7)" : "rgba(0,0,0,.7)"*/}
+      {/*    }}*/}
+      {/*  />*/}
+      {/*</ProjectIcons>*/}
     </ProjectCard>
   )
 }

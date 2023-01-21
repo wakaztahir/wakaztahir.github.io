@@ -14,37 +14,6 @@ import MyButton from "../commons/MyButton"
 import { Close } from "@mui/icons-material"
 import styled from "styled-components"
 
-function About(props) {
-  const theme = useTheme()
-  const fullScreen = useMediaQuery(theme.breakpoints.down("lg"))
-  return (
-    <Dialog
-      fullScreen={fullScreen}
-      open={props.open}
-      onClose={props.onClose}
-      aria-labelledby="responsive-dialog-title"
-    >
-      <DialogTitle id="responsive-dialog-title"><Typography variant={"h4"}></Typography></DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-
-        </DialogContentText>
-        <DialogContentText>
-
-        </DialogContentText>
-        <DialogContentText>
-
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <MyButton autoFocus onClick={props.onClose} color="primary">
-          Close
-        </MyButton>
-      </DialogActions>
-    </Dialog>
-  )
-}
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2)
@@ -61,7 +30,12 @@ const DialogTitleStyled = styled(Typography)(({ theme }) => ({
   }
 }))
 
-export default function CustomizedDialogs(props) {
+interface CustomizedDialogProps {
+  open : boolean,
+  onClose : ()=>void;
+}
+
+export default function CustomizedDialogs(props : CustomizedDialogProps) {
 
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
@@ -94,24 +68,13 @@ export default function CustomizedDialogs(props) {
       </DialogTitle>
       <DialogContent dividers>
         <Typography gutterBottom>
-          I am a software developer , I am mainly an Android Developer but I have
-          experience in other programming languages as well.
-          I use these languages a lot Kotlin,Typescript,Golang,C++ and Java.
-          I am familiar with these Technologies : Android, Kotlin, MVVM, Kotlin Flow, Room DB, SQLDelight, Sqlite, Kotlin
-          Serialization, Ktor, Jetpack Compose, Web Development with React | Gatsby, JS, HTML & CSS | Sass.
+        Hello, my name is Waqas Tahir and I am an Android Developer. I have a strong passion for mobile development and constantly strive to improve my skills and stay up-to-date with the latest technologies. I have experience in a variety of programming languages including Java, Kotlin, Typescript, React and Golang. I have a good understanding of various Android frameworks such as Room, SqlDelight, and Jetpack Compose.
         </Typography>
         <Typography gutterBottom>
-          I have built Android Apps,websites,Single Page Applications & PWAs. Backend APIs in Golang , Desktop Applications (JVM) , Kotlin Multiplatform Applications for Android & Desktop.
-          Also author of multiple Web & Android Libraries.
+        I am always eager to learn and explore new technologies and I believe that a good developer is always learning. In my free time, I like to work on personal projects and contribute to open-source projects on Github. If you are interested in checking out my work, please visit my Github profile at <a href={"https://github.com/wakaztahir"}>https://github.com/wakaztahir</a>.
         </Typography>
         <Typography gutterBottom>
-          I keep tying to learn more and make myself better and improve my
-          skills. You can check out my <a href="https://github.com/wakaztahir/" target="_blank">Github</a> to see all of my
-          projects. Most of which are open source.
-        </Typography>
-        <Typography gutterBottom>
-          You can send me an email by clicking <a href={"mailto:wakaztahir@gmail.com"}>here</a> if you would like to
-          contact me
+        I am always open to collaboration and networking with other developers, so feel free to reach out to me if you have any projects or ideas that you would like to work on together. Thank you for visiting my page and I hope to connect with you soon.
         </Typography>
       </DialogContent>
     </BootstrapDialog>
