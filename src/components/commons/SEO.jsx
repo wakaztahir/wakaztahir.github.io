@@ -11,10 +11,10 @@ var SEO = function (_a) {
     var seo = {
         title: title,
         description: description,
-        image: "" + href + image,
-        siteUrl: "" + href
+        image: "".concat(href).concat(image),
+        siteUrl: "".concat(href)
     };
-    return (<react_helmet_1.Helmet htmlAttributes={{ lang: "en" }} title={"Waqas Tahir | " + seo.title}>
+    return (<react_helmet_1.Helmet htmlAttributes={{ lang: "en" }} title={"Waqas Tahir | ".concat(seo.title)}>
       <meta name="description" content={seo.description}/>
       <meta name="image" content={seo.image}/>
       {seo.siteUrl && <meta property="og:url" content={seo.siteUrl}/>}
