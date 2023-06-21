@@ -59,6 +59,7 @@ export function setup(container) {
   createCanvas(container);
   resize();
   initParticles();
+  window.addEventListener('resize', resize);
   hasSetup = true
   draw();
 }
@@ -217,5 +218,3 @@ function draw() {
 
   window.requestAnimationFrame(draw);
 }
-
-window.addEventListener('resize', resize);
