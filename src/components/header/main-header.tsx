@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { IconButton, Typography } from "@mui/material"
 import { Menu } from "@mui/icons-material"
 import MyButton from "../commons/MyButton"
+import About from "../dialogs/About"
 
 const Header = styled.header`
   display: flex;
@@ -102,7 +103,11 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   }
 `
 
-export default function MainHeader(props) {
+interface HeaderProps {
+  onAboutDialog : ()=>void
+}
+
+export default function MainHeader(props : HeaderProps) {
 
   let [menuOpen, setMenuOpen] = useState(false)
 
@@ -112,25 +117,33 @@ export default function MainHeader(props) {
       <HeaderNav>
         <MobileMenuToggle onClick={() => setMenuOpen(!menuOpen)} />
         <DesktopMenu>
-          <SiteMenu useButtons={true} />
+          <SiteMenu useButtons={true} onAboutDialog={props.onAboutDialog} />
         </DesktopMenu>
         <MobileMenu isOpen={menuOpen}>
-          <SiteMenu />
+          <SiteMenu  onAboutDialog={props.onAboutDialog}/>
         </MobileMenu>
       </HeaderNav>
     </Header>
   )
 }
 
-export function SiteMenu(props: { useButtons?: boolean }) {
+interface SiteMenuProps {
+  useButtons?: boolean
+  onAboutDialog : ()=>void
+}
+
+export function SiteMenu(props: SiteMenuProps) {
+
 
   let Wrapper = (wProps) => props.useButtons != null && props.useButtons === true ? (<MyButton {...wProps} />) : (
     <Typography {...wProps} color={"textPrimary"} />)
 
   return (
     <React.Fragment>
-      <a href="/#home"><Wrapper>Home</Wrapper></a>
-      <a href="/#projects"><Wrapper>Projects</Wrapper></a>
+      {/*<a href="/#home"><Wrapper>Home</Wrapper></a>*/}
+      <div onClick={props.onAboutDialog}><Wrapper>About</Wrapper></div>
+      {/*<a href="/#projects"><Wrapper>Projects</Wrapper></a>*/}
+      <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}><Wrapper>Download CV</Wrapper></a>
     </React.Fragment>
   )
 }

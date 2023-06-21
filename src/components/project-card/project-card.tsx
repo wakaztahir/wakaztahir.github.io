@@ -11,11 +11,10 @@ const CardContainer = styled.div`
   margin: 1rem auto 0;
   transition: width 0.4s ease-out, height 0.4s ease-out;
   box-sizing: border-box;
-
-
-  background: ${props => props.theme.palette.mode === "dark" ? `rgba(0, 0, 0, .6)` : `rgba(255, 255, 255, .6)`};
+  
+  background: ${props => props.theme.palette.background.translucent};
   padding: 1rem 1rem 1rem;
-  border-radius: 5px;
+  border-radius: 0.5em;
   position: relative;
 
   ${props => props.theme.breakpoints.up("sm")} {
@@ -57,22 +56,20 @@ const CardLinkCenteredRow = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
+  & span {
+    font-size : 0.75rem;
+  }
+  
 `
 
 export const ProjectCardLinkWithIcon = ({ path , icon ,text } : { path : string,icon : ReactNode,text : string }) => {
   return (
     <ProjectCardLink href={path}>
-      <CardLinkCenteredRow>{icon}&nbsp;&nbsp;<span>{text}</span></CardLinkCenteredRow>
+      <CardLinkCenteredRow>{icon}</CardLinkCenteredRow>
     </ProjectCardLink>
   )
 }
-
-export const ProjectIcons = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 1em;
-`
 
 const TagsContainer = styled.div`
 

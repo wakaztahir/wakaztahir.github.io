@@ -1,27 +1,41 @@
 import * as React from "react";
 import styled from "styled-components";
 import { ThemeToggle } from "./ThemeToggle";
+// @ts-ignore
+import { setup } from "./coalesce";
 const ParallaxContainer = styled.div `
   position: relative;
   flex-basis: 100%;
   flex-shrink: 2.5;
   height: 100vh;
   overflow-x: hidden;
+  
+  & canvas {
+    z-index : -1 !important;
+    position:fixed !important;
+    width:100% !important;
+    left:0 !important;
+    height:100% !important;
+  }
+
+  & .parallax-content {
+    z-index:4;
+  }
 
   //Applying Background
-  background: url("/images/me-cover-small.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-
-  ${props => props.theme.breakpoints.up("md")} {
-    background: url("/images/me-cover-medium.jpg");
-  }
-
-  ${props => props.theme.breakpoints.up("lg")} {
-    background: url("/images/me-cover-large.jpg");
-    background-size: 100% 150%;
-    background-position: 8% 8%;
-  }
+  // background: url("/images/me-cover-small.jpg");
+  // background-size: cover;
+  // background-attachment: fixed;
+  //
+  // ${props => props.theme.breakpoints.up("md")} {
+  //   background: url("/images/me-cover-medium.jpg");
+  // }
+  //
+  // ${props => props.theme.breakpoints.up("lg")} {
+  //   background: url("/images/me-cover-large.jpg");
+  //   background-size: 100% 150%;
+  //   background-position: 8% 8%;
+  // }
 `;
 const ParrallaxGradient = styled.div `
   width: 100%;
@@ -37,12 +51,12 @@ const ParrallaxGradient = styled.div `
 `;
 const ToggleContainer = styled.div `
   position: fixed;
-  bottom :1em;
+  bottom: 1em;
   right: 2em;
 `;
 export default function Parallax(props) {
-    return (React.createElement(ParallaxContainer, null,
+    return (React.createElement(ParallaxContainer, { className: props.className, ref: (e) => { setup(e); } },
         React.createElement(ToggleContainer, null,
             React.createElement(ThemeToggle, null)),
-        React.createElement(ParrallaxGradient, null, props.children)));
+        React.createElement("div", { className: "parallax-content" }, props.children)));
 }

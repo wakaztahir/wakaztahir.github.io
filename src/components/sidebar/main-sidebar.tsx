@@ -7,6 +7,7 @@ import FacebookIcon from "../icons/FacebookIcon"
 import TwitterIcon from "../icons/TwitterIcon"
 import StackoverflowIcon from "../icons/StackoverflowIcon"
 import GithubIcon from "../icons/GithubIcon"
+import { LinkedIn } from "@mui/icons-material"
 
 const SideNav = styled.nav`
   display: flex;
@@ -34,7 +35,37 @@ const SideFooter = styled.section`
   margin-top: 1em;
 `
 
-export default function MainSidebar() {
+export function SocialIcons() {
+  return (<React.Fragment>
+    <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
+      <IconButton size="large"><FacebookIcon /></IconButton>
+    </a>
+    <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
+      <IconButton size="large">
+        <TwitterIcon /></IconButton>
+    </a>
+    <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
+      <IconButton size="large">
+        <StackoverflowIcon /></IconButton>
+    </a>
+    <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
+      <IconButton size="large">
+        <GithubIcon />
+      </IconButton>
+    </a>
+    <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
+      <IconButton size="large">
+        <LinkedIn />
+      </IconButton>
+    </a>
+  </React.Fragment>)
+}
+
+interface MainSidebarProps {
+  onAboutDialog : ()=>void
+}
+
+export default function MainSidebar(props : MainSidebarProps) {
   return (
     <BaseSidebar>
       <Typography variant={"h2"} align={"center"} color={"textPrimary"}>Waqas Tahir</Typography>
@@ -42,29 +73,15 @@ export default function MainSidebar() {
       <SideNav>
         <SiteMenu
           useButtons={true}
+          onAboutDialog={props.onAboutDialog}
         />
       </SideNav>
       <SideSocial>
-        <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton size="large"><FacebookIcon /></IconButton>
-        </a>
-        <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton size="large">
-            <TwitterIcon /></IconButton>
-        </a>
-        <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
-          <IconButton size="large">
-            <StackoverflowIcon /></IconButton>
-        </a>
-        <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
-          <IconButton size="large">
-            <GithubIcon />
-          </IconButton>
-        </a>
+        <SocialIcons />
       </SideSocial>
       <SideFooter>
-        <Typography variant={"caption"} color={"textPrimary"}>&copy; 2022 | Built with love</Typography>
+        <Typography variant={"caption"} color={"textPrimary"}>&copy; {new Date().getFullYear()} | Built with love</Typography>
       </SideFooter>
     </BaseSidebar>
-  );
+  )
 }

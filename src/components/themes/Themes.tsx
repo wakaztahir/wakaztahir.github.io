@@ -1,5 +1,13 @@
 import { ThemeOptions } from "@mui/material"
 
+type CustomThemeOptions = ThemeOptions & {
+  palette : {
+    background : {
+      translucent : string
+    }
+  }
+}
+
 export enum ThemeTypes {
   Light = "light",
   DarkBlue = "darkblue"
@@ -38,22 +46,24 @@ const commonTheme: ThemeOptions = {
   }
 }
 
-export const lightTheme: ThemeOptions = {
+export const lightTheme: CustomThemeOptions = {
   ...commonTheme,
   palette: {
     mode: "light",
     background: {
-      default: "#e7e4e4"
+      default: "#e7e4e4",
+      translucent : "rgba(231,228,228,0.8)",
     }
   }
 }
 
-export const darkBlue: ThemeOptions = {
+export const darkBlue: CustomThemeOptions = {
   ...commonTheme,
   palette: {
     mode: "dark",
     background: {
-      default: "#2b3a42"
+      default: "#2b3a42",
+      translucent : "rgba(43,58,66,0.9)",
     }
   }
 }

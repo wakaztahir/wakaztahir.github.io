@@ -103,15 +103,15 @@ export default function MainHeader(props) {
         React.createElement(HeaderNav, null,
             React.createElement(MobileMenuToggle, { onClick: () => setMenuOpen(!menuOpen) }),
             React.createElement(DesktopMenu, null,
-                React.createElement(SiteMenu, { useButtons: true })),
+                React.createElement(SiteMenu, { useButtons: true, onAboutDialog: props.onAboutDialog })),
             React.createElement(MobileMenu, { isOpen: menuOpen },
-                React.createElement(SiteMenu, null)))));
+                React.createElement(SiteMenu, { onAboutDialog: props.onAboutDialog })))));
 }
 export function SiteMenu(props) {
     let Wrapper = (wProps) => props.useButtons != null && props.useButtons === true ? (React.createElement(MyButton, { ...wProps })) : (React.createElement(Typography, { ...wProps, color: "textPrimary" }));
     return (React.createElement(React.Fragment, null,
-        React.createElement("a", { href: "/#home" },
-            React.createElement(Wrapper, null, "Home")),
-        React.createElement("a", { href: "/#projects" },
-            React.createElement(Wrapper, null, "Projects"))));
+        React.createElement("div", { onClick: props.onAboutDialog },
+            React.createElement(Wrapper, null, "About")),
+        React.createElement("a", { href: "/WaqasTahirCV.pdf", download: "waqas-tahir-cv.pdf" },
+            React.createElement(Wrapper, null, "Download CV"))));
 }

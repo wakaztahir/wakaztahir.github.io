@@ -39,7 +39,8 @@ export const lightTheme = {
     palette: {
         mode: "light",
         background: {
-            default: "#e7e4e4"
+            default: "#e7e4e4",
+            translucent: "rgba(231,228,228,0.8)",
         }
     }
 };
@@ -48,7 +49,8 @@ export const darkBlue = {
     palette: {
         mode: "dark",
         background: {
-            default: "#2b3a42"
+            default: "#2b3a42",
+            translucent: "rgba(43,58,66,0.9)",
         }
     }
 };

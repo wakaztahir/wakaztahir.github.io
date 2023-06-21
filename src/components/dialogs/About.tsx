@@ -10,7 +10,6 @@ import {
   useTheme
 } from "@mui/material"
 import * as React from "react"
-import MyButton from "../commons/MyButton"
 import { Close } from "@mui/icons-material"
 import styled from "styled-components"
 
@@ -31,11 +30,11 @@ const DialogTitleStyled = styled(Typography)(({ theme }) => ({
 }))
 
 interface CustomizedDialogProps {
-  open : boolean,
-  onClose : ()=>void;
+  open: boolean,
+  onClose: () => void;
 }
 
-export default function CustomizedDialogs(props : CustomizedDialogProps) {
+export default function CustomizedDialogs(props: CustomizedDialogProps) {
 
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"))
@@ -45,12 +44,11 @@ export default function CustomizedDialogs(props : CustomizedDialogProps) {
       fullScreen={fullScreen}
       open={props.open}
       onClose={props.onClose}
+      keepMounted={true}
       aria-labelledby="customized-dialog-title"
     >
       <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-        <DialogTitleStyled variant={"h4"}>
-          About Me
-        </DialogTitleStyled>
+        <DialogTitleStyled variant={"h4"}>About Me</DialogTitleStyled>
         {props.onClose ? (
           <IconButton
             aria-label="close"
@@ -68,13 +66,36 @@ export default function CustomizedDialogs(props : CustomizedDialogProps) {
       </DialogTitle>
       <DialogContent dividers>
         <Typography gutterBottom>
-        Hello, my name is Waqas Tahir and I am an Android Developer. I have a strong passion for mobile development and constantly strive to improve my skills and stay up-to-date with the latest technologies. I have experience in a variety of programming languages including Java, Kotlin, Typescript, React and Golang. I have a good understanding of various Android frameworks such as Room, SqlDelight, and Jetpack Compose.
+          Greetings ! I'm Waqas Tahir, an enthusiastic Android Developer with a deep passion for mobile development.
+          Constantly driven to enhance my skills and stay updated with the latest technologies, I thrive in the dynamic
+          world of app creation. Proficient in a wide array of programming languages such as Java, Kotlin, Typescript,
+          React, and Golang, I possess a diverse skill set that empowers me to tackle diverse challenges.
         </Typography>
         <Typography gutterBottom>
-        I am always eager to learn and explore new technologies and I believe that a good developer is always learning. In my free time, I like to work on personal projects and contribute to open-source projects on Github. If you are interested in checking out my work, please visit my Github profile at <a href={"https://github.com/wakaztahir"}>https://github.com/wakaztahir</a>.
+          My expertise extends beyond programming languages to encompass various Android frameworks, including Room,
+          SqlDelight, and Jetpack Compose. With a solid understanding of these frameworks, I excel in crafting efficient
+          and user-friendly Android applications.
         </Typography>
         <Typography gutterBottom>
-        I am always open to collaboration and networking with other developers, so feel free to reach out to me if you have any projects or ideas that you would like to work on together. Thank you for visiting my page and I hope to connect with you soon.
+          One aspect that sets me apart is my unwavering commitment to lifelong learning. I firmly believe that growth
+          stems from embracing new technologies and concepts. Consequently, I am always eager to explore emerging trends
+          and innovative tools, which enables me to deliver cutting-edge solutions to complex problems.
+        </Typography>
+        <Typography gutterBottom>
+          In addition to honing my craft, I actively engage in personal projects and contribute to open-source endeavors
+          on Github. My <a href={"https://github.com/wakaztahir"} target={"_blank"}>Github profile</a> showcases a range
+          of my work, providing you with
+          insights into my coding style and project involvement.
+        </Typography>
+        <Typography gutterBottom>
+          Collaboration and networking are at the core of my professional values. I embrace opportunities to work
+          alongside other talented developers, pooling our skills and knowledge to create remarkable applications. If
+          you
+          have any exciting projects or ideas you'd like to collaborate on, don't hesitate to reach out to me. Together,
+          we can build something extraordinary.
+        </Typography>
+        <Typography gutterBottom>
+          Thank you for visiting my page, and I look forward to connecting with you soon!
         </Typography>
       </DialogContent>
     </BootstrapDialog>

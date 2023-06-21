@@ -7,6 +7,7 @@ import FacebookIcon from "../icons/FacebookIcon";
 import TwitterIcon from "../icons/TwitterIcon";
 import StackoverflowIcon from "../icons/StackoverflowIcon";
 import GithubIcon from "../icons/GithubIcon";
+import { LinkedIn } from "@mui/icons-material";
 const SideNav = styled.nav `
   display: flex;
   flex-direction: column;
@@ -29,25 +30,35 @@ const SideSocial = styled.section `
 const SideFooter = styled.section `
   margin-top: 1em;
 `;
-export default function MainSidebar() {
+export function SocialIcons() {
+    return (React.createElement(React.Fragment, null,
+        React.createElement("a", { href: "https://facebook.com/wakaztahir", target: "_blank", rel: "noreferrer" },
+            React.createElement(IconButton, { size: "large" },
+                React.createElement(FacebookIcon, null))),
+        React.createElement("a", { href: "https://twitter.com/wakaztahir", target: "_blank", rel: "noreferrer" },
+            React.createElement(IconButton, { size: "large" },
+                React.createElement(TwitterIcon, null))),
+        React.createElement("a", { href: "https://stackoverflow.com/users/3343503/waqas", rel: "noreferrer", target: "_blank" },
+            React.createElement(IconButton, { size: "large" },
+                React.createElement(StackoverflowIcon, null))),
+        React.createElement("a", { href: "https://github.com/wakaztahir", target: "_blank", rel: "noreferrer" },
+            React.createElement(IconButton, { size: "large" },
+                React.createElement(GithubIcon, null))),
+        React.createElement("a", { href: "https://www.linkedin.com/in/wakaztahir/", target: "_blank", rel: "noreferrer" },
+            React.createElement(IconButton, { size: "large" },
+                React.createElement(LinkedIn, null)))));
+}
+export default function MainSidebar(props) {
     return (React.createElement(BaseSidebar, null,
         React.createElement(Typography, { variant: "h2", align: "center", color: "textPrimary" }, "Waqas Tahir"),
         React.createElement(SideSeparator, null),
         React.createElement(SideNav, null,
-            React.createElement(SiteMenu, { useButtons: true })),
+            React.createElement(SiteMenu, { useButtons: true, onAboutDialog: props.onAboutDialog })),
         React.createElement(SideSocial, null,
-            React.createElement("a", { href: "https://facebook.com/wakaztahir", target: "_blank", rel: "noreferrer" },
-                React.createElement(IconButton, { size: "large" },
-                    React.createElement(FacebookIcon, null))),
-            React.createElement("a", { href: "https://twitter.com/wakaztahir", target: "_blank", rel: "noreferrer" },
-                React.createElement(IconButton, { size: "large" },
-                    React.createElement(TwitterIcon, null))),
-            React.createElement("a", { href: "https://stackoverflow.com/users/3343503/waqas", rel: "noreferrer", target: "_blank" },
-                React.createElement(IconButton, { size: "large" },
-                    React.createElement(StackoverflowIcon, null))),
-            React.createElement("a", { href: "https://github.com/wakaztahir", target: "_blank", rel: "noreferrer" },
-                React.createElement(IconButton, { size: "large" },
-                    React.createElement(GithubIcon, null)))),
+            React.createElement(SocialIcons, null)),
         React.createElement(SideFooter, null,
-            React.createElement(Typography, { variant: "caption", color: "textPrimary" }, "\u00A9 2022 | Built with love"))));
+            React.createElement(Typography, { variant: "caption", color: "textPrimary" },
+                "\u00A9 ",
+                new Date().getFullYear(),
+                " | Built with love"))));
 }
