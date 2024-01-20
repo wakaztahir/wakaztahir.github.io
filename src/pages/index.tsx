@@ -112,7 +112,7 @@ export default function Home() {
                             <MainTitle>Hi , I am Waqas.</MainTitle>
                             <MainDescription>android developer</MainDescription>
                             <MainButton onClick={() => setAboutDialog(true)}>About Me</MainButton>
-                            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}>
+                            <a href={"/assets/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}>
                                 <MainButton>Download CV</MainButton>
                             </a>
                             <MdUpHidden>

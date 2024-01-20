@@ -158,7 +158,7 @@ export function SiteMenu(props: SiteMenuProps) {
             {/*<a href="/#home"><Wrapper>Home</Wrapper></a>*/}
             <div onClick={props.onAboutDialog}><Wrapper>About</Wrapper></div>
             {/*<a href="/#projects"><Wrapper>Projects</Wrapper></a>*/}
-            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}><Wrapper>Download CV</Wrapper></a>
+            <a href={"/assets/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}><Wrapper>Download CV</Wrapper></a>
         </>
     )
 }
