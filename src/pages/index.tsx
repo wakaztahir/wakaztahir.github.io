@@ -96,7 +96,7 @@ export default function Home() {
             <SEO
                 title={"Waqas Tahir | Trying My Best"}
                 description={"A portfolio site for Waqas Tahir | Android Developer"}
-                image={"profile.jpg"}
+                image={"images/feature.jpg"}
             />
             <Container>
                 {/*TODO MainHeader is not needed anywhere*/}

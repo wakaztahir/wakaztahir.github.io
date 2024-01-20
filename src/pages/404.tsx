@@ -7,6 +7,7 @@ export default function Notfound() {
             <SEO
                 title={"Not Found"}
                 description={"Couldn't not find the page you were looking for"}
+                image={"/images/feature.png"}
             />
             <main style={{ margin: "16px" }}>
                 <div>
