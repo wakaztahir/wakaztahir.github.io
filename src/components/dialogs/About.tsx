@@ -42,7 +42,8 @@ const DialogTitle = styled.h4`
 const DialogContent = styled(ScrollbarArea)`
     
     overflow-y: auto;
-    
+    padding-right : 0.5em;
+
     & > p:first-child {
         margin-top : 0;
     }
