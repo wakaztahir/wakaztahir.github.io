@@ -1,25 +1,32 @@
 import { styled } from "@qinetik/emotion"
-import { Anique } from "@qinetik/anique"
 import { ParentProps } from "solid-js"
 
 const Aside = styled.aside`
-  width: 22rem;
-  height: 100vh;
-  background-color: rgba(0,0,0,.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  float: left;
-  overflow-y:hidden;
+    width: 22em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    overflow-y: hidden;
+
+    .dark & {
+        background-color: rgba(43, 58, 66, 0.9);
+    }
+
+    .light & {
+        background-color: rgba(255, 255, 255, .6);
+    }
+
 `
 
-const BaseSidebar = (props : BaseSidebarProps) => {
-  return (
-    <Aside>
-      {props.children}
-    </Aside>
-  )
+const BaseSidebar = (props: BaseSidebarProps) => {
+    return (
+        <Aside>
+            {props.children}
+        </Aside>
+    )
 }
 
 interface BaseSidebarProps extends ParentProps {

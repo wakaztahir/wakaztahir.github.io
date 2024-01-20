@@ -1,28 +1,27 @@
 import MyButton from "../commons/MyButton"
-import About from "../dialogs/About"
 import { styled } from "@qinetik/emotion"
 import { Anique, IconButton } from "@qinetik/anique"
 import MenuIcon from "@qinetik/mdi/MenuIcon"
 import { Accessor, createSignal } from "solid-js"
 
 const Header = styled.header`
-  display: flex;
-  width: 100vw;
-  height: 4rem;
-  position: fixed;
-  top: 0;
-  z-index: 9;
-  align-items: center;
-  transition: background .5s ease-in-out;
-  
-  .light & {
-    background: rgba(255, 255, 255, .4);
-  }
-  
-  .dark & { 
-    background: rgba(0, 0, 0, .4);
-  }
-  
+    display: flex;
+    width: 100vw;
+    height: 4em;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    align-items: center;
+    transition: background .5s ease-in-out;
+
+    .light & {
+        background: rgba(255, 255, 255, .4);
+    }
+
+    .dark & {
+        background: rgba(0, 0, 0, .4);
+    }
+
 `
 
 const HeaderTitle = styled.span`
@@ -60,7 +59,7 @@ const MobileMenuToggle = styled((props) => <IconButton {...props} ><MenuIcon /><
 const DesktopMenu = styled.div`
   display: none;
   position: absolute;
-  top: 2rem;
+  top: 2em;
   right: 2em;
   transform: translateY(-50%);
 
@@ -78,7 +77,7 @@ const MobileMenu = styled.div<{ isOpen: Accessor<boolean> }>`
   width: 100vw;
   max-height: ${props => props.isOpen() ? `400px` : `0px`};
   position: absolute;
-  top: 4rem;
+  top: 4em;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -121,46 +120,46 @@ const MobileMenu = styled.div<{ isOpen: Accessor<boolean> }>`
 `
 
 interface HeaderProps {
-  onAboutDialog : ()=>void
+    onAboutDialog: () => void
 }
 
-export default function MainHeader(props : HeaderProps) {
+export default function MainHeader(props: HeaderProps) {
 
-  let [menuOpen, setMenuOpen] = createSignal(false)
+    let [menuOpen, setMenuOpen] = createSignal(false)
 
-  return (
-    <Header>
-      <HeaderTitle><span>Waqas Tahir</span></HeaderTitle>
-      <HeaderNav>
-        <MobileMenuToggle onClick={() => setMenuOpen(!menuOpen)} />
-        <DesktopMenu>
-          <SiteMenu useButtons={true} onAboutDialog={props.onAboutDialog} />
-        </DesktopMenu>
-        <MobileMenu isOpen={menuOpen}>
-          <SiteMenu  onAboutDialog={props.onAboutDialog}/>
-        </MobileMenu>
-      </HeaderNav>
-    </Header>
-  )
+    return (
+        <Header>
+            <HeaderTitle><span>Waqas Tahir</span></HeaderTitle>
+            <HeaderNav>
+                <MobileMenuToggle onClick={() => setMenuOpen(!menuOpen)} />
+                <DesktopMenu>
+                    <SiteMenu useButtons={true} onAboutDialog={props.onAboutDialog} />
+                </DesktopMenu>
+                <MobileMenu isOpen={menuOpen}>
+                    <SiteMenu onAboutDialog={props.onAboutDialog} />
+                </MobileMenu>
+            </HeaderNav>
+        </Header>
+    )
 }
 
 interface SiteMenuProps {
-  useButtons?: boolean
-  onAboutDialog : ()=>void
+    useButtons?: boolean
+    onAboutDialog: () => void
 }
 
 export function SiteMenu(props: SiteMenuProps) {
 
 
-  let Wrapper = (wProps) => props.useButtons != null && props.useButtons === true ? (<MyButton {...wProps} />) : (
-    <span {...wProps} color={"textPrimary"} />)
+    let Wrapper = (wProps) => props.useButtons != null && props.useButtons === true ? (<MyButton {...wProps} />) : (
+        <span {...wProps} color={"textPrimary"} />)
 
-  return (
-    <>
-      {/*<a href="/#home"><Wrapper>Home</Wrapper></a>*/}
-      <div onClick={props.onAboutDialog}><Wrapper>About</Wrapper></div>
-      {/*<a href="/#projects"><Wrapper>Projects</Wrapper></a>*/}
-      <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}><Wrapper>Download CV</Wrapper></a>
-    </>
-  )
+    return (
+        <>
+            {/*<a href="/#home"><Wrapper>Home</Wrapper></a>*/}
+            <div onClick={props.onAboutDialog}><Wrapper>About</Wrapper></div>
+            {/*<a href="/#projects"><Wrapper>Projects</Wrapper></a>*/}
+            <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}><Wrapper>Download CV</Wrapper></a>
+        </>
+    )
 }

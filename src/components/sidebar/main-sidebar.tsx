@@ -22,8 +22,8 @@ const SideNav = styled.nav`
 
 const SideSeparator = styled.hr`
     width: 80%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2em;
+    margin-bottom: 2em;
 `
 
 const SideSocial = styled.section`
@@ -37,56 +37,63 @@ const SideFooter = styled.section`
 `
 
 export function SocialIcons() {
-  return (<>
-    <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
-      <IconButton>
-        <FacebookIcon />
-      </IconButton>
-    </a>
-    <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
-      <IconButton>
-        <TwitterIcon /></IconButton>
-    </a>
-    <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
-      <IconButton>
-        <StackoverflowIcon /></IconButton>
-    </a>
-    <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
-      <IconButton>
-        <GithubIcon />
-      </IconButton>
-    </a>
-    <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
-      <IconButton>
-        <Icon>
-          <LinkedinIcon />
-        </Icon>
-      </IconButton>
-    </a>
-  </>)
+    return (<>
+        <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <FacebookIcon />
+            </IconButton>
+        </a>
+        <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <TwitterIcon /></IconButton>
+        </a>
+        <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
+            <IconButton>
+                <StackoverflowIcon /></IconButton>
+        </a>
+        <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <GithubIcon />
+            </IconButton>
+        </a>
+        <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
+            <IconButton>
+                <Icon>
+                    <LinkedinIcon />
+                </Icon>
+            </IconButton>
+        </a>
+    </>)
 }
 
 interface MainSidebarProps {
-  onAboutDialog: () => void
+    onAboutDialog: () => void
 }
 
+const TitleText = styled.h1`
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-size: 4rem;
+    text-align: center;
+`
+
 export default function MainSidebar(props: MainSidebarProps) {
-  return (
-    <BaseSidebar>
-      <h2>Waqas Tahir</h2>
-      <SideSeparator />
-      <SideNav>
-        <SiteMenu
-          useButtons={true}
-          onAboutDialog={props.onAboutDialog}
-        />
-      </SideNav>
-      <SideSocial>
-        <SocialIcons />
-      </SideSocial>
-      <SideFooter>
-        <span>&copy; {new Date().getFullYear()} | Built with love</span>
-      </SideFooter>
-    </BaseSidebar>
-  )
+    return (
+        <BaseSidebar>
+            <TitleText>Waqas Tahir</TitleText>
+            <SideSeparator />
+            <SideNav>
+                <SiteMenu
+                    useButtons={true}
+                    onAboutDialog={props.onAboutDialog}
+                />
+            </SideNav>
+            <SideSocial>
+                <SocialIcons />
+            </SideSocial>
+            <SideFooter>
+                <span>&copy; {new Date().getFullYear()} | Built with love</span>
+            </SideFooter>
+        </BaseSidebar>
+    )
 }
