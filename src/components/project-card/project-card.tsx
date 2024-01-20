@@ -1,10 +1,7 @@
-import * as React from "react"
-import { FunctionComponent, ReactNode } from "react"
-
-import styled from "styled-components"
-import { Typography } from "@mui/material"
 import MyButton from "../commons/MyButton"
-import { Language } from "@mui/icons-material"
+import { styled } from "@qinetik/emotion"
+import { Anique } from "@qinetik/anique"
+import { JSX } from "solid-js"
 
 const CardContainer = styled.div`
   width: calc(100% - 2rem);
@@ -12,12 +9,12 @@ const CardContainer = styled.div`
   transition: width 0.4s ease-out, height 0.4s ease-out;
   box-sizing: border-box;
   
-  background: ${props => props.theme.palette.background.translucent};
+  background: rgba(0,0,0,.7);
   padding: 1rem 1rem 1rem;
   border-radius: 0.5em;
   position: relative;
 
-  ${props => props.theme.breakpoints.up("sm")} {
+  ${Anique.breakpoints.up("sm")} {
     width: 16rem;
     margin: 1rem;
   }
@@ -30,11 +27,11 @@ const CardFooter = styled.div`
   margin-top: 1em;
 `
 
-export const ProjectCardTitle = styled((props) => (<Typography variant={"h4"} color={"textPrimary"} {...props} />))`
+export const ProjectCardTitle = styled((props) => (<h4 color={"textPrimary"} {...props} />))`
   margin-top: 0.5em;
 `
 export const ProjectCardDescription = styled((props) => (
-  <Typography variant={"body1"} color={"textPrimary"} {...props} />))`
+  <p color={"textPrimary"} {...props} />))`
   margin-top: 1em;
 `
 
@@ -63,7 +60,7 @@ const CardLinkCenteredRow = styled.div`
   
 `
 
-export const ProjectCardLinkWithIcon = ({ path , icon ,text } : { path : string,icon : ReactNode,text : string }) => {
+export const ProjectCardLinkWithIcon = ({ path , icon ,text } : { path : string,icon : JSX.Element,text : string }) => {
   return (
     <ProjectCardLink href={path}>
       <CardLinkCenteredRow>{icon}</CardLinkCenteredRow>
@@ -82,7 +79,7 @@ function ProjectCard(props : ProjectCardProps){
       <CardFooter>
         <TagsContainer>
           {props.tags.map(tagName => (
-            <Typography key={tagName} variant={"caption"} color={"textSecondary"}>{tagName}</Typography>
+            <p color={"textSecondary"}>{tagName}</p>
           ))}
         </TagsContainer>
       </CardFooter>
@@ -92,7 +89,7 @@ function ProjectCard(props : ProjectCardProps){
 
 interface ProjectCardProps {
   tags: string[],
-  children ?: React.ReactNode
+  children ?: JSX.Element
 }
 
 ProjectCard.defaultProps = {

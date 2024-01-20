@@ -1,10 +1,9 @@
-import * as React from "react"
-
-import styled from "styled-components"
 import { ThemeToggle } from "./ThemeToggle"
-import { PropsWithChildren } from "react"
 // @ts-ignore
 import { setup } from "./coalesce"
+import { styled } from "@qinetik/emotion"
+import { Anique } from "@qinetik/anique"
+import { ParentProps } from "solid-js"
 
 const ParallaxContainer = styled.div`
   position: relative;
@@ -30,11 +29,11 @@ const ParallaxContainer = styled.div`
   // background-size: cover;
   // background-attachment: fixed;
   //
-  // ${props => props.theme.breakpoints.up("md")} {
+  // ${Anique.breakpoints.up("md")} {
   //   background: url("/images/me-cover-medium.jpg");
   // }
   //
-  // ${props => props.theme.breakpoints.up("lg")} {
+  // ${Anique.breakpoints.up("lg")} {
   //   background: url("/images/me-cover-large.jpg");
   //   background-size: 100% 150%;
   //   background-position: 8% 8%;
@@ -60,17 +59,17 @@ const ToggleContainer = styled.div`
   right: 2em;
 `
 
-interface ParallaxProps extends PropsWithChildren {
+interface ParallaxProps extends ParentProps {
   className?: string
 }
 
 export default function Parallax(props: ParallaxProps) {
   return (
-    <ParallaxContainer className={props.className} ref={(e) => { setup(e) }}>
+    <ParallaxContainer class={props.className} ref={(e) => { setup(e) }}>
       <ToggleContainer>
         <ThemeToggle />
       </ToggleContainer>
-      <div className={"parallax-content"}>{props.children}</div>
+      <div class={"parallax-content"}>{props.children}</div>
       {/*<ParrallaxGradient>{props.children}</ParrallaxGradient>*/}
     </ParallaxContainer>
   )

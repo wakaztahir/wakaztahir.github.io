@@ -1,10 +1,11 @@
-import * as React from "react"
-import styled from "styled-components"
+import { styled } from "@qinetik/emotion"
+import { Anique } from "@qinetik/anique"
+
 
 const Button = styled.button`
   padding: 0.6em 1.2em;
-  background: ${props => props.theme.palette.background.default};
-  color: ${props => props.theme.palette.text.primary};
+  background: ${Anique.colors.bg};
+  color: ${Anique.colors.onBg};
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -13,8 +14,8 @@ const Button = styled.button`
   transition: color 0.3s ease-out, background 0.3s ease-out;
 
   &:hover {
-    color: ${props => props.theme.palette.background.default};
-    background: ${props => props.theme.palette.text.primary};
+    color: ${Anique.colors.bg};
+    background: ${Anique.colors.onBg};
   }
 `
 

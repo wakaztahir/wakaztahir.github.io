@@ -1,9 +1,8 @@
-import * as React from "react"
-import { SvgIcon } from "@mui/material"
+import SvgIcon from "@qinetik/mdi/SvgIcon"
 
 export default function PlayStoreIcon(props) {
   return (
-    <SvgIcon viewBox="-4.12599 -7.65905 35.75858 45.9543" version="1.1" {...props}>
+    <svg viewBox="-4.12599 -7.65905 35.75858 45.9543" width={24} height={24} version="1.1" {...props}>
       <defs id="defs38">
         <linearGradient gradientUnits="userSpaceOnUse" y2="21.86" x2="-5.9" y1="1.87" x1="14.09" id="linear-gradient">
           <stop id="stop4" stop-color="#008eff" offset="0" />
@@ -45,15 +44,15 @@ export default function PlayStoreIcon(props) {
           <path id="path46" d="M20.42 10.29L3 .4A1.93 1.93 0 00.55.48l14.84 14.84z" fill="url(#linear-gradient-4)" />
           <path id="path48" d="M20.31 20.24L3 30.06a2 2 0 01-2.39 0l-.09.09.09.09a2 2 0 002.39 0l17.39-9.88z"
                 opacity=".1" />
-          <path id="path50" d="M.55 30A2.43 2.43 0 010 28.32v.17a2.41 2.41 0 00.55 1.67l.09-.09z" className="cls-7" />
+          <path id="path50" d="M.55 30A2.43 2.43 0 010 28.32v.17a2.41 2.41 0 00.55 1.67l.09-.09z" class="cls-7" />
           <path id="path52"
                 d="M26.25 16.86l-5.94 3.38.11.11L26.25 17a2.11 2.11 0 001.25-1.72 2.21 2.21 0 01-1.25 1.58z"
-                className="cls-7" />
+                class="cls-7" />
           <path id="path54"
                 d="M3 .58l23.25 13.19a2.2 2.2 0 011.25 1.55 2.09 2.09 0 00-1.25-1.72L3 .4C1.36-.54 0 .24 0 2.15v.17C0 .42 1.36-.37 3 .58z"
                 fill="#fff" opacity=".3" />
         </g>
       </g>
-    </SvgIcon>
+    </svg>
   )
 }

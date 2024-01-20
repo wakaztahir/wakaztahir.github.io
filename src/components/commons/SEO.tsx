@@ -1,57 +1,35 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
+import { Meta, Title } from "solid-start"
 
-const SEO = ({ title, description, article, image }: SEOProps) => {
-  const { href } = useLocation()
-
-
-  // Check if data supplied
-  // If not, use defaults
-  const seo = {
-    title: title,
-    description: description,
-    image: `${href}${image}`,
-    siteUrl: `${href}`
-  }
-
+const SEO = (props: SEOProps) => {
   return (
-    <Helmet
-      htmlAttributes={{ lang: "en" }}
-      title={`Waqas Tahir | ${seo.title}`}
-    >
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      {seo.siteUrl && <meta property="og:url" content={seo.siteUrl} />}
-      {(article ? true : null) && <meta property="og:type" content="article" />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
+    <>
+      <Title>{props.title}</Title>
+      <Meta name="description" content={props.description} />
+      <Meta name="image" content={props.image} />
+      {props.siteUrl && <Meta property="og:url" content={props.siteUrl} />}
+      {props.article && <Meta property="og:type" content="article" />}
+      {props.title && <Meta property="og:title" content={props.title} />}
+      {props.description && (
+        <Meta property="og:description" content={props.description} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={"@wakaztahir"} />
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
+      {props.image && <Meta property="og:image" content={props.image} />}
+      <Meta name="twitter:card" content="summary_large_image" />
+      <Meta name="twitter:creator" content={"@wakaztahir"} />
+      {props.title && <Meta name="twitter:title" content={props.title} />}
+      {props.description && (
+        <Meta name="twitter:description" content={props.description} />
       )}
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
-    </Helmet>
+      {props.image && <Meta name="twitter:image" content={props.image} />}
+    </>
   )
 }
 
 interface SEOProps {
-  title?: string,
-  description?: string,
-  image?: string,
-  article: boolean
-}
-
-SEO.defaultProps = {
-  title: "Waqas Tahir",
-  description: "Waqas Tahir's Blog",
-  image: null,
-  article: false
+  title: string,
+  description: string,
+  image ?: string,
+  article?: boolean
+  siteUrl ?: string
 }
 
 export default SEO

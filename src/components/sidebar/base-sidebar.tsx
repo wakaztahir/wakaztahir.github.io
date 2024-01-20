@@ -1,11 +1,11 @@
-import * as React from "react"
-import { FunctionComponent, PropsWithChildren } from "react"
-import styled from "styled-components"
+import { styled } from "@qinetik/emotion"
+import { Anique } from "@qinetik/anique"
+import { ParentProps } from "solid-js"
 
 const Aside = styled.aside`
   width: 22rem;
   height: 100vh;
-  background-color: ${props => props.theme.palette.background.translucent};
+  background-color: rgba(0,0,0,.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ const Aside = styled.aside`
   overflow-y:hidden;
 `
 
-const BaseSidebar: FunctionComponent<BaseSidebarProps> = (props) => {
+const BaseSidebar = (props : BaseSidebarProps) => {
   return (
     <Aside>
       {props.children}
@@ -22,7 +22,7 @@ const BaseSidebar: FunctionComponent<BaseSidebarProps> = (props) => {
   )
 }
 
-interface BaseSidebarProps extends PropsWithChildren {
+interface BaseSidebarProps extends ParentProps {
 
 }
 

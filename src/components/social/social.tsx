@@ -1,10 +1,9 @@
-import * as React from "react"
-import { IconButton } from "@mui/material"
 import FacebookIcon from "../icons/FacebookIcon"
 import TwitterIcon from "../icons/TwitterIcon"
 import StackoverflowIcon from "../icons/StackoverflowIcon"
 import GithubIcon from "../icons/GithubIcon"
-import styled from "styled-components"
+import { IconButton } from "@qinetik/anique"
+import { styled } from "@qinetik/emotion"
 
 const Section = styled.section`
   display: block;
@@ -26,7 +25,7 @@ export default function Social() {
         target="_blank"
         rel="noreferrer"
       >
-        <IconButton size="large">
+        <IconButton>
           <FacebookIcon />
         </IconButton>
       </SocialLink>

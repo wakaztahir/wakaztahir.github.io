@@ -1,113 +1,129 @@
-import * as React from "react"
-import { useState } from "react"
 import About from "../components/dialogs/About"
-import MainHeader from "../components/header/main-header"
 import Parallax from "../components/parallax/parallax"
 import ProjectCard, {
   ProjectCardDescription,
   ProjectCardLinkWithIcon,
   ProjectCardTitle
 } from "../components/project-card/project-card"
-import MainSidebar, { SocialIcons } from "../components/sidebar/main-sidebar"
 import MyApp from "../components/commons/MyApp"
-import { Hidden, Typography, useTheme } from "@mui/material"
 import MyButton from "../components/commons/MyButton"
-import styled from "styled-components"
+import { styled } from "@qinetik/emotion"
 import SEO from "../components/commons/SEO"
-import { DesktopWindowsOutlined, Language } from "@mui/icons-material"
 import PlayStoreIcon from "../components/icons/PlaystoreIcon"
 import GithubIcon from "../components/icons/GithubIcon"
 
 import "../components/parallax/coalesce.js"
+import { Anique } from "@qinetik/anique"
+import { createSignal } from "solid-js"
+import DesktopWindowsIcon from "@qinetik/mdi/DesktopWindowsIcon"
+import WebIcon from "@qinetik/mdi/WebIcon"
+import MicrosoftGithubIcon from "@qinetik/mdi/MicrosoftGithubIcon"
+import MainSidebar, { SocialIcons } from "~/components/sidebar/main-sidebar"
 
 const Container = styled.main`
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  ${props => props.theme.breakpoints.up("md")} {
-    flex-direction: row;
-  }
+    ${Anique.breakpoints.up("md")} {
+        flex-direction: row;
+    }
 `
 
 const IconRowContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
 `
 
 const ContentSection = styled.section`
-  width: 100%;
-  padding: 5rem 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    padding: 5rem 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 const HomeSection = styled(ContentSection)`
-  min-height: 100vh;
-  padding: 0;
+    min-height: 100vh;
+    padding: 0;
 `
 
 const ProjectsSection = styled(ContentSection)`
-  min-height: 60vh;
-  padding-top: 0;
+    min-height: 60vh;
+    padding-top: 0;
 
-  ${props => props.theme.breakpoints.up("md")} {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+    ${Anique.breakpoints.up("md")} {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 `
 
-const MainTitle = styled(Typography)`
-  color: white;
+const MainTitle = styled.h3`
+    color: white;
 `
-const MainDescription = styled(Typography)`
-  color: white;
-  margin-top: 0.5em;
+
+const MainDescription = styled.p`
+    color: white;
+    margin-top: 0.5em;
 `
 
 const MainButton = styled(MyButton)`
-  margin-top: 1em;
+    margin-top: 1em;
 `
+
+const MdDownHidden = styled.div`
+    ${Anique.breakpoints.down("md")} {
+        display: none;
+    }
+`
+
+const MdUpHidden = styled.div`
+    ${Anique.breakpoints.up("md")} {
+        display: none;
+    }
+`
+
 
 export default function Home() {
 
-  const [aboutDialogOpen, setAboutDialog] = useState(false)
+  const [aboutDialogOpen, setAboutDialog] = createSignal(false)
 
   return (
     <MyApp>
       <SEO
-        title={"Trying My Best"}
+        title={"Waqas Tahir | Trying My Best"}
+        description={"A portfolio site for Waqas Tahir | Android Developer"}
+        image={"profile.jpg"}
       />
       <Container>
         {/*TODO MainHeader is not needed anywhere*/}
         {/*<Hidden smUp={true}>*/}
         {/*  <MainHeader />*/}
         {/*</Hidden>*/}
-        <Hidden mdDown={true}>
+        <MdDownHidden>
           <MainSidebar onAboutDialog={() => setAboutDialog(true)} />
-        </Hidden>
+        </MdDownHidden>
         <Parallax className={"content--canvas"}>
-          <Hidden mdUp={true}>
+          <MdUpHidden>
             <HomeSection id="home">
-              <MainTitle variant={"h3"}>Hi , I am Waqas.</MainTitle>
+              <MainTitle>Hi , I am Waqas.</MainTitle>
               <MainDescription>android developer</MainDescription>
               <MainButton onClick={() => setAboutDialog(true)}>About Me</MainButton>
               <a href={"/WaqasTahirCV.pdf"} download={"waqas-tahir-cv.pdf"}>
                 <MainButton>Download CV</MainButton>
               </a>
-              <Hidden mdUp={true}>
-                <IconRowContainer style={{ marginTop: "1em" }}>
+              <MdUpHidden>
+                <IconRowContainer style={{ "margin-top": "1em" }}>
                   <SocialIcons />
                 </IconRowContainer>
-              </Hidden>
+              </MdUpHidden>
             </HomeSection>
-          </Hidden>
+          </MdUpHidden>
           <About
             open={aboutDialogOpen}
             onClose={() => setAboutDialog(false)}
@@ -139,13 +155,20 @@ function MindMapCard() {
         A Mind Mapping App that that exports high quality PNG,JPG and PDFs , very customizable supporting many features
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path="https://qawaz.github.io/mindnode-web"
-                                 icon={<Language />}
-                                 text={"Web App"} />
-        <ProjectCardLinkWithIcon path={"https://qawaz.github.io/mindnode-web/latest-windows.html"}
-                                 icon={<DesktopWindowsOutlined />} text={"Windows"} />
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.mindnode"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path="https://qawaz.github.io/mindnode-web"
+          icon={<WebIcon />}
+          text={"Web App"}
+        />
+        <ProjectCardLinkWithIcon
+          path={"https://qawaz.github.io/mindnode-web/latest-windows.html"}
+          icon={<DesktopWindowsIcon />}
+          text={"Windows"}
+        />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.mindnode"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -159,13 +182,18 @@ function SketchableCard() {
         A Simple Drawing or Sketching App
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path="https://qawaz.github.io/sketchable-web"
-                                 icon={<Language />}
-                                 text={"Web App"} />
-        <ProjectCardLinkWithIcon path={"https://qawaz.github.io/sketchable-web/latest-windows.html"}
-                                 icon={<DesktopWindowsOutlined />} text={"Windows"} />
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.sketchapp"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path="https://qawaz.github.io/sketchable-web"
+          icon={<WebIcon />}
+          text={"Web App"} />
+        <ProjectCardLinkWithIcon
+          path={"https://qawaz.github.io/sketchable-web/latest-windows.html"}
+          icon={<DesktopWindowsIcon />}
+          text={"Windows"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.sketchapp"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -179,8 +207,10 @@ function SimpleScannerCard() {
         A document scanner app built with OpenCV, Detects cropping and crops it
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.docscanner"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.docscanner"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -194,8 +224,10 @@ function PhotoEditorApp() {
         A photo editor app that allows editing photos
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.photoeditor"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.photoeditor"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -209,8 +241,10 @@ function EasyToDoCard() {
         A Task Management app that allows managing tasks and creating reminders
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.easytodo"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.easytodo"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -224,8 +258,10 @@ function PDFEditorCard() {
         PDF Editor app that allows to view and edit PDF documents
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.pdfreader"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.pdfreader"}
+          icon={<PlayStoreIcon />}
+          text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -238,8 +274,10 @@ function ComposeDraggableListCard() {
       <ProjectCardDescription>
         Its a Jetpack Compose library for android that creates a draggable list
       </ProjectCardDescription>
-      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/compose-draggable-list"} icon={<GithubIcon />}
-                               text={"Github"} />
+      <ProjectCardLinkWithIcon
+        path={"https://github.com/wakaztahir/compose-draggable-list"}
+        icon={<MicrosoftGithubIcon />}
+        text={"Github"} />
     </ProjectCard>
   )
 }
@@ -252,11 +290,14 @@ function ReactStaggeredGridCard() {
         This is a npm package that creates a staggered grid in React
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path="https://wakaztahir.github.io/react-staggered-grid/"
-                                 icon={<Language />}
-                                 text={"Live Demo"} />
-        <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/react-staggered-grid"} icon={<GithubIcon />}
-                                 text={"Github"} />
+        <ProjectCardLinkWithIcon
+          path="https://wakaztahir.github.io/react-staggered-grid/"
+          icon={<WebIcon />}
+          text={"Live Demo"} />
+        <ProjectCardLinkWithIcon
+          path={"https://github.com/wakaztahir/react-staggered-grid"}
+          icon={<MicrosoftGithubIcon />}
+          text={"Github"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -271,10 +312,13 @@ function TimelineCard() {
         your information.
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path="https://qawaz.github.io/timeline" icon={<Language />}
-                                 text={"Website"} />
-        <ProjectCardLinkWithIcon path={"https://play.google.com/store/apps/details?id=com.wakaztahir.timeline"}
-                                 icon={<PlayStoreIcon />} text={"PlayStore"} />
+        <ProjectCardLinkWithIcon
+          path="https://qawaz.github.io/timeline"
+          icon={<WebIcon />}
+          text={"Website"} />
+        <ProjectCardLinkWithIcon
+          path={"https://play.google.com/store/apps/details?id=com.wakaztahir.timeline"}
+          icon={<PlayStoreIcon />} text={"PlayStore"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -290,11 +334,14 @@ function AcadtableCard() {
         <br />
       </ProjectCardDescription>
       <IconRowContainer>
-        <ProjectCardLinkWithIcon path="https://wakaztahir.github.io/acadtable/"
-                                 icon={<Language />}
-                                 text={"Live Demo"} />
-        <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/acadtable"} icon={<GithubIcon />}
-                                 text={"Github"} />
+        <ProjectCardLinkWithIcon
+          path="https://wakaztahir.github.io/acadtable/"
+          icon={<WebIcon />}
+          text={"Live Demo"} />
+        <ProjectCardLinkWithIcon
+          path={"https://github.com/wakaztahir/acadtable"}
+          icon={<MicrosoftGithubIcon />}
+          text={"Github"} />
       </IconRowContainer>
     </ProjectCard>
   )
@@ -308,8 +355,10 @@ function MusicLandingPageCard() {
         A Wordpress Plugin I built in PHP that helps creates a landing page
         for songs linking to different stores its available in
       </ProjectCardDescription>
-      <ProjectCardLinkWithIcon path={"https://github.com/wakaztahir/musiclandingpage"} icon={<GithubIcon />}
-                               text={"Github"} />
+      <ProjectCardLinkWithIcon
+        path={"https://github.com/wakaztahir/musiclandingpage"}
+        icon={<MicrosoftGithubIcon />}
+        text={"Github"} />
     </ProjectCard>
   )
 }
