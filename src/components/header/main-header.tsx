@@ -43,7 +43,7 @@ const HeaderNav = styled.nav`
 
 `
 
-const MobileMenuToggle = styled((props) => <IconButton {...props} ><MenuIcon /></IconButton>)`
+const MobileMenuToggle : typeof IconButton = styled((props) => <IconButton {...props} ><MenuIcon /></IconButton>)`
   font-size: 2rem;
   cursor: pointer;
   position: absolute;
@@ -150,9 +150,8 @@ interface SiteMenuProps {
 
 export function SiteMenu(props: SiteMenuProps) {
 
-
-    let Wrapper = (wProps) => props.useButtons != null && props.useButtons === true ? (<MyButton {...wProps} />) : (
-        <span {...wProps} color={"textPrimary"} />)
+    let Wrapper = (wProps : any) => props.useButtons != null && props.useButtons ? (<MyButton {...wProps} />) : (
+        <span {...wProps} />)
 
     return (
         <>

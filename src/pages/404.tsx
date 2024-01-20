@@ -1,5 +1,3 @@
-import * as React from "react"
-
 import MyApp from "../components/commons/MyApp"
 import SEO from "../components/commons/SEO"
 
