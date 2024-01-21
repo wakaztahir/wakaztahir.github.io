@@ -17,7 +17,7 @@ import { createSignal } from "solid-js"
 import DesktopWindowsIcon from "@qinetik/mdi/DesktopWindowsIcon"
 import WebIcon from "@qinetik/mdi/WebIcon"
 import MicrosoftGithubIcon from "@qinetik/mdi/MicrosoftGithubIcon"
-import MainSidebar, { SocialIcons } from "~/components/sidebar/main-sidebar"
+import MainSidebar, { SocialIcons, SocialIconsNonColored } from "~/components/sidebar/main-sidebar"
 import { useLocation } from "@solidjs/router"
 import { getOrigin } from "~/utils/Origin"
 
@@ -119,7 +119,7 @@ export default function Home() {
                             </a>
                             <MdUpHidden>
                                 <IconRowContainer style={{ "margin-top": "1em" }}>
-                                    <SocialIcons />
+                                    <SocialIconsNonColored />
                                 </IconRowContainer>
                             </MdUpHidden>
                         </HomeSection>

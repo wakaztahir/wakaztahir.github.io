@@ -22,10 +22,10 @@ export function ThemeToggle() {
                 setIsDark(nowDark)
             }}>
             <Show when={isDark()}>
-                <Brightness7Icon />
+                <Brightness7Icon color={"#fff"} />
             </Show>
             <Show when={!isDark()}>
-                <Brightness4Icon />
+                <Brightness4Icon color={"#fff"} />
             </Show>
         </IconButton>
     )

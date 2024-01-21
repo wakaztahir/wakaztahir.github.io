@@ -36,6 +36,38 @@ const SideFooter = styled.section`
     margin-top: 1em;
 `
 
+export function SocialIconsNonColored() {
+    return (<>
+        <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <FacebookIcon fill={"#fff"} />
+            </IconButton>
+        </a>
+        <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <TwitterIcon fill={"#fff"} />
+            </IconButton>
+        </a>
+        <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
+            <IconButton>
+                <StackoverflowIcon fill={"#fff"} />
+            </IconButton>
+        </a>
+        <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
+            <IconButton>
+                <GithubIcon fill={"#fff"} />
+            </IconButton>
+        </a>
+        <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
+            <IconButton>
+                <Icon fill={"#fff"}>
+                    <LinkedinIcon />
+                </Icon>
+            </IconButton>
+        </a>
+    </>)
+}
+
 export function SocialIcons() {
     return (<>
         <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
@@ -45,11 +77,13 @@ export function SocialIcons() {
         </a>
         <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
             <IconButton>
-                <TwitterIcon /></IconButton>
+                <TwitterIcon />
+            </IconButton>
         </a>
         <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
             <IconButton>
-                <StackoverflowIcon /></IconButton>
+                <StackoverflowIcon />
+            </IconButton>
         </a>
         <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
             <IconButton>
