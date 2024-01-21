@@ -1,5 +1,7 @@
 import MyApp from "../components/commons/MyApp"
 import SEO from "../components/commons/SEO"
+import { useLocation } from "@solidjs/router"
+import { getOrigin } from "~/utils/Origin"
 
 export default function Notfound() {
     return (
@@ -7,7 +9,7 @@ export default function Notfound() {
             <SEO
                 title={"Not Found"}
                 description={"Couldn't not find the page you were looking for"}
-                image={"/images/feature.png"}
+                image={`${getOrigin()}/images/feature.png`}
             />
             <main style={{ margin: "16px" }}>
                 <div>

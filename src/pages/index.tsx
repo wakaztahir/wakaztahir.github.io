@@ -18,6 +18,8 @@ import DesktopWindowsIcon from "@qinetik/mdi/DesktopWindowsIcon"
 import WebIcon from "@qinetik/mdi/WebIcon"
 import MicrosoftGithubIcon from "@qinetik/mdi/MicrosoftGithubIcon"
 import MainSidebar, { SocialIcons } from "~/components/sidebar/main-sidebar"
+import { useLocation } from "@solidjs/router"
+import { getOrigin } from "~/utils/Origin"
 
 const Container = styled.main`
     display: flex;
@@ -96,7 +98,7 @@ export default function Home() {
             <SEO
                 title={"Waqas Tahir | Trying My Best"}
                 description={"A portfolio site for Waqas Tahir | Android Developer"}
-                image={"images/feature.png"}
+                image={`${getOrigin()}/images/feature.png`}
             />
             <Container>
                 {/*TODO MainHeader is not needed anywhere*/}

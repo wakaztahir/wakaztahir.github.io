@@ -2148,6 +2148,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.11.5":
+  version: 20.11.5
+  resolution: "@types/node@npm:20.11.5"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: a542727de1334ae20a3ca034b0ecf4b464a57ca01efc4f9cf43bd9ab93896125ab3c2de060ecd8f6ae23b86c6bf3463f681b643e69c032c6a662d376c98a6092
+  languageName: node
+  linkType: hard
+
 "@types/resolve@npm:1.20.2":
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
@@ -5035,6 +5044,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
 "undici@npm:^5.22.1":
   version: 5.28.2
   resolution: "undici@npm:5.28.2"
@@ -5264,6 +5280,7 @@ __metadata:
     "@qinetik/mdi": ^1.0.4
     "@solidjs/meta": ^0.29.1
     "@solidjs/router": ^0.8.3
+    "@types/node": ^20.11.5
     gh-pages: ^6.0.0
     solid-js: ^1.8.5
     solid-start: ^0.3.9
