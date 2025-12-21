@@ -24,7 +24,7 @@ func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon
         display: block;
         text-decoration: none;
         &:hover > svg {
-            color: #fff !important;
+            opacity: 0.8;
         }
     }
     var rowClass = #css {
@@ -69,18 +69,13 @@ func ProjectCard(page : &mut HtmlPage, tags : std::span<std::string_view>, conte
         width: calc(100% - 2em);
         margin: 1em auto 0;
         transition: width 0.4s ease-out, height 0.4s ease-out;
+        background-color: var(--card-bg);
+        transition: width 0.4s ease-out, height 0.4s ease-out, background-color 0.3s ease;
         box-sizing: border-box;
         padding: 1.5em;
         border-radius: 0.5em;
         position: relative;
-
-        .dark & {
-            background-color: rgba(43, 58, 66, 0.9);
-        }
-
-        .light & {
-            background-color: rgba(255, 255, 255, .6);
-        }
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 
         @media (min-width: 600px) {
             width: 16em;

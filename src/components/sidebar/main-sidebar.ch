@@ -47,10 +47,16 @@ func SocialIcons(page : &mut HtmlPage) {
 }
 
 func SiteMenu(page : &mut HtmlPage, useButtons : bool) {
+    var menuClass = #css {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+    }
     if(useButtons) {
         #html {
-            <div>
-                {MyTextButton(page, "About")}
+            <div class={menuClass}>
+                {MyTextButton(page, "About", "showAboutDialog()")}
                 <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
                     {MyTextButton(page, "Download CV")}
                 </a>
@@ -58,7 +64,7 @@ func SiteMenu(page : &mut HtmlPage, useButtons : bool) {
         }
     } else {
         #html {
-            <div>
+            <div class={menuClass}>
                 <span>About</span>
                 <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
                     <span>Download CV</span>
@@ -70,22 +76,29 @@ func SiteMenu(page : &mut HtmlPage, useButtons : bool) {
 
 func MainSidebar(page : &mut HtmlPage) {
     
+    // min-height: auto;
     var asideClass = #css {
-        width: 22em;
-        height: 100vh;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        float: left;
-        overflow-y: hidden;
-
+        padding: 2em;
+        
         .dark & {
             background-color: rgba(43, 58, 66, 0.9);
         }
 
         .light & {
             background-color: rgba(255, 255, 255, .6);
+        }
+
+        @media (min-width: 768px) {
+            width: 22em;
+            height: 100vh;
+            overflow-y: hidden;
+            position: sticky;
+            top: 0;
         }
     }
 

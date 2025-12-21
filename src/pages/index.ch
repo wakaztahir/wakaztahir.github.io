@@ -49,25 +49,34 @@ func MainPage(page : &mut HtmlPage) {
     }
 
     var titleClass = #css {
-        color: #fff;
+        color: var(--text-color);
         font-size: 3rem;
         margin: 0.5em 0;
     }
 
     var descClass = #css {
-        color: #fff;
-        margin-bottom: 1em;
+        color: var(--text-color);
+        margin-bottom: 1rem;
     }
 
-    var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass|() => {
+    var buttonRowClass = #css {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass, buttonRowClass|() => {
         #html {
             <section id="home" class={homeSectionClass}>
                 <h3 class={titleClass}>Hi , I am Waqas.</h3>
                 <p class={descClass}>android developer</p>
-                {MyTextButton(page, "About Me")}
-                <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
-                    {MyTextButton(page, "Download CV")}
-                </a>
+                <div class={buttonRowClass}>
+                    {MyTextButton(page, "About Me", "showAboutDialog()")}
+                    <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
+                        {MyTextButton(page, "Download CV")}
+                    </a>
+                </div>
                 {SocialIconsNonColored(page)}
             </section>
             <section id="projects" class={projectsSectionClass}>
@@ -96,6 +105,7 @@ func MainPage(page : &mut HtmlPage) {
             <div class={mainContentClass}>
                 {Parallax(page, parallaxSection)}
             </div>
+            {AboutDialog(page)}
         </div>
     }
 }

@@ -1,13 +1,27 @@
 func ThemeToggle(page : &mut HtmlPage) {
     var toggleClass = #css {
         position: fixed;
-        bottom: 1em;
-        right: 2em;
-        z-index: 10;
+        bottom: 1.5em;
+        right: 1.5em;
+        z-index: 100;
+        
+        & .sun-icon { display: block; }
+        & .moon-icon { display: none; }
+
+        .dark & .sun-icon { display: none; }
+        .dark & .moon-icon { display: block; }
     }
+
+    var buttonContent : std::function<(page : &mut HtmlPage) => void> = (page : &mut HtmlPage) => {
+        #html {
+            <div class="sun-icon">{SunIcon(page)}</div>
+            <div class="moon-icon">{MoonIcon(page)}</div>
+        }
+    }
+
     #html {
         <div class={toggleClass}>
-             {MyTextButton(page, "Toggle Theme", "toggleTheme()")}
+             {MyButton(page, buttonContent, "toggleTheme()")}
         </div>
         <head>
             <script>{"""
@@ -27,6 +41,7 @@ func ThemeToggle(page : &mut HtmlPage) {
                 // Initialize theme
                 (function() {
                     const savedTheme = localStorage.getItem('theme') || 'dark';
+                    document.documentElement.classList.remove('light', 'dark');
                     document.documentElement.classList.add(savedTheme);
                 })();
             """}</script>
