@@ -72,7 +72,7 @@ func SiteMenu(page : &mut HtmlPage, useButtons : bool) {
         #html {
             <div class={menuClass}>
                 <span>About</span>
-                <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
+                <a href="assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
                     <span>Download CV</span>
                 </a>
             </div>
