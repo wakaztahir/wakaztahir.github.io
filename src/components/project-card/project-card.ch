@@ -1,0 +1,113 @@
+func ProjectCardTitle(page : &mut HtmlPage, text : std::string_view) {
+    var className = #css {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        font-family: Raleway, sans-serif;
+        font-size: 2rem;
+    }
+    #html {
+        <h4 class={className}>{text.data()}</h4>
+    }
+}
+
+func ProjectCardDescription(page : &mut HtmlPage, text : std::string_view) {
+    var className = #css {
+        margin: 1em 0 0;
+    }
+    #html {
+        <p class={className}>{text.data()}</p>
+    }
+}
+
+func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon : std::function<(p : &mut HtmlPage)=>void>, text : std::string_view) {
+    var linkClass = #css {
+        display: block;
+        text-decoration: none;
+        &:hover > svg {
+            color: #fff !important;
+        }
+    }
+    var rowClass = #css {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        & span {
+            font-size: 0.75rem;
+        }
+    }
+    var buttonFunc : std::function<(p : &mut HtmlPage)=>void> = |rowClass, icon, &text|(page : &mut HtmlPage) => {
+        #html {
+            <div class={rowClass}>
+                {icon(page)}
+                <span>{text.data()}</span>
+            </div>
+        }
+    }
+    #html {
+        <a href={path} target="_blank" class={linkClass}>
+             {MyButton(page, buttonFunc)}
+        </a>
+    }
+}
+
+func card_tags(page : &mut HtmlPage, tags : std::span<std::string_view>) {
+    var i = 0u;
+    const total = tags.size();
+    while(i < total) {
+        var tag = tags.get(i);
+        #html {
+            <p>{tag.data()}</p>
+        }
+        i++;
+    }
+}
+
+func ProjectCard(page : &mut HtmlPage, tags : std::span<std::string_view>, content : std::function<(p : &mut HtmlPage) => void>) {
+    var cardClass = #css {
+        width: calc(100% - 2em);
+        margin: 1em auto 0;
+        transition: width 0.4s ease-out, height 0.4s ease-out;
+        box-sizing: border-box;
+        padding: 1.5em;
+        border-radius: 0.5em;
+        position: relative;
+
+        .dark & {
+            background-color: rgba(43, 58, 66, 0.9);
+        }
+
+        .light & {
+            background-color: rgba(255, 255, 255, .6);
+        }
+
+        @media (min-width: 600px) {
+            width: 16em;
+            margin: 1em;
+        }
+    }
+    
+    var footerClass = #css {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    var tagsClass = #css {
+        & p {
+            margin: 0.5em 0 0;
+        }
+    }
+
+    #html {
+        <div class={cardClass}>
+            {content(page)}
+            <div class={footerClass}>
+                <div class={tagsClass}>
+                    {card_tags(page, tags)}
+                </div>
+            </div>
+        </div>
+    }
+}

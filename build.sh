@@ -1,0 +1,1 @@
+D:/Programming/Cpp/zig-bootstrap/chemical/cmake-build-debug/TCCCompiler.exe build.lab --no-cache
