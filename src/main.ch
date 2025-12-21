@@ -36,10 +36,7 @@ public func main(argc : int, argv : **char) : int {
     printf("copying assets\n");
     fs::copy_directory(srcAssetsDir.data(), outAssetsDir.data(), fs::CopyOptions.Recursive)
 
-    printf("complete page:\n");
-
-    var completePage = page.toString();
-    printf("%s\n", completePage.data())
+    printf("complete page written to %s\n", path.data());
 
     return 0;
 }

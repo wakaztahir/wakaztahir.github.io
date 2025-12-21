@@ -45,7 +45,7 @@ func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon
         }
     }
     #html {
-        <a href={path} target="_blank" class={linkClass}>
+        <a href={path.data()} target="_blank" class={linkClass}>
              {MyButton(page, buttonFunc, "")}
         </a>
     }
