@@ -68,17 +68,6 @@ func MainPage(page : &mut HtmlPage) {
 
     var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass, buttonRowClass|() => {
         #html {
-            <section id="home" class={homeSectionClass}>
-                <h3 class={titleClass}>Hi , I am Waqas.</h3>
-                <p class={descClass}>android developer</p>
-                <div class={buttonRowClass}>
-                    {MyTextButton(page, "About Me", "showAboutDialog()")}
-                    <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
-                        {MyTextButton(page, "Download CV")}
-                    </a>
-                </div>
-                {SocialIconsNonColored(page)}
-            </section>
             <section id="projects" class={projectsSectionClass}>
                 {MindMapCard(page)}
                 {SketchableCard(page)}

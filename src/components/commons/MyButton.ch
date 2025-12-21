@@ -1,28 +1,31 @@
 func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPage)=>void>, onClick : std::string_view = "") {
     var buttonClass = #css {
-        padding: 0.6em 1.2em;
-        background: #2b3a42;
-        color: #fff;
+        padding: 0.8em;
+        background: transparent;
+        color: var(--text-color);
         border: 0;
         outline: 0;
         cursor: pointer;
-        border-radius: 1.4em;
+        border-radius: 12px;
         box-sizing: border-box;
-        transition: color 0.3s ease-out, background 0.3s ease-out;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.8;
 
         &:hover {
-            color: #2b3a42;
-            background: #fff;
-        }
-        
-        .dark & {
-            background: #fff;
-            color: #2b3a42;
+            opacity: 1;
+            background: rgba(0,0,0,0.05);
+            transform: translateY(-2px);
         }
         
         .dark &:hover {
-            background: #2b3a42;
-            color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
+        & svg {
+            transition: fill 0.25s ease;
         }
     }
     #html {
@@ -31,9 +34,19 @@ func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPag
 }
 
 func MyTextButton(page : &mut HtmlPage, content : std::string_view, onClick : std::string_view = "") {
-    MyButton(page, |&content|(page : &mut HtmlPage) => {
+    var textBtnClass = #css {
+        padding: 0.8em 1.5em;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    var clickLamb : std::function<(page : &mut HtmlPage)=>void> = |&content|() => {
         #html {
             <span>{content.data()}</span>
         }
-    }, onClick)
+    }
+    #html {
+        <div class={textBtnClass}>
+            {MyButton(page, clickLamb, onClick)}
+        </div>
+    }
 }

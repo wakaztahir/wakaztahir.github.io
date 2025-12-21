@@ -83,30 +83,31 @@ func MainSidebar(page : &mut HtmlPage) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2em;
+        padding: 4em 2em;
+        background-color: var(--bg-color);
+        transition: background-color 0.4s ease;
         
-        .dark & {
-            background-color: rgba(43, 58, 66, 0.9);
-        }
-
-        .light & {
-            background-color: rgba(255, 255, 255, .6);
-        }
-
         @media (min-width: 768px) {
             width: 22em;
             height: 100vh;
             overflow-y: hidden;
             position: sticky;
             top: 0;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-left : 0px;
+            border-top : 0px;
+            border-bottom : 0px;
         }
     }
 
     var titleClass = #css {
-        font-family: Raleway, sans-serif;
-        font-weight: normal;
-        font-size: 4rem;
+        font-family: Montserrat, sans-serif;
+        font-weight: 700;
+        letter-spacing: -2px;
+        font-size: 3.5rem;
         text-align: center;
+        margin: 0.5em 0;
+        color: var(--text-color);
     }
 
     var separatorClass = #css {

@@ -27,18 +27,14 @@ func ThemeToggle(page : &mut HtmlPage) {
             <script>{"""
                 function toggleTheme() {
                     const html = document.documentElement;
-                    if (html.classList.contains('dark')) {
-                        html.classList.remove('dark');
-                        html.classList.add('light');
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        html.classList.remove('light');
-                        html.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
-                    }
+                    const isDark = html.classList.contains('dark');
+                    const newTheme = isDark ? 'light' : 'dark';
+                    
+                    html.classList.remove('light', 'dark');
+                    html.classList.add(newTheme);
+                    localStorage.setItem('theme', newTheme);
                 }
 
-                // Initialize theme
                 (function() {
                     const savedTheme = localStorage.getItem('theme') || 'dark';
                     document.documentElement.classList.remove('light', 'dark');
@@ -54,8 +50,12 @@ func Parallax(page : &mut HtmlPage, content : std::function<(p : &mut HtmlPage)=
         position: relative;
         flex-basis: 100%;
         flex-shrink: 2.5;
-        height: 100vh;
+        min-height: 100vh;
         overflow-x: hidden;
+
+        @media (min-width: 768px) {
+            height: 100vh;
+        }
 
         & canvas {
             z-index: -1 !important;
@@ -67,6 +67,7 @@ func Parallax(page : &mut HtmlPage, content : std::function<(p : &mut HtmlPage)=
 
         & .parallax-content {
             z-index: 4;
+            min-height: 100vh;
         }
     }
 

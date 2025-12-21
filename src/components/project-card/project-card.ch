@@ -2,8 +2,9 @@ func ProjectCardTitle(page : &mut HtmlPage, text : std::string_view) {
     var className = #css {
         margin-top: 0;
         margin-bottom: 0.5em;
-        font-family: Raleway, sans-serif;
-        font-size: 2rem;
+        font-family: Inter, sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
     }
     #html {
         <h4 class={className}>{text.data()}</h4>
@@ -12,14 +13,17 @@ func ProjectCardTitle(page : &mut HtmlPage, text : std::string_view) {
 
 func ProjectCardDescription(page : &mut HtmlPage, text : std::string_view) {
     var className = #css {
-        margin: 1em 0 0;
+        margin: 1.5em 0 2em;
+        line-height: 1.5;
+        font-size: 0.95rem;
+        opacity: 0.8;
     }
     #html {
         <p class={className}>{text.data()}</p>
     }
 }
 
-func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon : std::function<(p : &mut HtmlPage)=>void>, text : std::string_view) {
+func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon : std::function<(p : &mut HtmlPage)=>void>, _text : std::string_view) {
     var linkClass = #css {
         display: block;
         text-decoration: none;
@@ -32,16 +36,11 @@ func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 0.5em;
-        & span {
-            font-size: 0.75rem;
-        }
     }
-    var buttonFunc : std::function<(p : &mut HtmlPage)=>void> = |rowClass, icon, &text|(page : &mut HtmlPage) => {
+    var buttonFunc : std::function<(p : &mut HtmlPage)=>void> = |rowClass, icon|(page : &mut HtmlPage) => {
         #html {
             <div class={rowClass}>
                 {icon(page)}
-                <span>{text.data()}</span>
             </div>
         }
     }
@@ -85,23 +84,31 @@ func ProjectCard(page : &mut HtmlPage, tags : std::span<std::string_view>, conte
     
     var footerClass = #css {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2em;
+        gap: 1em;
     }
 
     var tagsClass = #css {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
         & p {
-            margin: 0.5em 0 0;
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--icon-fill);
+            opacity: 0.7;
         }
     }
 
     #html {
         <div class={cardClass}>
             {content(page)}
-            <div class={footerClass}>
-                <div class={tagsClass}>
-                    {card_tags(page, tags)}
-                </div>
+            <div class={tagsClass}>
+                {card_tags(page, tags)}
             </div>
         </div>
     }
