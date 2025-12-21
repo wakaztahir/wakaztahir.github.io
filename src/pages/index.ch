@@ -5,7 +5,7 @@ func MainPage(page : &mut HtmlPage) {
     var seoProps = SEOProps()
     seoProps.title = std::string("Waqas Tahir | Software Developer")
     seoProps.description = std::string("A portfolio site for Waqas Tahir | Software Developer")
-    seoProps.image = std::string("/images/feature.png")
+    seoProps.image = std::string("assets/images/icon.png")
     seoProps.siteUrl = std::string("https://wakaztahir.com")
     
     SEO(page, seoProps)
@@ -86,7 +86,7 @@ func MainPage(page : &mut HtmlPage) {
                 <link
                     href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300&family=Hind&display=swap"
                     rel="stylesheet" />
-                <link rel="icon" href="images/favicon.png" type="image/png" />
+                <link rel="icon" href="assets/images/favicon.png" type="image/png" />
             </head>
             {MainSidebar(page)}
             <div class={mainContentClass}>

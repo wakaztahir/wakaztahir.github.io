@@ -26,7 +26,7 @@ public func main(argc : int, argv : **char) : int {
     page.writeToDirectory(std::string_view(path.data(), path.size()), "index")
 
     const srcAssetsDir = std::string(intrinsics::get_module_dir())
-    srcAssetsDir.append_char_ptr("/assets")
+    srcAssetsDir.append_char_ptr("/../assets")
     printf("the src assets directory is %s\n", srcAssetsDir.data());
 
     var outAssetsDir = std::string(intrinsics::get_build_dir());
