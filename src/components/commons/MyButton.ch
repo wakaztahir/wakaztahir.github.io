@@ -1,4 +1,4 @@
-func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPage)=>void>) {
+func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPage)=>void>, onClick : std::string_view = "") {
     var buttonClass = #css {
         padding: 0.6em 1.2em;
         background: #2b3a42;
@@ -26,14 +26,14 @@ func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPag
         }
     }
     #html {
-        <button class={buttonClass}>{content(page)}</button>
+        <button class={buttonClass} onclick={onClick}>{content(page)}</button>
     }
 }
 
-func MyTextButton(page : &mut HtmlPage, content : std::string_view) {
+func MyTextButton(page : &mut HtmlPage, content : std::string_view, onClick : std::string_view = "") {
     MyButton(page, |&content|(page : &mut HtmlPage) => {
         #html {
             <span>{content.data()}</span>
         }
-    })
+    }, onClick)
 }

@@ -7,16 +7,16 @@ func SocialIconsNonColored(page : &mut HtmlPage) {
     #html {
         <div class={iconClass}>
             <a href="https://facebook.com/wakaztahir" target="_blank" rel="noreferrer">
-                {FacebookIcon(page, "#fff")}
+                {FacebookIcon(page)}
             </a>
             <a href="https://twitter.com/wakaztahir" target="_blank" rel="noreferrer">
-                {TwitterIcon(page, "#fff")}
+                {TwitterIcon(page)}
             </a>
             <a href="https://stackoverflow.com/users/3343503/waqas" rel="noreferrer" target="_blank">
-                {StackoverflowIcon(page, "#fff")}
+                {StackoverflowIcon(page)}
             </a>
             <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
-                {GithubIcon(page, "#fff")}
+                {GithubIcon(page)}
             </a>
         </div>
     }

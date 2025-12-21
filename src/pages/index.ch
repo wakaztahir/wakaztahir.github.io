@@ -102,108 +102,146 @@ func MainPage(page : &mut HtmlPage) {
 
 func MindMapCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon, windowsIcon, webIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "123Mind") }
-            { ProjectCardDescription(p, "A Mind Mapping App that that exports high quality PNG,JPG and PDFs , very customizable supporting many features") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.mindnode", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "123Mind") }
+            { ProjectCardDescription(page, "A Mind Mapping App that that exports high quality PNG,JPG and PDFs , very customizable supporting many features") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://qawaz.github.io/mindnode-web", webIcon, "Web App") }
+                { ProjectCardLinkWithIcon(page, "https://qawaz.github.io/mindnode-web/latest-windows.html", windowsIcon, "Windows") }
+                { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.mindnode", playStoreIcon, "PlayStore") }
+            </div>
         }
     })
 }
 
 func SketchableCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon, webIcon, windowsIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Sketchable") }
-            { ProjectCardDescription(p, "A Simple Drawing or Sketching App") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.sketchapp", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "Sketchable") }
+            { ProjectCardDescription(page, "A Simple Drawing or Sketching App") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://qawaz.github.io/sketchable-web", webIcon, "Web App") }
+                { ProjectCardLinkWithIcon(page, "https://qawaz.github.io/sketchable-web/latest-windows.html", windowsIcon, "Windows") }
+                { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.sketchapp", playStoreIcon, "PlayStore") }
+            </div>
         }
     })
 }
 
 func SimpleScannerCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Simple Scanner") }
-            { ProjectCardDescription(p, "A document scanner app built with OpenCV, Detects cropping and crops it") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.docscanner", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "Simple Scanner") }
+            { ProjectCardDescription(page, "A document scanner app built with OpenCV, Detects cropping and crops it") }
+            { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.docscanner", playStoreIcon, "PlayStore") }
         }
     })
 }
 
 func PhotoEditorApp(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Photo Editor") }
-            { ProjectCardDescription(p, "A photo editor app that allows editing photos") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.photoeditor", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "Photo Editor") }
+            { ProjectCardDescription(page, "A photo editor app that allows editing photos") }
+            { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.photoeditor", playStoreIcon, "PlayStore") }
         }
     })
 }
 
 func EasyToDoCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Easy To Do") }
-            { ProjectCardDescription(p, "A Task Management app that allows managing tasks and creating reminders") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.easytodo", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "Easy To Do") }
+            { ProjectCardDescription(page, "A Task Management app that allows managing tasks and creating reminders") }
+            { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.easytodo", playStoreIcon, "PlayStore") }
         }
     })
 }
 
 func PDFEditorCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("July 2022") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "PDFEditor") }
-            { ProjectCardDescription(p, "PDF Editor app that allows to view and edit PDF documents") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.pdfreader", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "PDFEditor") }
+            { ProjectCardDescription(page, "PDF Editor app that allows to view and edit PDF documents") }
+            { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.pdfreader", playStoreIcon, "PlayStore") }
         }
     })
 }
 
 func ReactStaggeredGridCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("June 2021") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    var githubIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |webIcon, githubIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "React Staggered Grid") }
-            { ProjectCardDescription(p, "This is a npm package that creates a staggered grid in React") }
-            { ProjectCardLinkWithIcon(p, "https://github.com/wakaztahir/react-staggered-grid", iconLambda, "Github") }
+            { ProjectCardTitle(page, "React Staggered Grid") }
+            { ProjectCardDescription(page, "This is a npm package that creates a staggered grid in React") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://wakaztahir.github.io/react-staggered-grid/", webIcon, "Live Demo") }
+                { ProjectCardLinkWithIcon(page, "https://github.com/wakaztahir/react-staggered-grid", githubIcon, "Github") }
+            </div>
         }
     })
 }
 
 func TimelineCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("March 2021") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    var githubIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |webIcon, playStoreIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Timeline") }
-            { ProjectCardDescription(p, "A Material Designed Web & Android App inspired by Google Keep to make notes and organize your information.") }
-            { ProjectCardLinkWithIcon(p, "https://play.google.com/store/apps/details?id=com.wakaztahir.timeline", iconLambda, "PlayStore") }
+            { ProjectCardTitle(page, "Timeline") }
+            { ProjectCardDescription(page, "A Material Designed Web & Android App inspired by Google Keep to make notes and organize your information.") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://qawaz.github.io/timeline", webIcon, "Website") }
+                { ProjectCardLinkWithIcon(page, "https://play.google.com/store/apps/details?id=com.wakaztahir.timeline", playStoreIcon, "PlayStore") }
+            </div>
         }
     })
 }
 
 func AcadtableCard(page : &mut HtmlPage) {
     const tags = [ std::string_view("August 2020") ]
-    var iconLambda : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
-    ProjectCard(page, std::span<std::string_view>(tags), |iconLambda|(p : &mut HtmlPage) => {
+    var playStoreIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { PlayStoreIcon(p2) }
+    var webIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WebIcon(p2) }
+    var windowsIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { WindowsIcon(p2) }
+    var githubIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |playStoreIcon, webIcon, githubIcon|(page : &mut HtmlPage) => {
         #html {
-            { ProjectCardTitle(p, "Acadtable") }
-            { ProjectCardDescription(p, "Online react application that allows the users to make academic time tables.") }
-            { ProjectCardLinkWithIcon(p, "https://github.com/wakaztahir/acadtable", iconLambda, "Github") }
+            { ProjectCardTitle(page, "Acadtable") }
+            { ProjectCardDescription(page, "Online react application that allows the users to make academic time tables.") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://wakaztahir.github.io/acadtable/", webIcon, "Live Demo") }
+                { ProjectCardLinkWithIcon(page, "https://github.com/wakaztahir/acadtable", githubIcon, "Github") }
+            </div>
         }
     })
 }

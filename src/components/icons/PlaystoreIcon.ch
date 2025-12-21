@@ -1,4 +1,4 @@
-func PlayStoreIcon(page : &mut HtmlPage) {
+func PlayStoreIcon(page : &mut HtmlPage, fill : std::string_view = "currentColor") {
     #html {
         <svg viewBox="-4.12599 -7.65905 35.75858 45.9543" width="24" height="24" version="1.1">
             <defs>

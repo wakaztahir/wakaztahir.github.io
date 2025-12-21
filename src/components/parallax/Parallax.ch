@@ -7,8 +7,30 @@ func ThemeToggle(page : &mut HtmlPage) {
     }
     #html {
         <div class={toggleClass}>
-             {MyTextButton(page, "Toggle Theme")}
+             {MyTextButton(page, "Toggle Theme", "toggleTheme()")}
         </div>
+        <head>
+            <script>{"""
+                function toggleTheme() {
+                    const html = document.documentElement;
+                    if (html.classList.contains('dark')) {
+                        html.classList.remove('dark');
+                        html.classList.add('light');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        html.classList.remove('light');
+                        html.classList.add('dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                }
+
+                // Initialize theme
+                (function() {
+                    const savedTheme = localStorage.getItem('theme') || 'dark';
+                    document.documentElement.classList.add(savedTheme);
+                })();
+            """}</script>
+        </head>
     }
 }
 

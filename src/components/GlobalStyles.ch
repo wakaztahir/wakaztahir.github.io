@@ -2,19 +2,21 @@ func GlobalStyles(page : &mut HtmlPage) {
     #html {
         <style>{"""
           :root {
-            --bg-color: #ffffff;
-            --text-color: #2c3e50;
-            --secondary-bg: rgba(255, 255, 255, 0.6);
+            --bg-color: #f5f6fa;
+            --text-color: #2f3640;
+            --secondary-bg: #ffffff;
             --accent-color: #106962;
-            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-bg: #ffffff;
+            --icon-fill: #2f3640;
           }
 
           .dark {
-            --bg-color: #1a1a1a;
-            --text-color: #ecf0f1;
-            --secondary-bg: rgba(43, 58, 66, 0.9);
+            --bg-color: #1e272e;
+            --text-color: #d2dae2;
+            --secondary-bg: #2f3542;
             --accent-color: #1abc9c;
-            --card-bg: rgba(43, 58, 66, 0.8);
+            --card-bg: #2f3542;
+            --icon-fill: #ffffff;
           }
 
           html, body {

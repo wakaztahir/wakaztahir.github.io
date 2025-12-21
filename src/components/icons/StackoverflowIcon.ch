@@ -1,4 +1,4 @@
-func StackoverflowIcon(page : &mut HtmlPage, fill : std::string_view = "#fff") {
+func StackoverflowIcon(page : &mut HtmlPage, fill : std::string_view = "currentColor") {
     #html {
         <svg viewBox="0 0 496 512" width="24" height="24" fill={fill}>
             <path
