@@ -38,7 +38,7 @@ func AboutDialog(page : &mut HtmlPage) {
     #html {
         <div id="about-dialog" class={overlayClass} onclick="hideAboutDialog(event)">
             <div class={dialogClass} onclick="event.stopPropagation()">
-                <button class={closeButtonClass} onclick="hideAboutDialog()">×</button>
+                <button class={closeButtonClass} onclick="hideAboutDialog()">&times;</button>
                 <h2>About Me</h2>
                 <p>
                     I am Waqas Tahir, an Android Developer passionate about creating beautiful and functional applications. 

@@ -16,14 +16,15 @@ public func main(argc : int, argv : **char) : int {
     printf("creating output directory\n");
     fs::mkdir(path.data());
 
-    printf("creating page\n");
+    printf("creating index page\n");
+    var indexPage = HtmlPage()
+    MainPage(indexPage)
+    indexPage.writeToDirectory(std::string_view(path.data(), path.size()), "index")
 
-    var page = HtmlPage()
-    MainPage(page)
-
-    printf("writing to output directory\n");
-
-    page.writeToDirectory(std::string_view(path.data(), path.size()), "index")
+    printf("creating 404 page\n");
+    var notFoundPage = HtmlPage()
+    NotFoundPage(notFoundPage)
+    notFoundPage.writeToDirectory(std::string_view(path.data(), path.size()), "404")
 
     const srcAssetsDir = std::string(intrinsics::get_module_dir())
     srcAssetsDir.append_char_ptr("/../assets")

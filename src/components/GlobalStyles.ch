@@ -4,6 +4,7 @@ func GlobalStyles(page : &mut HtmlPage) {
           :root {
             --bg-color: #f8fafc;
             --text-color: #0f172a;
+            --text-color-rgb: 15, 23, 42;
             --secondary-bg: #ffffff;
             --accent-color: #0f172a;
             --card-bg: #ffffff;
@@ -14,6 +15,7 @@ func GlobalStyles(page : &mut HtmlPage) {
           .dark {
             --bg-color: #020617;
             --text-color: #f1f5f9;
+            --text-color-rgb: 241, 245, 249;
             --secondary-bg: #0f172a;
             --accent-color: #f1f5f9;
             --card-bg: #0f172a;
