@@ -1,1 +1,1 @@
-D:/Programming/Cpp/zig-bootstrap/chemical/cmake-build-debug/TCCCompiler.exe build.lab --no-cache
+D:/Programming/Cpp/zig-bootstrap/chemical/cmake-build-debug/TCCCompiler.exe build.lab --no-cache --mode debug_complete

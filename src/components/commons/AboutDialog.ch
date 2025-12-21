@@ -54,12 +54,14 @@ func AboutDialog(page : &mut HtmlPage) {
         </div>
         <head>
             <script>{"""
-                function showAboutDialog() {
-                    document.getElementById('about-dialog').style.display = 'flex';
-                }
-                function hideAboutDialog(event) {
-                    document.getElementById('about-dialog').style.display = 'none';
-                }
+                window.showAboutDialog = function() {
+                    const dialog = document.getElementById('about-dialog');
+                    if (dialog) dialog.style.display = 'flex';
+                };
+                window.hideAboutDialog = function(event) {
+                    const dialog = document.getElementById('about-dialog');
+                    if (dialog) dialog.style.display = 'none';
+                };
             """}</script>
         </head>
     }

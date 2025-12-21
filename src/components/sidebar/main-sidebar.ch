@@ -50,15 +50,21 @@ func SiteMenu(page : &mut HtmlPage, useButtons : bool) {
     var menuClass = #css {
         display: flex;
         flex-direction: column;
-        gap: 1em;
+        gap: 0.5em;
         align-items: center;
     }
     if(useButtons) {
+        var clickLamb : std::function<(page : &mut HtmlPage)=>void> = ||() => {
+            #html { <span>About</span> }
+        }
+        var cvBtnContent : std::function<(page : &mut HtmlPage)=>void> = ||() => {
+             #html { <span>Download CV</span> }
+        }
         #html {
             <div class={menuClass}>
-                {MyTextButton(page, "About", "showAboutDialog()")}
+                {MyButton(page, clickLamb, "showAboutDialog()")}
                 <a href="/assets/WaqasTahirCV.pdf" download="waqas-tahir-cv.pdf">
-                    {MyTextButton(page, "Download CV")}
+                    {MyButton(page, cvBtnContent, "")}
                 </a>
             </div>
         }
@@ -83,7 +89,7 @@ func MainSidebar(page : &mut HtmlPage) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 4em 2em;
+        padding: 3em 2em;
         background-color: var(--bg-color);
         transition: background-color 0.4s ease;
         
@@ -106,14 +112,15 @@ func MainSidebar(page : &mut HtmlPage) {
         letter-spacing: -2px;
         font-size: 3.5rem;
         text-align: center;
-        margin: 0.5em 0;
+        margin: 0.2em 0 0.5em;
         color: var(--text-color);
     }
 
     var separatorClass = #css {
         width: 80%;
-        margin-top: 2em;
-        margin-bottom: 2em;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        opacity: 0.2;
     }
 
     var navClass = #css {
@@ -121,19 +128,18 @@ func MainSidebar(page : &mut HtmlPage) {
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
-        & > * {
-            margin-top: 0.5em;
-        }
     }
 
     var socialClass = #css {
-        margin-top: 2em;
+        margin-top: 1.5em;
         display: flex;
         flex-direction: row;
     }
 
     var footerClass = #css {
         margin-top: 1em;
+        font-size: 0.85rem;
+        opacity: 0.6;
     }
 
     #html {

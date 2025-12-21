@@ -29,7 +29,7 @@ func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPag
         }
     }
     #html {
-        <button class={buttonClass} onclick={onClick}>{content(page)}</button>
+        <button class={buttonClass} onclick={onClick.data()}>{content(page)}</button>
     }
 }
 

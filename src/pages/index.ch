@@ -36,16 +36,13 @@ func MainPage(page : &mut HtmlPage) {
         width: 100%;
         min-height: 60vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        padding: 2em;
+        align-items: flex-start;
+        padding: 4em 1em;
         box-sizing: border-box;
-        @media (min-width: 768px) {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-        }
+        gap: 1em;
     }
 
     var titleClass = #css {

@@ -35,9 +35,9 @@ func ThemeToggle(page : &mut HtmlPage) {
                     localStorage.setItem('theme', newTheme);
                 }
 
+                // Immediate initialization to prevent flash
                 (function() {
                     const savedTheme = localStorage.getItem('theme') || 'dark';
-                    document.documentElement.classList.remove('light', 'dark');
                     document.documentElement.classList.add(savedTheme);
                 })();
             """}</script>
