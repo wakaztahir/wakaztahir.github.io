@@ -66,6 +66,7 @@ func MainPage(page : &mut HtmlPage) {
     var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass, buttonRowClass|() => {
         #html {
             <section id="projects" class={projectsSectionClass}>
+                {ChemicalCard(page)}
                 {MindMapCard(page)}
                 {SketchableCard(page)}
                 {PDFEditorCard(page)}
@@ -97,6 +98,20 @@ func MainPage(page : &mut HtmlPage) {
             {AboutDialog(page)}
         </div>
     }
+}
+
+func ChemicalCard(page : &mut HtmlPage) {
+    const tags = [ std::string_view("December 2025") ]
+    var githubIcon : std::function<(p2 : &mut HtmlPage) => void> = (p2 : &mut HtmlPage) => { GithubIcon(p2) }
+    ProjectCard(page, std::span<std::string_view>(tags), |githubIcon|(page : &mut HtmlPage) => {
+        #html {
+            { ProjectCardTitle(page, "Chemical Programming Language") }
+            { ProjectCardDescription(page, "A high performance native programming language built with LLVM and Tiny CC that supports web development using embedded languages.") }
+            <div style="display:flex; flex-wrap:wrap; gap:0.5em;">
+                { ProjectCardLinkWithIcon(page, "https://github.com/chemicallang/chemical", githubIcon, "Github") }
+            </div>
+        }
+    })
 }
 
 func MindMapCard(page : &mut HtmlPage) {

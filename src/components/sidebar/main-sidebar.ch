@@ -18,6 +18,9 @@ func SocialIconsNonColored(page : &mut HtmlPage) {
             <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
                 {GithubIcon(page)}
             </a>
+            <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
+                {LinkedinIcon(page)}
+            </a>
         </div>
     }
 }
@@ -41,6 +44,9 @@ func SocialIcons(page : &mut HtmlPage) {
             </a>
             <a href="https://github.com/wakaztahir" target="_blank" rel="noreferrer">
                 {GithubIcon(page)}
+            </a>
+            <a href="https://www.linkedin.com/in/wakaztahir/" target="_blank" rel="noreferrer">
+                {LinkedinIcon(page)}
             </a>
         </div>
     }
