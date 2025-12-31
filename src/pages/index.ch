@@ -63,7 +63,7 @@ func MainPage(page : &mut HtmlPage) {
         flex-wrap: wrap;
     }
 
-    var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass, buttonRowClass|() => {
+    var parallaxSection : std::function<(page : &HtmlPage) => void> = |homeSectionClass, titleClass, descClass, projectsSectionClass, buttonRowClass|(page) => {
         #html {
             <section id="projects" class={projectsSectionClass}>
                 {ChemicalCard(page)}

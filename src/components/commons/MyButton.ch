@@ -29,7 +29,7 @@ func MyButton(page : &mut HtmlPage, content : std::function<(page : &mut HtmlPag
         }
     }
     #html {
-        <button class={buttonClass} onclick={onClick.data()}>{content(page)}</button>
+        <button class={buttonClass} onclick={onClick}>{content(page)}</button>
     }
 }
 
@@ -41,7 +41,7 @@ func MyTextButton(page : &mut HtmlPage, content : std::string_view, onClick : st
     }
     var clickLamb : std::function<(page : &mut HtmlPage)=>void> = |&content|() => {
         #html {
-            <span>{content.data()}</span>
+            <span>{content}</span>
         }
     }
     #html {

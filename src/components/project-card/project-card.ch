@@ -7,7 +7,7 @@ func ProjectCardTitle(page : &mut HtmlPage, text : std::string_view) {
         font-size: 1.5rem;
     }
     #html {
-        <h4 class={className}>{text.data()}</h4>
+        <h4 class={className}>{text}</h4>
     }
 }
 
@@ -19,7 +19,7 @@ func ProjectCardDescription(page : &mut HtmlPage, text : std::string_view) {
         opacity: 0.8;
     }
     #html {
-        <p class={className}>{text.data()}</p>
+        <p class={className}>{text}</p>
     }
 }
 
@@ -45,7 +45,7 @@ func ProjectCardLinkWithIcon(page : &mut HtmlPage, path : std::string_view, icon
         }
     }
     #html {
-        <a href={path.data()} target="_blank" class={linkClass}>
+        <a href={path} target="_blank" class={linkClass}>
              {MyButton(page, buttonFunc, "")}
         </a>
     }
@@ -55,9 +55,9 @@ func card_tags(page : &mut HtmlPage, tags : std::span<std::string_view>) {
     var i = 0u;
     const total = tags.size();
     while(i < total) {
-        var tag = tags.get(i);
+        var tag = *tags.get(i);
         #html {
-            <p>{tag.data()}</p>
+            <p>{tag}</p>
         }
         i++;
     }

@@ -9,9 +9,9 @@ struct SEOProps {
 func SEO(page : &mut HtmlPage, props : SEOProps) {
     #html {
         <head>
-            <title>{props.title.data()}</title>
-            <meta name="description" content={props.description.data()}/>
-            <meta name="image" content={props.image.data()}/>
+            <title>{props.title}</title>
+            <meta name="description" content={props.description}/>
+            <meta name="image" content={props.image}/>
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:creator" content="@wakaztahir"/>
         </head>
@@ -19,7 +19,7 @@ func SEO(page : &mut HtmlPage, props : SEOProps) {
     if(!props.siteUrl.empty()) {
         #html {
             <head>
-                <meta property="og:url" content={props.siteUrl.data()}/>
+                <meta property="og:url" content={props.siteUrl}/>
             </head>
         }
     }
@@ -33,24 +33,24 @@ func SEO(page : &mut HtmlPage, props : SEOProps) {
     if(!props.title.empty()) {
         #html {
             <head>
-                <meta property="og:title" content={props.title.data()}/>
-                <meta name="twitter:title" content={props.title.data()}/>
+                <meta property="og:title" content={props.title}/>
+                <meta name="twitter:title" content={props.title}/>
             </head>
         }
     }
     if(!props.description.empty()) {
         #html {
             <head>
-                <meta property="og:description" content={props.description.data()}/>
-                <meta name="twitter:description" content={props.description.data()}/>
+                <meta property="og:description" content={props.description}/>
+                <meta name="twitter:description" content={props.description}/>
             </head>
         }
     }
     if(!props.image.empty()) {
         #html {
             <head>
-                <meta property="og:image" content={props.image.data()}/>
-                <meta name="twitter:image" content={props.image.data()}/>
+                <meta property="og:image" content={props.image}/>
+                <meta name="twitter:image" content={props.image}/>
             </head>
         }
     }
